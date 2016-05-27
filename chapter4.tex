@@ -1,0 +1,58 @@
+\chapter{Statistics in cosmology}
+\label{chapter:4}
+
+\section{Introduction}
+
+In this chapter we present briefly most of the statistical tools used in the thesis. 
+
+A random event $ A $ is an event which can have $ A_j $ different outcomes. It is not possible to predict the outcomes $ A_j $ of a given random event $ A $, but the probabilities $ P\,(\,A_j\,) $ for each outcome $ A_j $ are known. Then we can assign a discrete real random variable $ X $ to the random event $ A $ : real numbers $ X_j $ are associated to  outcomes $ A_j $.  Thus the real numbers $ X_j $ have corresponding probabilities $ P\, (\,A_j\,) = P\,(\,X_j\,(\,A_j\,)) $ which form a probability distribution that satisfies $ \sum_j \,P\,(\,X_j\,) = 1 $.  
+
+If the random variable $ X $ covers continuous intervals, then we have a continuous random variable and therefore, instead of a probability distribution, we have a probability density function $ p\,(\,X\,) $ satisfying $ \int_{\mathbb{R}} \,p\,(\,X\,)\, dX = 1 $. The expectation value and the variance of $ X $ are defined respectively as 
+
+\begin{equation}
+\int_{\mathbb{R}} \,X\, p\,(\,X\,)\, dX = \langle X \rangle\,,
+\end{equation}
+
+and
+
+\begin{equation}
+V\,(\,X\,) = \sigma^2 = \int_{\mathbb{R}} \, \left(\, X - \langle X \rangle \,\right)^2 \,p(\,X\,) \,dX = \langle X^2 \rangle - \langle X \rangle^2. 
+\end{equation}
+
+The quantity $ \sigma $ is called the standard deviation. If the expectation value of a random variable $ \langle X \rangle = 0 $, we call $ X $ a fluctuation. In cosmology we are mainly interested in this kind of random variables e.g., fluctuations on the temperature field of the CMB, mass density, and curvature. Two random variables $ X_1 $ and $ X_2 $ with means $ x_1 $, $ x_2 $ and variances $ \sigma_1^2 $, $ \sigma_2^2 $ are independent if they satisfy $ \langle \,(\, X_i - x_i \,)\, (\, X_j - x_j \,)\, \rangle  = \delta_{ij} \, \sigma_i^2$.
+
+If a random variable $ X $ has a Gaussian (normal) probability density function 
+
+\begin{equation}
+p\,(\,X\,)\, = \frac{1}{\sqrt{2 \pi \sigma}} \exp\left(-\frac{(X-\langle X \rangle)^2}{2\sigma^2}\right)\,,
+\end{equation} 
+
+it is called a Gaussian random variable with mean $ \langle X \rangle $ and variance $ \sigma^2 $. 
+
+The foregoing definition can easily be generalised to a collection of Gaussian random variables $X_1,\,\dots,\, X_N$. Let us consider the vector $\vec{X}$ formed by those random variables and $C$ their covariance matrix (a real, positive-definite, symmetric $N \times N$ matrix). If the joint probability density function of $\vec{X}$ can be written as 
+
+\begin{equation}
+p\,(\,\vec{X}\,)\, = \frac{1}{\sqrt{(2 \pi)^N \det C }} \exp\left(-\frac{1}{2} \vec{X}^T \,C^{-1}\, \vec{X} \right)\,,
+\end{equation}
+
+then we say that the collection of random variables is Gaussian. A collection of Gaussian random variables has some important properties. First, arbitrary linear combinations of a collection of Gaussian random variables is also a collection of Gaussian random variables. In contrast, non-linear combinations of Gaussian random variables are not Gaussian. Second, the result of adding squares of $N$ independent Gaussian random variables, which have the same distribution, is a random variable with a $\chi^2$-distribution and $N$ degrees of freedom.
+
+A random field is an application $\Phi: \vec{n} \rightarrow X(\vec{n})$ which associates each point $\vec{n}$ in the space 
+(e.g., $\mathbb{R}^n$, three dimensional space, CMB sky) to a random variable $X(\vec{n})$ (e.g., temperature fluctuations of the CMB, matter fluctuations, velocity fluctuations, curvature fluctuations). If the random variables $X(\vec{n})$ are Gaussian, then $\Phi(\vec{n})$ is a Gaussian random field. The correlator 
+
+\begin{equation}
+\langle X(\vec{n}_1) \,X(\vec{n}_2) \rangle = C(\vec{n}_1,\vec{n}_2)\,,
+\end{equation}
+
+is the correlation function or the $2-$point function of the field $\Phi$. A quite important result concerning Gaussian random fields is the Wick's theorem: for a collection of Gaussian random variables all $ n- $point correlators can be written in terms of the $ 2- $point function. 
+
+There are two pretty important assumptions which are made in the concordance model of cosmology, namely, the fields of interest are statistically homogeneous and isotropic. On the one hand, if the correlation function of the random field $\Phi(\vec{n})$ is invariant under rotations $R$, then the field $\Phi(\vec{n})$ is said to be statistically isotropic. On the other hand, if the correlation function is invariant under translations $ T $, the field is statistically homogeneous. 
+
+
+\section{Correlation and spectral functions}
+ 
+\section{Angular power spectra and higher order spectral functions}
+
+\section{Bayesian methods}
+
+\section{Markov Chain Monte Carlo}

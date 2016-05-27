@@ -1,0 +1,234 @@
+\chapter{Testing isotropy and Gaussianity in the \textit{Planck} CMB estimates}
+\label{chapter:8}
+
+\section{Introduction} 
+
+\texttt{This chapter is uncompleted. As can be seen in some of the figures shown below, the V-S-K method does not work properly when using masked maps: the oscillations in the spectra of V-S-K spectra do not come from the scanning of the sky, they are due to the masked region. The V-S-K method needs to be modified in order to include only unmasked regions because otherwise real cosmic features could be overlooked. We will try to extend this chapter, at least in two ways. First, we will implement the MASTER technique to deal only with unmasked regions of the sky. Second, in order to compare our results directly with those obtained by the Planck team, we must implement some of the component separation methods and use the same set of Gaussian isotropic simulations, that is, FFP6 and FFP8.}
+
+The cosmological principle -- the assumption that the universe at sufficiently large scales is homogeneous and isotropic -- is one of the cornerstones of the standard model of cosmology (see, e.g., \cite{Robertson1935}; \cite{Walker1937}). Any significant indication of its violation would mean a serious caveat in our cosmological paradigm. Thus, to examine the validity of these assumptions is crucial. 
+
+Recently, the \textit{Planck} collaboration has measured the anisotropies in the CMB with a much better precision than the \textit{Wilkinson Microwave Anisotropy Probe} (hereafter, \textit{WMAP}) (see, e.g., \cite{Spergel2003b}). According to the inflationary paradigm, at very early times the universe was filled with a hypothetical scalar field, the inflaton, whose fluctuations produced curvature perturbations distributed as a homogeneous and isotropic Gaussian random field. Cosmological perturbation theory establishes a relation between those primordial fluctuations and the CMB anisotropies, hence offering a unique probe to test models of the early universe. This relation implies that, in the framework of the cosmological principle, the CMB anisotropies are  statistically isotropic and Gaussian. Thus, testing the statistical properties of the CMB anisotropies allows us to examine  basic assumptions of the standard model of cosmology. In this work we will apply a statistical method different to those used by the \textit{Planck} team in \cite{PlanckXXIII} to look for possible deviations of Gaussianity and isotropy in the \textit{Planck} data.
+
+The \textit{WMAP} team \cite{Spergel2003b} and other groups found some unexpected features -- anomalous properties in the CMB anisotropies which are statistically inconsistent with a best-fit $\Lambda$CDM model -- especially on large angular scales ($\ell < 600$); the list of anomalies includes lack of power on large angular scales \cite{Copi2007}, alignment of low-order multipoles (\cite{Tegmark2003}; \cite{Schwarz2004}; \cite{Bielewicz2005}; \cite{Land2005}), north-south asymmetry in both power spectra (\cite{Eriksen2004}; \cite{Hansen2009}) and several measures of non-Gaussianity (\cite{Eriksen2004a}; \cite{Eriksen2005}; \cite{Rath2007}; \cite{Rath2009}), the cold spot (\cite{Vielva2004}; \cite{Cruz2005}), and parity asymmetry in the power spectrum \cite{Kim2010a}. Not long ago, the \textit{Planck} team has confirmed the observation of those large scale anomalies. Bearing in mind that both \textit{Planck} and \textit{WMAP} are cosmic variance limited, the presence of those unexpected features in the \textit{WMAP} and \textit{Planck} data could be, in principle, due to unaccounted systematic errors, non-subtracted foreground contamination, or more interestingly, it could have a cosmological origin. On the one hand, the fact that two independent experiments have observed the same features reduces drastically the possibility that systematics errors be the source of these anomalies \cite{Larson2014}. On the other hand, unresolved foreground and the more appealing cosmological origin need to be studied further. 
+
+In \cite{PlanckXXIII} the \textit{Plank} team has tested the Gaussianity and isotropy of  the CMB anisotropies and determined the statistical significance of their findings with a set of Gaussian, isotropic simulations of the CMB sky, namely, the ``Full Focal Plane'' (FFP6) simulations. They have used several statistical methods including the study of one-dimensional moments, N-point correlation functions, Minkowski functionals, wavelet, bispectrum and phase correlations. Several of those statistical methods (e.g., N-point correlation functions, the Minkowski functionals, and the bispectrum) show consistency with Gaussianity and isotropy regardless of the mask, the component separation and the resolution of the CMB maps used ($N_{side}$). Nevertheless, there is inconsistency with the FFP6 simulations when employing other methods. On the one hand, in their one-dimensional moments analysis they found that the variance is anomalously low at all considered resolutions ($N_{side}=2048,\, 512,\, 64,\, 32,\, 16$) and that the skewness (kurtosis) is anomalously low (high) at low resolutions ($N_{side}=64,\,32,\,16$). On the other hand, when using the wavelet statistics they also found inconsistencies. In particular, they report skewness (kurtosis) at small (intermediate) scales significantly lower (greater) than in the simulations. Finally, the most important discrepancy between data and simulations appears when analysing the data with the method of surrogates. The \textit{Planck} team found presence of pronounced anisotropy and also correlations between the low-$\ell$ Fourier phases in the analysed CMB maps, findings which turn out to be robust regardless of reference frame and component separation method. Similar results were obtained previously in \textit{WMAP} data \cite{Rath2009}. 
+
+It is of great importance for the standard model of cosmology to clarify those discrepancies between the isotropic, Gaussian simulations and the \textit{Planck} data. In this paper we will test isotropy and Gaussianity by employing a blind analysis which has been applied in previous works to \textit{WMAP} data and assess the statistical significance of our results by using a set of Gaussian, isotropic simulations of the CMB sky. The method (hereafter, V-S-K method) consists of a set of statistical estimators which measure variance, skewness, and kurtosis in patches of the sky. The V-S-K method is similar to the wavelet statistics employed by the \textit{Planck} collaboration but, since our analysis works in real space, it localizes possible non-subtracted foregrounds and may provide the angular scale of possible deviations of Gaussianity and isotropy in the CMB anisotropies. Recently, the V-S-K method was used in \cite{Bernui2014} and in \cite{Bernui2014a} to study the north-south asymmetry phenomenon and non-Gaussianity in CMB anisotropies, respectively. However, the authors used overlapping patches of the sky when defining their estimators, possibly introducing spurious correlations in their estimations. Moreover, they did not use CMB maps in the full \textit{Planck} resolution ($N_{side}=2048$); even though this reduces the noise in the data (dominant at small scales), it also increases the error in the estimations. Since the V-S-K method is built to test large scales, the latter would not be crucial, but it would mean an important reduction in the statistical significance of the results.
+
+In the present chapter, we start out giving a brief description of the data (Section \ref{s:data}) and then present the V-S-K method for non-overlapping patches of the sky (Section \ref{s:method}). The V-S-K method is subsequently applied to both \textit{Planck} data and Gaussian, isotropic simulations of the CMB sky and our results are discussed in Section \ref{s:results}. We conclude in Section \ref{s:summary}.
+
+\section{Data}
+\label{s:data}
+
+In this work we make use of part of the \textit{Planck}-2013 data release corresponding to the nominal period of the \textit{Planck} mission. We utilise some of the available masks, the two available inpainted CMB maps, and the nearly full-sky foreground cleaned CMB maps resulting from four  component separation algorithms applied by the \textit{Planck} team \cite{Ade2014d}, viz., \texttt{Commander-Ruler, NILC, SEVEM} and \texttt{SMICA}. The maps and masks were provided in \textsc{HEALPix}\footnote{http://healpix.sourceforge.net} format, with a pixel size defined by the $N_{side}$ parameter. 
+
+Throughout the paper we use the standardized common mask U73 (sky coverage $f_{sky} = 73$ per cent). However, when studying the mask dependence of our analysis we use the confidence mask VALMASK ($f_{sky} = 89$ per cent) and the mask of the inpainted regions INP$\_$MASK ($f_{sky} = 97$ per cent) of the \texttt{SMICA} CMB estimate. Where appropriate, we have changed the resolution of the mask and maps, originally having $N_{side}=2048$. In particular, we have degraded the data to have $N_{side}=1024,\, 512$, and $256$. When degrading the mask we have followed the same conservative approach used by the \textit{Planck} team: after degrading the mask to the final resolution using the \textsc{ud$\_$grade HEALPix} routine, any pixel having a value lower than $0.8$ has been set to zero. 
+
+Finally, in order to assess the significance of any anisotropic or non-Gaussian signal in the data, we resort to a set of $2000$ simulated Gaussian, isotropic CMB maps. The Monte Carlo simulations were generated using the \textsc{synfast HEALPix} routine based on the \textit{Planck} best-fit power spectrum and having an effective Gaussian beam $\texttt{FWHM}=5$ arcmin.
+
+\section{V-S-K Method}
+\label{s:method}
+
+The method, which in the scope of this study will be referred to as V-S-K method, was first introduced and applied to \textit{WMAP} data in \cite{Bernui2009}  (see also \cite{Bernui2010,Bernui2012}). However, as originally proposed, the method uses overlapping patches in the sky that, as mentioned earlier, might introduce spurious correlations in the data. The V-S-K method was modified to employ non-overlapping patches of the sky and applied to \textit{WMAP} data in \cite{Cardona2012} and simulations in \cite{Cardona2013}. Given a full-sky CMB map in \textsc{HEALPix} format with parameter $N_{side}$, the construction of the estimators in the V-S-K method proceeds as follows. 
+
+\begin{enumerate}
+\item We superimpose on the original CMB map a \textsc{HEALPix} grid with much lower resolution $N'_{side}$ than that of the CMB map (e.g., $N'_{side} = 2,4,8,\dots$). Thus, we have a set of $12 \times N^{'2}_{side}$ non-overlapping patches in the sky, each patch having equal number $N_p$ of pixels belonging to the initial CMB map\footnote{For a full-sky CMB map with parameter $N_{side}$ the number of pixels is given by $12 \times N^2_{side}$. Then, the number of pixels per patch is given by $\left(N_{side}/N'_{side}\right)^2$.}. %Hereafter, we will call each one of those non-overlapping patches cells.
+\item For each patch we compute sample variance,
+\begin{equation}
+\label{eq:1}
+V_j = \frac{1}{N_p -1} \sum_{i=1}^{N_p} (T_i - \bar{T})^2 = \frac{N_p}{N_p -1} \sigma_j^2 ,
+\end{equation}
+sample skewness,
+\begin{equation}
+\label{eq:2}
+S_j = \frac{1}{N_p \sigma_j^3} \sum_{i=1}^{N_p} (T_i - \bar{T})^3 ,
+\end{equation}
+and sample kurtosis,
+\begin{equation}
+\label{eq:3}
+K_j = \frac{1}{N_p \sigma_j^4} \sum_{i=1}^{N_p} (T_i - \bar{T})^4 - 3 ,
+\end{equation}
+where $j$ numbers the non-overlapping patches, $T_i$ is the temperature at the $i^{th}$ pixel in the $j^{th}$ patch, $\bar{T}$ is the CMB mean temperature in the $j^{th}$ patch, and $\sigma_j$ denotes the standard deviation of the CMB data in the $j^{th}$ patch. We compute sample variance, sample skewness, and sample kurtosis including only unmasked pixels; any patch for which more than $20$ per cent of the area is masked is set to zero.
+\item The result of computing $V_j$, $S_j$, and $K_j$ for all the patches is three different maps, namely, one map of sample variance, one map of sample skewness and one map of sample kurtosis. Henceforward, we will refer to those maps as V-map, S-map and K-map, respectively.
+\item Since the V-map, S-map, and the K-map are signals on the sphere, they can be written in terms of a spectral representation. For instance, for the V-map we have 
+\begin{equation}
+\label{eq:4}
+V(\mathbf{x}) = \sum^{\infty}_{\ell=0} \sum^{\ell}_{m=-\ell} v_{\ell m} Y_{\ell m} (\mathbf{x})
+\end{equation}
+
+\noindent where $\mathbf{x}$ is a unit direction vector, $Y_{\ell m}$ the spherical harmonics and 
+
+\begin{equation}
+v_{\ell m} = \int d\mathbf{x} V(\mathbf{x}) Y^*_{\ell m}(\mathbf{x}),
+\end{equation}
+
+\noindent $m=0,\pm1,\dots,\pm \ell$, $\ell=0,1,2,\dots$. Similar expressions are satisfied by S-map and K-map. 
+
+\item Finally, we perform the harmonic analysis of the V-map, S-map, and K-map with the help of the \textsc{anafast HEALPix} routine with maximum spherical harmonic order given by $\ell_{max}=3\times N'_{side}-1$. Taking as an example the $V(\mathbf{x})$ signal again, we have 
+\begin{equation}
+\label{eq:5}
+V_\ell = \frac{1}{2 \ell +1} \sum_{m} |v_{\ell m}|^2 ,
+\end{equation}
+where $V_{\ell}$ is the angular power spectrum of the V-map. Similar expressions  $S_\ell$ and $K_\ell$ apply for S-map and K-map, respectively.
+\end{enumerate}
+
+Throughout this paper we quantify the degree of agreement between the Gaussian, isotropic simulations and the observations by a simple $\chi^2$ test which has been performed separately for the V, S, and K estimators. For instance, for the V estimator we define $\chi^2_{V}$ as 
+
+\begin{equation}
+\chi^2_{V} = \sum_{\ell \ell'} \left( V_\ell - \left\langle V_\ell \right\rangle_G \right) C^{-1}_{\ell \ell'} \left( V_{\ell'} - \left\langle V_{\ell'} \right\rangle_G\right),
+\label{eq:6}
+\end{equation}
+
+with analogous expressions for S and K estimators. In equation (\ref{eq:6}) $V_\ell$ is the angular power spectrum of a V-map computed out of a given full-sky CMB map, $\left\langle V_\ell \right\rangle_G$ the corresponding average from a set of Gaussian, isotropic simulations, and 
+
+\begin{equation}
+C_{\ell \ell'} = \left\langle \left( V_\ell - \left\langle V_\ell \right\rangle_G \right) \left( V_{\ell'} - \left\langle V_{\ell'} \right\rangle_G \right)\right\rangle_G
+\end{equation}
+
+the covariance matrix from a different set of Gaussian, isotropic simulations.
+
+\section{Results}
+\label{s:results}
+
+We now apply the V-S-K method to \textit{Planck} data. We start by examining how the method works when using full-sky ($f_{sky}=100$ per cent) CMB maps. In particular, we use the two inpainted CMB estimates released by the \textit{Planck} collaboration, namely, the $N_{side}=2048$ inpainted \texttt{SMICA} and \texttt{NILC}. 
+
+In Fig. \ref{Fig:1} we show angular power spectra for the V-map, S-map, and the K-map computed for those CMB estimates and for $1000$ Gaussian, isotropic simulations using $N'_{side} = 4$. As expected, the mean angular power spectra for the simulations do not exhibit scale dependence. The angular power spectrum of the variance maps, $V_{\ell}$, for the two considered CMB estimates show  departure from the null hypothesis. In particular, inpainted \texttt{SMICA} has both a dipole and a quadrupole outside the $95$ per cent confidence region. This dipolar structure,  the so-called north-south asymmetry, was also found in \textit{WMAP} and \textit{Planck} data (\cite{Eriksen2004}; \cite{Hansen2009}; \cite{PlanckXXIII}; \cite{Akrami2014a}). Using different values of the parameter $N'_{side}$, we verified the robustness of this result. The angular power spectra of the corresponding S-maps, $S_{\ell}$, is consistent with the null hypothesis. Although at multipoles $\ell \geq 10$ the inpainted \texttt{NILC} shows  a little tension with regard to the simulations, we could verify that this mismatch vanishes when $N'_{side}$ increases. The most remarkable difference between the two CMB estimates is brought out when looking at the corresponding $K_{\ell}$. The inpainting technique applied to the \texttt{NILC} CMB estimate seems to induce kurtosis at all considered scales. This contribution, however, diminishes for increasing $N'_{side}$. The same applies for the multipole $\ell=5$ in the inpainted \texttt{SMICA}. In Fig. \ref{Fig:2} we show the $\chi^2$ analysis for the spectra in Fig. \ref{Fig:1}. Note that due to this discrepancy we do not show the $\chi^2$ value for the inpainted \texttt{NILC} $K_{\ell}$. In Table \ref{table:1} we show the lower-tail probability computed out of N-pdf $\chi^2$ for different values of the parameter $N'_{side}$. The V estimator gives consistent results for the two CMB estimates and does not seem to strongly depend on the $N'_{side}$ parameter. The probabilities are high for all the $N'_{side}$ considered. The probabilities for the S estimator vary consistently with $N'_{side}$. However, for $N'_{side}=4$ the probability is high in the inpainted \texttt{NILC}. The probabilities for the K estimator increase with $N'_{side}$ for inpainted \texttt{SMICA} and remain constant for inpainted \texttt{NILC} because of the discrepancy shown we discussed previously.
+
+\begin{figure}
+\centering
+%\includegraphics[scale=0.45]{Inp_Vl.pdf}\\
+%\includegraphics[scale=0.45]{Inp_Sl.pdf}\\
+%\includegraphics[scale=0.45]{Inp_Kl.pdf}
+\caption{Angular power spectra for the $N'_{side} = 4$ V-map, S-map, and K-map computed out of the full-sky $N_{side} = 2048$ inpainted CMB estimates. The red solid line indicates the mean for $1000$ Monte Carlo simulations and the shaded dark and light gray regions indicate the $68$ per cent and $95$ per cent confidence regions, respectively.}
+\label{Fig:1}
+\end{figure}
+
+\begin{figure}
+\centering
+%\includegraphics[scale=0.45]{vchi2.pdf}\\
+%\includegraphics[scale=0.45]{schi2.pdf}\\
+%\includegraphics[scale=0.45]{kchi2.pdf}
+\caption{N-pdf $\chi^ 2$ for the angular power spectra shown in Fig. \ref{Fig:1}. The vertical lines show values for the corresponding CMB estimates.}
+\label{Fig:2}
+\end{figure}
+
+\begin{table}
+\centering
+\caption{Lower-tail probability for the V, S, K estimators at different resolutions, for the $N_{side} = 2048$ inpainted \texttt{SMICA} and \texttt{NILC}.}
+\label{table:1}
+\begin{tabular}{@{}lcccc}
+\hline 
+  & & Probability & \\
+\hline  
+CMB estimate & V & S & K \\ 
+\hline  
+ & & $N'_{side}=2$ & \\
+\texttt{SMICA} & $0.977$ & $0.355$ & $0.038$ \\ 
+\texttt{NILC} & $0.972$ & $0.781$ & $1.0$  \\
+ & & $ N'_{side} = 4 $ & \\
+\texttt{SMICA} & $0.998$ & $0.718$ & $0.585$ \\
+\texttt{NILC} & $0.985$ & $0.988$ & $1.0$ \\
+ & & $N'_{side} = 8$ & \\
+ \texttt{SMICA} & $1.0$ & $0.374$ & $0.745$ \\
+ \texttt{NILC} & $0.995$ & $0.385$ & $1.0$ \\
+ & & $N'_{side} = 16$ & \\
+ \texttt{SMICA} & $1.0$ & $0.241$ & $0.786$ \\
+ \texttt{NILC} & $1.0$ & $0.093$ & $1.0$ \\
+\end{tabular} 
+\end{table}
+
+According to the previous analysis the inpainting technique applied to \texttt{NILC} might induce some deviations of the null hypothesis. Therefore we now apply the V-S-K method to the almost full-sky $N_{side}=2048$ CMB estimates. We examine the four component separation methods mentioned above and use the U73 mask. In Fig. \ref{Fig:3} we illustrate, as an example, the V-map, S-map, and the K-map for the \texttt{SMICA} estimate. In Fig. \ref{Fig:4} we plot the corresponding angular power spectra $V_{\ell},\, S_{\ell},\, $ and $K_{\ell}$ computed for the four component separation CMB estimates. As can be seen, all the four estimates seem to be consistent with the null hypothesis. Nevertheless, note that due to the masked regions in the V-maps, S-maps, and K-maps the angular power spectra of the simulations are not any longer scale independent, the effect being much more visible in the case of $V_{\ell}$ because of the much more different value associated with the masked pixels. A possible modification in the method to include only unmasked regions in the computation of the angular power spectrum would be necessary to avoid these spurious features. Nevertheless, since in this work we want to test whether or not the \textit{Planck} data are consistent with the null hypothesis, we will not include  this modification in the present paper. Such a modification would require to adapt the V-S-K method as explained in \cite{Gorski1994} and \cite{Hivon2002}.
+
+Comparing the results of the full-sky inpainted CMB maps with those of the almost full-sky CMB maps, we can see that there is no departure from the null hypothesis in the NILC CMB estimate when the inpainted regions are disregarded. Thus, the discrepancy observed in the full-sky map for the K estimator seems to be caused by the inpainted regions in the inpainted \texttt{NILC}. The four component separation methods exhibit a dipole in the V-maps outside the $95$ per cent confidence region for $N'_{side}=2$, but this feature disappears gradually  when increasing the parameter $N'_{side}$. This might be due to the fact that by construction the method V-S-K, as we have applied it here, disregards patches (patches set to zero) with less than $80$ per cent of unmasked pixels and therefore it is not guaranteed that the sky fraction (fraction of the sky having patches with non zero value) be the same for each $N'_{side}$. 
+
+Since all the four component separation methods give pretty similar results and to avoid circumlocution, in Table \ref{table:2} we present the lower-tail probabilities only for the \texttt{SMICA} CMB estimate. We have examined the dependence of our results on the parameters $N_{side}$ and $N'_{side}$. In summary, we do not see significant deviation of the null hypothesis for almost all the possible combinations of parameters considered, with the exception of the V estimator for $N_{side}=2048$ and $N'_{side}=8,\,16$ where there is a discrepancy with the simulations.
+ 
+
+\begin{figure}
+\centering
+%\includegraphics[scale=0.3]{vmap.pdf}\\
+%\includegraphics[scale=0.3]{smap.pdf}\\
+%\includegraphics[scale=0.3]{kmap.pdf}
+\caption{$N'_{side = 4}$ V-map (\textit{upper}), S-map (\textit{middle}), and K-map (\textit{lower}) for the $N_{side} = 2048$ SMICA CMB estimate masked with the U73 mask.}
+\label{Fig:3}
+\end{figure}
+
+\begin{figure}
+\centering
+%\includegraphics[scale=0.45]{Vl_u73.pdf}\\
+%\includegraphics[scale=0.45]{Sl_u73.pdf}\\
+%\includegraphics[scale=0.45]{Kl_u73.pdf}
+\caption{Angular power spectra of the $N'_{side} = 4$ V-map, S-map, and K-map for the four $N_{side} = 2048$ CMB estimates. The blue dots indicate the mean angular power spectrum for $1000$ Monte Carlo simulations and the shaded dark and light gray regions indicate the $68$ per cent and $95$ per cent confidence regions, respectively.}
+\label{Fig:4}
+\end{figure}
+
+We have also studied the mask dependence of the V-S-K method. The results for both the confidence mask and the mask of inpainted regions for \texttt{SMICA} are shown in Table \ref{table:3}. In order to facilitate the comparison some of the results for the mask U73 are repeated. The sky coverage of the considered masks does not seem to affect the results considerably in any of the estimators. 
+
+\begin{table}
+\centering
+\caption{Lower-tail probability for the V, S, K estimators at different resolutions $N'_{side}$, for different resolutions $N_{side}$ of the  \texttt{SMICA} CMB estimate using the U73 mask.}
+\label{table:2}
+\begin{tabular}{@{}lcccc}
+\hline 
+  & & Probability & \\
+\hline  
+$N'_{side}$ & V & S & K \\ 
+\hline  
+ & & $N_{side}=2048$ & \\
+$2$ & $0.929 $ & $ 0.152$ & $0.513 $ \\ 
+$4$ & $ 0.754$ & $0.656 $ & $0.292 $  \\
+$8$ & $ 1.0$ & $ 0.094 $ & $ 0.412 $  \\
+$16$ & $ 1.0 $ & $ 0.391 $ & $ 0.439 $  \\
+ & & $ N_{side} = 1024 $ & \\
+$2$ & $ 0.869 $ & $ 0.151 $ & $ 0.523 $ \\ 
+$4$ & $ 0.394 $ & $ 0.653 $ & $ 0.253 $  \\
+$8$ & $ 0.835 $ & $ 0.145 $ & $ 0.457 $  \\
+$16$ & $ 0.928 $ & $ 0.226 $ & $ 0.265 $  \\
+ & & $N_{side} = 512$ & \\
+$2$ & $0.273 $ & $ 0.174 $ & $ 0.626 $ \\ 
+$4$ & $ 0.532 $ & $ 0.651 $ & $ 0.195 $  \\
+$8$ & $ 0.5 $ & $ 0.167 $ & $ 0.559 $  \\
+$16$ & $ 0.492 $ & $ 0.231 $ & $ 0.331 $  \\
+ & & $N_{side} = 256$ & \\
+$2$ & $ 0.276 $ & $ 0.235 $ & $ 0.647 $ \\ 
+$4$ & $ 0.393 $ & $ 0.571 $ & $ 0.232 $  \\
+$8$ & $ 0.192 $ & $ 0.216 $ & $ 0.518 $  \\
+$16$ & $ 0.589$ & $ 0.176 $ & $ 0.409 $  \\
+\end{tabular} 
+\end{table}
+
+\begin{table}
+\centering
+\caption{Lower-tail probability for the V, S, K estimators at different resolutions $N'_{side}$, for the \texttt{SMICA} CMB estimate using different masks.}
+\label{table:3}
+\begin{tabular}{@{}lcccc}
+\hline 
+  & & Probability & \\
+\hline  
+$N'_{side}$ & V & S & K \\ 
+\hline  
+ & & U73 & \\
+$2$ & $ 0.929 $ & $ 0.152 $ & $ 0.513 $ \\ 
+$4$ & $ 0.754 $ & $ 0.656 $ & $ 0.292 $  \\
+ & & VALMASK & \\
+$2$ & $ 0.983 $ & $ 0.388 $ & $ 0.423 $ \\ 
+$4$ & $ 0.741 $ & $ 0.754 $ & $ 0.319 $  \\
+ & & INP$\_$MASK & \\
+$2$ & $ 0.976 $ & $ 0.37 $ & $ 0.163 $ \\ 
+$4$ & $ 0.996 $ & $ 0.738 $ & $ 0.528 $  \\
+\end{tabular} 
+\end{table}
+
+
+\section{Summary}
+\label{s:summary}
+
+In this work we have applied a non-parametric analysis, the V-S-K method, to test for possible departures from the cosmological principle in the CMB anisotropies measured by the \textit{Planck} satellite. We have used the available full-sky maps (inpainted \texttt{SMICA} and \texttt{NILC}) and the four almost full-sky CMB estimates released by the \textit{Planck} collaboration (\texttt{SMICA, NILC, Commander-Ruler,} and \texttt{SEVEM}) to investigate possible anomalous angular variations of the variance, skewness, and kurtosis in the CMB anisotropies. We have determined the statistical significance of our results by using a set of Gaussian, isotropic simulations of the CMB sky seeded by the \textit{Planck} best-fit angular power spectrum.    
+
+The V-S-K method applied to inpainted \textit{Planck} maps brings out the following features. The V estimator measures departure ($95$ per cent confidence region) of the null hypothesis at the level of the dipole and the quadrupole which are robust against both component separation and the parameter $ N'_{side} $ of the V-S-K method. The S estimator is fully consistent with the null hypothesis in both CMB estimates. This is not the case for the K estimator, where only inpainted \texttt{SMICA} turns out to be consistent with the simulations. According to the K estimator, the inpainting method applied to \texttt{NILC } seems to induce kurtosis at all scales allowed by a given $ N'_{side} $. However, this discrepancy with the null hypothesis becomes  less significant when higher $ N'_{side} $ are employed. 
+
+Next, we have studied several aspects of the V-S-K method applied to the almost full-sky \textit{Planck} maps. In particular, we have considered the V-S-K method applied to the four component separation CMB estimates by using different resolutions of the data ($ N_{side} $), masks, and $ N'_{side} $. All the four component separation methods are fully consistent with the hypothesis of a universe statistically isotropic and Gaussian regardless of those parameters of the V-S-K method. 
+
+When applying the V-S-K method to masked CMB maps one must be careful. Since the method computes the full-sky angular power spectrum of V-map, S-map, and K-map, the masked region of those maps might include strong angular variations if the value of the unmasked pixels is very different from the masked ones.  A modified V-S-K method should take into account only unmasked pixels of the V-map, S-map, and K-map in order to avoid this caveat. Since both the simulations and the data are affected in the same way by this limitation of the method, such modification would not alter our results (consistency with the null hypothesis), but produce the true form of the angular power spectra. 
+
+Finally, we notice that although our results are compatible with most of the analysis done by the \textit{Planck} team, a direct comparison is not possible. First, by construction, the V-S-K method may not use the same fraction of the sky as analysed by some of the statistical methods used by the \textit{Planck} team. Second, we do not use the sophisticated set  of Gaussian, isotropic simulations  (the FFP6 simulations) employed by the \textit{Planck} team in their analysis. 

@@ -1,0 +1,244 @@
+\chapter{Perturbation theory}
+\label{chapter:3}
+
+\section{Introduction}
+\label{section:3.1}
+
+\section{Quantum fluctuations of a scalar field}
+\label{section:3.2}
+
+\begin{equation}
+\chi (\tau , \mathbf{x}) = \chi (\tau) + \delta \chi (\tau , \mathbf{x} ) \,,
+\label{equation:3.2.1}
+\end{equation}
+
+\begin{equation}
+\Box \chi = \dfrac{\partial V}{\partial \chi } \qquad , \qquad \Box \chi \equiv \frac{1}{\sqrt{-g}}\partial_\nu \left[ \sqrt{-g}g^{\mu\nu}\partial_\mu \chi  \right]  \, .
+\label{equation:3.2.2}
+\end{equation}
+
+\begin{equation}
+\chi^{''} + 2 \H\chi^{'} - \nabla^2 \chi = -a^2 \dfrac{\partial V }{\partial \chi } \, ,
+\label{equation:3.2.3}
+\end{equation}
+
+\begin{equation}
+\H \equiv \frac{a^{'}}{a} \, .
+\label{equation:3.2.4}
+\end{equation}
+
+\begin{equation}
+\delta \chi^{''} + 2\H \delta \chi^{'} - \nabla^2 \delta \chi = - a^2\dfrac{\partial^2 V}{\partial \chi^2} \delta \chi \, .
+\label{equation:3.2.5}
+\end{equation}
+
+\begin{equation}
+\delta \chi (\tau , \mathbf{x}) = \int \frac{d^3 \mathbf{k}}{(2\pi)^{3/2}} \left[ \chi_{\mathbf{k}} (\tau) a_{\mathbf{k}} \exp(i \mathbf{k} \cdot \mathbf{x} ) + \chi_{\mathbf{k}}^{\ast}(\tau) a_{\mathbf{k}}^{\ast} \exp(-i \mathbf{k} \cdot \mathbf{x} )    \right]\, ,
+\label{equation:3.2.6}
+\end{equation}
+
+\begin{equation}
+\chi^{''}_{\mathbf{k}} + 2 \H \chi^{'}_{\mathbf{k}} + k^2  \chi_{\mathbf{k}} = -a^2 \dfrac{\partial^2 V }{\partial \chi^2 }\chi_{\mathbf{k}} \, .
+\label{equation:3.2.7}
+\end{equation} 
+
+\begin{equation}
+u_k(\tau) \equiv a(\tau) \chi_{\mathbf{k}}(\tau) \,,
+\label{equation:3.2.8}
+\end{equation}
+
+\begin{equation}
+u_k^{''} + \left ( k^2 - \frac{a^{''}}{a} + m_{\chi}^2 a^2 \right ) u_k = 0 \, ,
+\label{equation:3.2.9}
+\end{equation}
+
+\begin{equation}
+m_{\chi}^2 = \dfrac{\partial^2 V}{\partial \chi^2} \, ,
+\label{equation:3.2.10}
+\end{equation}
+  
+\begin{enumerate}
+\item \textit{UV limit}:  $ \mathit{k\gg \frac{a^{''}}{a}} $ . 
+
+\begin{equation}
+u_k^{''} +  k^2 u_k = 0 \, ,
+\label{equation:3.2.11}
+\end{equation}
+
+\begin{equation}
+u_k(\tau) = \frac{1}{\sqrt{2k}}\left[ A_k \exp(-ik\tau) + B_k \exp(ik\tau) \right] \, .
+\label{equation:3.2.12}
+\end{equation}
+
+
+\item \textit{IR limit}: $ \mathit{k\ll \frac{a^{''}}{a}} $ . 
+
+\begin{equation}
+u_k^{''} - \left ( \frac{a^{''}}{a} - m_{\chi}^2 a^2 \right ) u_k = 0 \, .
+\label{equation:3.2.13}
+\end{equation}
+
+\begin{equation}
+u_k^{''} a = a^{''} u_k \, ,
+\label{equation:3.2.14}
+\end{equation}
+
+\begin{equation}
+u_k(\tau) = B_{+} (k) a(\tau) \, ,
+\label{equation:3.2.15}
+\end{equation}
+
+\begin{equation}
+\chi_{\mathbf{k}}(\tau) = B_{+} (k) \, .
+\label{equation:3.2.16} 
+\end{equation}
+
+\end{enumerate}
+
+\subsubsection{Quantization}
+\label{subsubsection:3.2.1}
+
+
+\begin{equation}
+\widetilde{\delta \chi} (\tau , \mathbf{x}) = \int \frac{d^3 \mathbf{k}}{(2\pi)^{3/2}} \left[ u_{k} (\tau) \hat{a}_{\mathbf{k}} \exp(i \mathbf{k} \cdot \mathbf{x} ) + u_{k}^{\ast}(\tau) \hat{a}_{\mathbf{k}}^{\dagger} \exp(-i \mathbf{k} \cdot \mathbf{x} )    \right]\, ,
+\label{equation:3.2.17}
+\end{equation}
+ 
+
+\begin{equation}
+\widetilde{\delta \chi} (\tau,\mathbf{x}) \equiv a(\tau) \delta \chi (\tau,\mathbf{x})\, .
+\label{equation:3.2.18}
+\end{equation} 
+
+\begin{eqnarray}
+\left[ a_{\mathbf{k}} , a_{\mathbf{k'}} \right] & = & 0 \, , \nonumber \\
+\left[ a_{\mathbf{k}} , a_{\mathbf{k'}^{\dagger}} \right] & = & \delta^{(3)}(\mathbf{k}-\mathbf{k'}) \, . 
+\label{equation:3.2.19}
+\end{eqnarray}
+
+\begin{eqnarray}
+\left[ \widetilde{\delta \chi}(\tau,\mathbf{x}),\Pi (\tau,\mathbf{y}) \right] & = & i\, \delta (\mathbf{x} - \mathbf{y}) \, , \nonumber \\  \left[ \widetilde{\delta \chi}(\tau,\mathbf{x}),\widetilde{\delta \chi}(\tau,\mathbf{y}) \right] & = & 0 \, , \nonumber \\ \left[  \Pi(\tau,\mathbf{x}),\Pi (\tau,\mathbf{y}) \right] & = & 0 \, ,
+\label{equation:3.2.20} 
+\end{eqnarray}  
+
+\begin{equation}
+u_k^{\ast} u_k' - u_k u_k^{\ast '} = -i \, .
+\label{equation:3.2.21}
+\end{equation}
+
+\begin{equation}
+| A_k |^2 + | B_k |^2 = 1\, ,
+\label{equation:3.2.22}
+\end{equation}
+
+\begin{equation}
+u_k(\tau) = \frac{1}{\sqrt{2k}} \exp(-ik\tau) \, ,
+\label{equation:3.2.23}  
+\end{equation}
+
+
+\begin{equation}
+A_k = 1 \quad , \quad B_k =0 \, ,
+\label{equation:3.2.24}
+\end{equation} 
+
+
+\begin{equation}
+| B_+ (k) | = | \chi_{\mathbf{k}} | = \frac{1}{a\sqrt{2k}} = \frac{H}{\sqrt{2k^3}}\, .
+\label{equation:3.2.25}
+\end{equation}
+
+\subsection{de Sitter solution}
+\label{subsection:3.2.1}
+
+\be 
+a(t) \propto \exp(Ht)\, ,
+\label{equation:3.2.26}
+\ee
+
+\be 
+d\tau \equiv \dfrac{dt}{a(t)}\, ,
+\label{equation:3.2.27}
+\ee
+
+\be 
+\tau = -\frac{1}{aH} \, .
+\label{equation:3.2.28}
+\ee
+
+\begin{equation}
+\frac{a^{''}}{a} - m_{\chi}^2 a^2 = \frac{2}{\tau^2} \left( 1 - \frac{1}{2}\frac{m_{\chi}^2}{H^2} \right) \, ,
+\label{equation:3.2.29}
+\end{equation}
+
+\begin{equation}
+u_k^{''} + \left( k^2 - \frac{\nu_{\chi}^2-\frac{1}{4}}{\tau^2} \right) u_k = 0 \, ,
+\label{equation:3.2.30}
+\end{equation}
+
+\begin{equation}
+\nu_{\chi}^2 = \frac{9}{4} - \frac{m_{\chi}^2}{H^2} \, .
+\label{equation:3.2.31}
+\end{equation}
+
+\begin{equation}
+u_k (\tau) = \sqrt{-\tau}\left [ c_1 (k) H_{\nu_{\chi}}^{(1)}(-k\tau) + c_2 (k) H_{\nu_{\chi}}^{(2)}(-k\tau) \right ] \, ,
+\label{equation:3.2.32} 
+\end{equation}
+
+\begin{equation}
+H_{\nu_{\chi}}^{(1)}(x \gg 1) \sim \sqrt{\frac{2}{\pi x}} \exp(i[x - \frac{\pi}{2}\nu_{\chi} - \frac{\pi}{4}]) \, ,
+\label{equation:3.2.33}
+\end{equation}
+
+\begin{equation}
+H_{\nu_{\chi}}^{(2)}(x \gg 1) \sim \sqrt{\frac{2}{\pi x}} \exp(-i[x - \frac{\pi}{2}\nu_{\chi} - \frac{\pi}{4}])\, .
+\label{equation:3.2.34}
+\end{equation}
+
+\begin{equation}
+u_k(\tau) = \frac{\sqrt{\pi}}{2} \exp(i\frac{[\nu_{\chi}+\frac{1}{2}]\pi}{2})\sqrt{-\tau} H_{\nu_{\chi}}^{(1)}(-k\tau)\, .
+\label{equation:3.2.35}
+\end{equation}
+
+\begin{equation}
+H_{\nu_{\chi}}^{(1)}(x \ll 1) \sim  \sqrt{\frac{2}{\pi}}\exp(-i\frac{\pi}{2})2^{\nu_{\chi}-\frac{3}{2}}\frac{\Gamma(\nu_{\chi})}{\Gamma(3/2)}x^{-\nu_\chi} \, ,
+\label{equation:3.2.36}
+\end{equation}
+
+\begin{equation}
+u_k(\tau) = \exp(i\frac{[\nu_{\chi}-\frac{1}{2}]\pi}{2}) 2^{\nu_{\chi}-\frac{3}{2}} \frac{\Gamma(\nu_{\chi})}{\Gamma(3/2)}\frac{1}{\sqrt{2k}}(-k\tau)^{\frac{1}{2}-\nu_{\chi}}\, .
+\label{equation:3.2.37}
+\end{equation}
+
+\begin{equation}
+| \delta \chi_k | = 2^{\nu_{\chi}-\frac{3}{2}} \frac{\Gamma(\nu_{\chi})}{\Gamma(3/2)} \frac{H}{\sqrt{2k^3}} \left ( \frac{k}{a(\tau) H} \right )^{\frac{3}{2}-\nu_{\chi}}\, .
+\label{equation:3.2.38}
+\end{equation}
+
+\subsection{Quasi de Sitter solution}
+\label{subsection:3.2.2}
+
+
+
+\subsection{The power spectra}
+\label{subsection:3.2.3}
+
+\section{Non-homogeneous universe}
+\label{section:3.3}
+
+\subsection{Gauge problem}
+\label{subsection:3.3.1}
+
+\subsection{Metric perturbations}
+\label{subsection:3.3.2}
+
+\subsection{Perturbations in the energy-momentum tensor}
+\label{subsection:3.3.3}
+
+\subsection{Gauge invariant variables}
+\label{subsection:3.3.4}
+
+\subsection{Evolution of cosmological perturbations}
+\label{subsection:3.3.5}
+

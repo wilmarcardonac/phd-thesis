@@ -1,0 +1,503 @@
+\chapter{Standard model of cosmology}
+\label{chapter:1} 
+
+\section{Introduction}
+\label{section:1.1}
+
+One can hardly imagine a bigger and more complex  physical system than the universe. Questions like ``How did we get here ?'' and  ``When did the universe start ?'' have been addressed in different epochs by different cultures and by different means during mankind history. The scientific and technological development of last century has allowed scientists from different fields (e.g., physics, astronomy and mathematics) to achieve a remarkable progress in the understanding of the universe. 
+
+Cosmologists still have to give a satisfactory answer to the fundamental questions referenced above. Nevertheless, investigating the universe over the last decades, we have accumulated some experience in the field and new and  sophisticated questions have come out: why is the universe speeding-up ? is there a new kind of energy with negative pressure ? or instead should we look for a new theory of gravity ? how did the structures we see in the universe (e.g., galaxies, clusters of galaxies) form ? what is dark matter ? 
+
+Those questions have motivated the development of new theories, which in turn, have been the building blocks of innovative cosmological models. Unfortunately, this wonderful theoretical work have brought us to a point where different models can reproduce our current cosmological observations, that is, our space of models presents degeneracies. Luckily, not only the theoretical cosmology has seen progress. People working on observational cosmology also have been following a successful path, being awarded some Nobel prizes already.  The new instruments are looking at the universe much more farther than $50$ years ago and with an amazing precision. Hopefully, the new generation of satellites and surveys will help to falsify some cosmological models and break the existing degeneracies.
+
+In this Chapter we will introduce the simplest cosmological model, also known as concordance model or $\Lambda$CDM.  It will also allow us to specify the notation that we will use in the thesis. 
+
+As an starting point we could ask ourselves the following questions concerning the system we aim to study:
+
+\begin{enumerate}
+\item Which are the components of the universe ?
+\item Where does the content of the universe act ? N-dimensional space-time ? is it continuous or discrete ?  does it change with time ?
+\item Which  are the interactions governing the components of the universe ? what is their energy scale and range ? how well do we know these interactions ? to which extent are they valid ? Which are the theories we use to describe them ?
+%\item How can we build models of the universe ? 
+\item How can we test those models ? which kind of experiments and observations do we use ? 
+\end{enumerate}
+
+In the coming sections we will try to explain how those questions are addressed in the Standard model of cosmology. 
+
+ %However, before going on let us discuss briefly a few points about the construction of models of the universe. So far we have identified some considerations before In order to build models of the universe we should: 
+
+%\begin{enumerate}
+%\item choose a period of time where the laws of physics are relatively well-known and tested
+%\item identify which are the relevant components present during the period (which might be different along the way)
+%\item define where those components act (which might be change as time evolves) 
+%\item make assumptions or considerations about relevant interactions during the chosen period
+%\item Finally, try to build the model according to the items above
+%\end{enumerate}
+
+%After building the models we can test whether they correspond to what we see or not. 
+
+%I will try to address the questions above in order to introduce the standard model of cosmology
+
+How is this chapter organised ?
+
+\section{Matter $+$ Fundamental interactions}
+\label{section:1.2}
+
+It is known that matter is constituted by particles that have different properties (e.g., mass, charge, spin). Moreover, particles interact with each other in different ways depending on their particular properties. According to our current understanding of nature there are four fundamental interactions, namely: gravity, weak interaction, strong interaction and electromagnetic interaction. Gravity is described by the General Theory of Relativity (hereafter GR) whereas the other three fundamental interactions are described by the standard model of particle physics (hereafter SM). These two descriptions of the fundamental interactions are probably the two most outstanding achievements in modern physics so far. 
+
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline   & Energy scale (GeV) & Length scale \\ 
+\hline  CMB &  $ 10^{-10} $ & $ \sim 10^{29} \times \ell_p $\\ 
+\hline  Electroweak phase transition & $ 10^3 $ & $ \sim 10^{16} \times \ell_p $\\ 
+\hline  LHC & $ 10^4 $ & $ \sim 10^{15} \times \ell_p $\\ 
+\hline  GUT & $ 10^{16} $ & $ \sim 10^3 \times \ell_p $\\ 
+\hline  Planck scale & $ 10^{19} $ & $ \ell_p $\\ 
+\hline 
+\end{tabular}
+\caption{Key energy scale}
+\label{table:1}
+\end{table}
+
+I must compare data in Table \ref{table:1} with the size of the universe in the corresponding epochs.
+
+
+In spite of the great success of both GR and SM, there are some caveats with these two descriptions of nature. On one hand, there is not quantum counterpart for GR which is important in a model of the very early universe. On the other hand, SM does not account for neutrino oscillations and dark matter which is a key ingredient in the standard model of cosmology. 
+  
+In the $\Lambda$CDM model the components of the universe are divided as follows. There are mainly three type of constituents, namely: 
+
+\begin{itemize}
+\item the cosmological constant $\Lambda$;
+\item the cold dark matter (CDM) and the baryonic matter (non-relativistic matter);
+\item the radiation (relativistic matter).
+\end{itemize}
+
+There is a huge mismatch between the value of the cosmological constant computed within the SM and that deduced from cosmological observations. This is known as the cosmological constant problem. On the other hand, cosmological observations have shown that the amount of matter needed to fit, for instance, rotational speeds of galaxies, must be bigger than what the amount of matter accounted for the baryonic matter. This missing matter seems to be constituted by particles moving slower than the speed of light and only interacts with SM particles through gravity. Not explanation has been given neither for the cosmological constant problem nor for the nature of the dark matter so far. 
+
+\texttt{This kind of answers the first and third questions above. However, I should add a figure for the regime of validity of the interactions and explain things much more better. Then, I must focus on the description of the geometry. Papers by A. G. Walker and H. Robertson may be helpful}
+
+One of the cornerstones of the $ \Lambda $CDM model of cosmology is the cosmological principle. It claims that our universe is homogeneous and isotropic in scales $ \sim 100 h^{-1} $ Mpc. The universe is modelled by a $ 4- $dimensional manifold. It can be shown that in such a manifold the most general metric fulfilling the requirements of the cosmological principle is the well-known FLRW metric,
+
+
+\begin{equation}
+ds^2=-dt^2+a^2(t)\left[\frac{dr^2}{1-K r^2}+r^2d\Omega^2\right] \, , 
+\label{equation:1.2.1}
+\end{equation}
+
+where
+
+\begin{equation}
+d\Omega^2=d\theta^2+\sin^2\theta d\phi^2 \, ,
+\label{equation:1.2.2}
+\end{equation}
+
+is the metric of the unit sphere, $ r,\, \theta,\,\phi $ are comoving coordinates, $ t $ is the cosmic time, $ a(t) $ is the scale factor, and $ K $ is a curvature constant for $ 3- $dimensional hyper-surfaces: $ K=1,\, -1,\, 0 $ for spherical, hyperbolic, and flat geometries, respectively. The FLRW metric can also be written as  
+
+\begin{equation}
+ds^2=-dt^2+a^2(t)\left[d\chi^2+f(\chi)^2d\Omega^2\right] \, ,
+\label{equation:1.2.3}
+\end{equation}
+
+where the relation between $ r $ and $ \chi $ is given by
+
+\begin{equation}
+r=f(\chi)=\left \{\begin{array}{lll} \sin\chi & \longrightarrow & K=1\\
+\chi & \longrightarrow & K=0\\
+\sinh\chi & \longrightarrow & K=-1\end{array}\right \} \, .
+\label{equation:1.2.4}
+\end{equation}
+
+If we consider a radial trajectory for a photon emitted at $ (t,\chi) $ and detected at $ (t_0, 0) $, we can use the metric \eqref{equation:1.2.3} along with $ ds=0 $ to find
+
+\begin{equation}
+\chi=\int_t^{t_0}{\frac{dt}{a(t)}} \, .
+\label{equation:1.2.5}
+\end{equation}
+
+Let us consider two consecutive crests in an electromagnetic wave. If we consider that the scale factor $ a(t) $ is approximately constant during a period of the wave, we find   
+
+\begin{equation}
+\frac{\lambda_0}{\lambda_1}=\frac{a_0}{a_1} \, ,
+\label{equation:1.2.6}
+\end{equation}
+
+where $ \lambda_0 $ and $ \lambda_1 $ are the wavelengths of the observed wave and of the emitted wave, respectively; $ a_0\equiv a(t_0) $ and $ a_1 \equiv a(t) $ refer to the scale factor at detection and emission, respectively. 
+
+Defining the red-shift as 
+
+\begin{equation}
+z \equiv \frac{\lambda_0}{\lambda_1}-1 \, ,
+\label{equation:1.2.7}
+\end{equation}
+
+we can write the equation \eqref{equation:1.2.6} as a relation between the red-shift $ z $ and the scale factor $ a $
+
+\begin{equation}
+z+1=\frac{a_0}{a_1} \, .
+\label{equation:1.2.8}
+\end{equation}
+
+The scale factor is a pretty important function because, as we will see later on, it gives us information about the expansion history of the universe. Assuming that $ a(t) $ is an analytical function, it can be Taylor expanded 
+
+\begin{equation}
+a(t)=a_0\left \{1+\frac{t-t_0}{t_H}-\frac{q_0}{2}\left(\frac{t-t_0}{t_H}\right)^2+\dots\right \} \, ,
+\label{equation:1.2.9}
+\end{equation}
+
+where
+
+\begin{equation}
+t_H \equiv \frac{a(t_0)}{\dot{a}(t_0)} \, ,
+\label{equation:1.2.10}
+\end{equation}
+
+is called the Hubble time and
+
+\begin{equation}
+q_0 \equiv -\left[\frac{a\ddot{a}}{\dot{a}^2}\right]_{t_0} \, ,
+\label{equation:1.2.11}
+\end{equation}
+
+is the deceleration parameter.\footnote{Hereafter we will denote derivatives with respect to the cosmic time $ t $ by a dot, for instance, $ \dot{a} = \dfrac{d a}{d t}$.} From equation \eqref{equation:1.2.11} we can see that when $ q_0<0 $ the universe is speeding up, that is, $ \ddot{a}>0 $.
+
+We can also define the Hubble parameter 
+
+\begin{equation}
+H(t)\equiv \frac{\dot{a}}{a} \, ,
+\label{equation:1.2.12}
+\end{equation}
+
+which allow us to rewrite the Hubble time $ t_H $ as
+
+\begin{equation}
+t_H = H^{-1}(t_0) \, .
+\label{equation:1.2.13}
+\end{equation}
+ 
+To finish this section we define the particle horizon $ r_{max}(t) $ which will be important when reviewing the inflationary paradigm in Chapter \ref{chapter:2}. Let us consider a ray light emitted at  $ (t=0,\,r=0) $ travelling towards an observer receiving the signal at time $ t $. With a FLRW metric \eqref{equation:1.2.1} the greatest  radial distance $ r_{max}(t) $ from which the observer can be aware of is given by 
+ 
+\begin{equation}
+\int_0^t \frac{dt'}{a(t')} = \int_0^{r_{max}(t)} \frac{dr}{\sqrt{1-K r^2}} \, .
+\label{equation:1.2.14}
+\end{equation} 
+
+The physical distance corresponding to the particle horizon would be given by 
+
+\begin{equation}
+d_{max}(t) = a(t) \int_0^{r_{max}(t)} \frac{dr}{\sqrt{1-K r^2}} = a(t) \int_0^t \frac{dt'}{a(t')} \, .
+\label{equation:1.2.15}
+\end{equation} 
+
+
+\section{Dynamics}
+\label{section:1.3}
+
+Since cosmology aims at investigating the universe, it is necessary to determine which are the fundamental interactions we should take into account. Nowadays, we are aware of four fundamental interactions: weak, strong, electromagnetic, and gravitational. Weak and strong interactions are irrelevant beyond distances of order $ 10^{-15} $ m and $ 10^{-16} $ m, respectively. The distances considered by the cosmological principle are of order $ 10^{24} $ m, therefore both weak and strong interactions are negligible in a cosmological context. 
+
+On the other hand, there is no observational evidence of neither electrical charges nor electrical currents at cosmological scales. Since those are the sources of the electromagnetic field, we can, in principle, disregard the electromagnetic interaction. 
+
+As a result, the only fundamental interaction to be considered is gravity. The most successful theory for describing gravitation is the Einstein General Theory of Relativity. According to this theory, there exists a relation between the space-time geometry and its energetic content. In order to describe the energetic content of the universe, we employ the energy-momentum tensor of a perfect fluid which reads 
+
+\begin{equation}
+T_{\mu\nu}=P g_{\mu\nu} + (P+\rho)U_{\mu}U_{\nu}  \qquad \text{ou} \qquad  T^{\mu}_{\nu}=diag(-\rho, P, P, P) \, ,
+\label{equation:1.3.1}
+\end{equation}        
+
+with $ g_{\mu\nu} $ being the space-time metric, and $ P $, $ \rho $, $ U_{\mu} $ the pressure, the density and the $ 4- $velocity of the fluid, respectively. An ideal fluid whose pressure is a function only of the density, $ P=P(\rho) $, is called a barotropic fluid. In the standard model of cosmology it is assumed that the energetic components of the universe are ideal, barotropic fluids whose equation of state can be written as
+
+\begin{equation}
+P = w \rho \, ,
+\label{equation:1.3.2}
+\end{equation}
+
+where $ w $ is a constant: $ 1/3 $ for radiation, $ 0 $ for non-relativistic matter; if $ w<-1/3 $ the fluid is usually referred as dark energy.
+
+The connections $ \Gamma^\alpha_{\beta\gamma} $ of the metric $ g_{\mu\nu} $ are defined as  
+
+\be
+\Gamma^\alpha_{\beta\gamma}\,\equiv \,
+\frac{1}{2}\,g^{\alpha\rho}\left( \frac{\partial
+g_{\rho\gamma}}{\partial x^{\beta}} \,+\, \frac{\partial
+g_{\beta\rho}}{\partial x^{\gamma}} \,-\, \frac{\partial
+g_{\beta\gamma}}{\partial x^{\rho}}\right)\, .
+\label{equation:1.3.3}
+\ee
+
+which in turn allow us to define the Riemann tensor
+
+\be
+R^{\alpha}_{~\beta\mu\nu}=
+\Gamma^{\alpha}_{\beta\nu,\mu}-\Gamma^{\alpha}_{\beta\mu,\nu}+
+\Gamma^{\alpha}_{\lambda\mu}\Gamma^{\lambda}_{\beta\nu}-
+\Gamma^{\alpha}_{\lambda\nu}\Gamma^{\lambda}_{\beta\mu} \,,
+\label{equation:1.3.4}
+\ee
+
+the Ricci tensor -- a contraction of the Riemann tensor \eqref{equation:1.3.4} -- 
+
+\begin{equation}
+R_{\mu\nu}\,\equiv \, \partial_\alpha\,\Gamma^\alpha_{\mu\nu} \,-\,
+\partial_{\mu}\,\Gamma^\alpha_{\nu\alpha} \,+\,
+\Gamma^\alpha_{\sigma\alpha}\,\Gamma^\sigma_{\mu\nu} \,-\,
+\Gamma^\alpha_{\sigma\nu} \,\Gamma^\sigma_{\mu\alpha}\, ,
+\label{equation:1.3.5}
+\end{equation}
+
+and the Ricci scalar -- a contraction of the Ricci tensor --
+
+\begin{equation}
+R \equiv g^{\mu\alpha}\,R_{\alpha\mu}= R^{\mu}_{~\mu} \, .
+\label{equation:1.3.6}
+\end{equation}
+
+The Einstein equations for an universe whose matter content is described by a perfect fluid \eqref{equation:1.3.1} read 
+
+
+\begin{equation}
+G_{\mu\nu} = \kappa^2 T_{\mu\nu} - \Lambda g_{\mu\nu} \qquad ; \qquad \kappa^2 \equiv \frac{8\pi}{M_p^2} \quad ; \quad M_p^2 \equiv  \frac{1}{G} \, ,
+\label{equation:1.3.7}
+\end{equation}
+
+where $ \Lambda $ is the cosmological constant, $ M_p $ is the Planck mass, and $ G_{\mu\nu} $ is the Einstein tensor defined as 
+
+\begin{equation}
+G_{\mu\nu} \equiv R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R \, .
+\label{equation:1.3.8}
+\end{equation}
+
+The Einstein equations \eqref{equation:1.3.7} stablish a relation between the matter content in the universe (left hand side) and its geometry (right hand side). If we define the energy-momentum tensor for a cosmological constant as
+
+\begin{equation}
+T_{\mu\nu}^{vac} \equiv -\frac{\Lambda g_{\mu\nu}}{\kappa^2} \, ,
+\label{equation:1.3.9}
+\end{equation}
+
+the equation \eqref{equation:1.3.7} can be rewritten as
+
+\begin{equation}
+G_{\mu\nu} = \kappa^2 T_{\mu\nu} \, ,
+\label{equation:1.3.10}
+\end{equation}
+
+where $ T_{\mu\nu} $ is the total energy-momentum tensor, that is, the sum of all the matter contributions including the cosmological constant.
+
+From the time-time component of the Einstein equations \eqref{equation:1.3.10} we can obtain one of the key equations in the $ \Lambda $CDM model, namely, the Friedman equation 
+
+\begin{equation}
+H^2=\left(\frac{\dot{a}}{a}\right)^2=\frac{\kappa^2 \rho}{3}-\frac{K}{a^2}\, ,
+\label{equation:1.3.11}
+\end{equation}
+
+where $ \rho $ and $ K $ are the total energy density and the curvature constant, respectively. From the space-space components of equation \eqref{equation:1.3.10} along with the Friedman equation \eqref{equation:1.3.11} it is straightforward to find the acceleration equation (also called Raychaudhuri equation) 
+
+\begin{equation}
+\left(\frac{\ddot{a}}{a}\right)=-\frac{\kappa^2 }{6}\left(\rho+3P\right) \, .
+\label{equation:1.3.12}
+\end{equation}
+
+On the other hand, if we use the identity 
+
+\begin{equation}
+\dot{H}=\frac{\ddot{a}}{a}-H^2 \, ,
+\label{equation:1.3.13}
+\end{equation}
+
+along with the Friedman equation \eqref{equation:1.3.11} in the acceleration equation \eqref{equation:1.3.12}, we can write  
+
+\begin{equation}
+\dot{H}=-\frac{\kappa^2}{2} (\rho+P)+\frac{K}{a^2} \, .
+\label{equation:1.3.14}
+\end{equation}
+ 
+Let us define the parameter density $ \Omega_i $ for each sort of matter as 
+ 
+\begin{equation}
+\Omega_i (t)\equiv \frac{\rho_i(t)}{\rho_c(t)}\, ; \qquad \rho_c \equiv \frac{3H^2}{\kappa^2} \, ; \qquad \rho_{\Lambda} \equiv \frac{\Lambda}{\kappa^2} , 
+\label{equation:1.3.15}
+\end{equation}
+
+$ i $ being an index indicating different kinds of matter, $ \rho_c $ the critical density, and $ \rho_{\Lambda} $ the energy density of a cosmological constant. The Friedman equation \eqref{equation:1.3.11} can be written as taking the form 
+
+\begin{equation}
+\Omega_{Tot}(t)-1=\frac{K}{a^2H^2(t)},
+\label{equation:1.3.16}
+\end{equation}
+
+where
+
+\begin{equation}
+\Omega_{Tot} (t) = \sum_i \Omega_i \, .
+\label{equation:1.3.17}
+\end{equation}
+
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Density    & Curvature & Geometry \\ \hline
+$\Omega_{Tot}>1$   & $K=1$     & spherical \\ \hline
+$ \Omega_{Tot}=1 $ & $ K=0 $   & flat  \\ \hline
+$ \Omega_{Tot}<1 $ & $ K=-1 $  & hyperbolic \\ \hline
+\end{tabular}
+\caption{Relation between density parameter and geometry.}
+\label{table:1.3.1}
+\end{table}
+
+\begin{equation}
+2R^{\alpha}_{\sigma;\alpha}-R_{;\sigma}=0 \, ,
+\label{equation:1.3.18}
+\end{equation}
+
+\begin{equation}
+T^{\mu}_{\nu;\mu} =0  \, ,
+\label{equation:1.3.19}
+\end{equation}
+
+\begin{equation}
+\dot{\rho}+3H(\rho+P)=0 \, .
+\label{equation:1.3.20}
+\end{equation}
+
+\begin{equation}
+\rho_i = \rho_{0i} a^{-3 (1+w)}; \qquad \left \{
+\begin{array}{lll}w =1/3 & \longrightarrow & \rho_{\gamma} \propto a^{-4}\\
+w=0 & \longrightarrow & \rho_M \propto a^{-3}\\
+w =-1 & \longrightarrow & \rho_{\Lambda}(a)=\rho_{\Lambda}(a_0)\end{array}\right \} \, ,
+\label{equation:1.3.21}
+\end{equation}
+
+\begin{equation}
+a(t) \propto (t-t_0)^{\frac{2}{3(1+w)}}\, .
+\label{equation:1.3.22}
+\end{equation}
+
+\begin{equation}
+w <-1/3 \, ,
+\label{equation:1.3.23}
+\end{equation}
+ 
+\begin{equation}
+a(t) \propto e^{Ht} \, ,
+\label{equation:1.3.24}
+\end{equation}
+
+\section{Comparison with observations}
+\label{section:1.4}
+
+\begin{equation}
+\frac{d \mathfrak{R}}{dt}=H_0\mathfrak{R}+v_p \, ,
+\label{equation:1.4.1}
+\end{equation}
+
+\begin{equation}
+\Omega_{Tot} = \Omega_{\gamma} + \Omega_M + \Omega_{\Lambda} \approx 1 \, ,
+\label{equation:1.4.2}
+\end{equation}
+
+\begin{equation}
+\Omega_M + \Omega_{\Lambda} = 1 \, ,
+\label{equation:1.4.3}
+\end{equation}
+
+\section{Shortcomings of the standard model}
+\label{section:1.5}
+
+\subsection{Flatness}
+\label{subsection:1.5.1}
+
+\begin{equation}
+\frac{\ddot{a}}{a} = -\frac{1}{2}H^2 \Omega_{Tot} (1+3 w) \, .
+\label{equation:1.5.1}
+\end{equation}
+
+\begin{equation}
+\dfrac{d \Omega_{Tot}}{d \ln a} = (1+3 w)\Omega_{Tot} (\Omega_{Tot} - 1) \, .
+\label{equation:1.5.2}
+\end{equation}
+
+\begin{equation}
+\Omega_{Tot} (x) = \frac{1}{1-\alpha \exp^{(1+3 w)x}} \qquad ; \qquad x \equiv \ln a \, ,
+\label{equation:1.5.3} 
+\end{equation}   
+ 
+\begin{equation}
+\dfrac{d |\Omega_{Tot} - 1 |}{d x} > 0 \qquad se \qquad (1+ 3 w) > 0 \, ,
+\label{equation:1.5.4}
+\end{equation}   
+
+\begin{equation}
+w < -\frac{1}{3}\, ,
+\label{equation:1.5.5}
+\end{equation}
+
+\begin{equation}
+\dfrac{d |\Omega_{Tot} - 1 |}{d x} < 0 \,,
+\label{equation:1.5.6}
+\end{equation}
+
+\begin{equation}
+R_k^2 \equiv \frac{a^2}{|K|}\, ,
+\label{equation:1.5.7}
+\end{equation}
+
+\begin{equation}
+R_k^2 = \frac{1}{H^2 |\Omega_{Tot} -1 |} \, .
+\label{equation:1.5.8}
+\end{equation}
+
+\begin{equation}
+R_k^2 (t_0) \gg \frac{1}{H_0^2}\, .
+\label{equation:1.5.9}
+\end{equation}
+
+\subsection{Horizon}
+\label{subsection:1.5.2}
+
+\begin{equation}
+ds^2=a^2(\tau)\left[-d\tau^2 + \left[\frac{dr^2}{1-K r^2}+r^2d\Omega^2\right]\right]\, ,
+\label{equation:1.5.10}
+\end{equation} 
+
+
+\begin{equation}
+d\tau \equiv \dfrac{dt}{a(t)}\, .
+\label{equation:1.5.11}
+\end{equation}
+
+\begin{equation}
+d_H (t) = \int_0^t \frac{dt'}{a(t')} = \int_0^{\tau} d\tau' = \tau \, .
+\label{equation:1.5.12}
+\end{equation}
+
+\begin{equation}
+\tau \propto -\frac{1}{a H} \, .
+\label{equation:1.5.13}
+\end{equation}
+
+\begin{equation}
+\left( \frac{\lambda}{d_H}\right)^2 |\Omega - 1 |=const. \, .
+\label{equation:1.5.14}
+\end{equation}
+
+\begin{equation}
+\dfrac{d (\frac{\lambda}{d_H})}{dx} < 0\, .
+\label{equation:1.5.15}
+\end{equation}
+
+\begin{equation}
+\dfrac{d | \Omega_{Tot} - 1 |}{d x} < 0 \qquad se \qquad (1+ 3 w) < 0\, ,
+\label{equation:1.5.16}
+\end{equation}   
+
+\begin{equation}
+\dfrac{d (\frac{\lambda}{d_H})}{dx} > 0\, ,
+\label{equation:1.5.17}
+\end{equation}
+
+\subsection{Another drawbacks}
+\label{subsection:1.5.3}
+
