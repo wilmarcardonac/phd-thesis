@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage[parfill]{parskip}  
 \usepackage{makeidx}
+\usepackage{color}
 %\usepackage{ucs}
 %\DeclareUnicodeCharacter{00A0}{~}
 \newcommand{\captionfonts}{\it}
@@ -32,7 +33,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DEFINITIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\definecolor{red}{rgb}{1,0,0} 
+\def\commentr#1{\textcolor{red}{\tt [#1]}}
 \def\be{\begin{equation}}
 \def\ee{\end{equation}}
 

@@ -1,16 +1,69 @@
-\chapter{Forecasts on neutrino masses with an Euclid-like survey}
+\chapter{Lensing convergence and neutrino mass in galaxy surveys}
 \label{chapter:7}
 
 \section{Introduction}
+\label{chapter:7:introduction}
 
-The study of the large scale structure of the universe allows us to test the different cosmological models. The sky coverage and the deepness in redshift of  galaxy surveys have improved significantly in the past decades. This, in addition to the high precision CMB experiments, will able us to break the degeneracies in cosmological models that have plagued cosmology for quiet a while already. In particular, a better mapping of the matter distribution in the universe will help to put tighter constraints on the masses of neutrinos. Indeed, the clustering properties of the mass in the universe depend on the neutrino masses and possibly on their hierarchy. 
+Measurements of the Cosmic Microwave Background (CMB) anisotropies over the past three decades represent a remarkable achievement in cosmology \commentr{cite cobe, wmap, planck papers}. Constant increases in both amount and quality of data not only have allowed more rigorous tests of cosmological models, but also have required the improvement of both the tools and methods we use for the analysis of those data sets. This progress has turned out in a phenomenological model of the universe which fits reasonably well most of the available observations \commentr{cite Planck paper about cosmological parameters}.    
 
-Due to the experiments carried out in particle accelerators we know that neutrinos are massive. Nevertheless, we do not have a precise estimation for their masses which, in turn, unable us to estimate their total contribution to the energetic composition of the universe. Therefore, by measuring precisely the neutrino masses we can discriminate between different cosmological models since these predict distinct clustering properties. 
+Although the $\Lambda CDM$ model is relatively successful at explaining the current observations, most of the underlying physics in the model remains unknown (e.g., dark energy, dark matter). In particular, the unknown Cold Dark Matter (CDM) constitutes about $30\%$ of the energy content in the universe. Searches for dark matter particles have come out with no conclusive results leaving neutrinos as the only known dark matter candidate. Neutrino experiments have shown that neutrinos are massive particles, but have been unable to provide an absolute scale for their masses \commentr{cite Julien's reviews}. 
 
-In this chapter we do forecasts on the neutrino masses by using an Euclid-like survey. We use formalism of the angular power spectrum of the matter distribution and include the relevant relativistic effects, namely, lensing and redshift space distortions. The advantage of this formalism over the usual power spectrum $P(k;\, z=z_0)$ is that \dots \texttt{I must have a review of the literature and understand much better the two formalisms. A first advantage is related to the fact that the $C_{\ell}$ formalism deals with quantities which are directly observable without any model assumption. \\
-In the Euclid teleconference of Monday 14.12.2014 a Italian guy mentioned a third formalism. \\
-In particular, it would be important to understand why we include only the relativistic effects above. \\
-In addition, I must clarify the differences between spectroscopy and tomographic surveys. \\
-In connection with this last point, I should make clear what the power of Euclid will be.}
+Since massive neutrinos change the background evolution of the universe the CMB measurements can be utilised to constraint their masses. When the neutrino mass is small ($\approx 0.1 \, \mathit{eV}$) neutrinos have a modest signature on the CMB angular power spectrum and those constraints can provide only an upper limit for the neutrino mass. Degeneracies with other parameters in the cosmological model (e.g., the equation of state of dark energy $w$ or the Hubble parameter $H_0$) help to further degrade constraints on the neutrino mass from CMB data.  
+   
+By mapping the distribution of matter in the universe one can also test cosmological models. Galaxy surveys, probing the low red-shift universe, allow to break parameter degeneracies hence improving the constraints on the neutrino masses \commentr{cite paper by W. Hu et al.}. Massive neutrinos would suppress the clustering of galaxies at small scales thus damping the matter power spectrum $P(k)$ on those scales. It is expected that future galaxy surveys will be able to measure this suppression and therefore determine the  absolute mass of the neutrinos.  
+  
+Future galaxy surveys will probe distance scales comparable to the Hubble horizon (a few tens of $\mathrm{Gpc^3/h^3}$) allowing thus more rigorous analysis. Non-linearities and relativistic effects such as red-shift space distortions and lensing convergence should then be consistently included in galaxy clustering analyses if the constraining power of the survey is not to be wasted. This chapter aims at showing the importance of the inclusion of lensing convergence in galaxy clustering analyses. In particular, we show that if future analyses neglected the lensing convergence, measurements of the neutrino masses would be severely biased thus throwing away valuable information and leading to misleading conclusions about the cosmological model. 
 
-In summary, in this chapter we aim to answer the following questions. First, will Euclid be able to measure the neutrino masses ?. Second, what error do we expect for such a survey ?. Third, will we be able to distinguish between different hierarchies with a Euclid-like survey ? 
+The plan of the chapter is as follows. In the next Section we explain our methodology. Then in Section \ref{chapter:7:results} we show and discuss our results. Finally, we give our conclusions in Section \ref{chapter:7:conclusions}.
+ 
+\section{Methodology}
+\label{chapter:7:methodology}
+
+\subsection{Galaxy number counts angular power spectrum}
+
+Galaxy surveys measure the number of galaxies in direction $\mathbf{n}$ at red-shift $z$. Number counts of galaxies is given by 
+\begin{equation}
+\label{Eq:galaxy-number-counts}
+n(z,\,\mathbf{n}) = \bar{n}(z) \left[ 1 + \Delta(z,\,\mathbf{n};\,m_{\mathrm{lim}}) \right],
+\end{equation}  
+where $\bar{n}(z)$ is the mean galaxy density per red-shift and per steradian at red-shift $z$, $m_{\mathrm{lim}}$ is the limiting magnitude of the survey, and 
+\begin{eqnarray}
+\label{Eq:galaxy-number-counts-perturbation}
+\Delta(z,\,\mathbf{n};\,m_{\mathrm{lim}}) &=&  b(z)\,D + \frac{1}{\mathcal{H}}\left[ \dot{\Phi} + \partial_r^2 V \right] + (2 - 5 s) \left[ \int_0^r \frac{d\tilde{r}}{r}(\Phi + \Psi) - \kappa \right] \nonumber \\
+&+&  (f_{\mathrm{evo}} - 3)\mathcal{H}V + (5s-2)\Phi + \Psi 
++ \left( \frac{\dot{\mathcal{H}}}{\mathcal{H}^2} + \frac{2 - 5s}{r\mathcal{H}} + 5s - f_{\mathrm{evo}} \right) \nonumber \\
+&\times & \left( \Psi + \partial_rV + \int_0^r d\tilde{r}(\dot{\Phi} + \dot{\Psi}) \right) 
+\end{eqnarray}
+is the number counts perturbation \commentr{cite papers by Ruth, Challinor, and the Asian guys}. \commentr{Define and explain terms in the equation above(e.g., bias, evolution, magnification, lensing convergence, potentials, r, conformal Hubble parameter)...}  
+
+\commentr{Expansion of number counts perturbation in spherical harmonics in analogy with CMB and definition of angular power spectrum by using red-shift bins. Show in a figure the dominant contributions to the angular power spectrum for models with massive neutrinos and where neutrinos are massless (cross and auto correlations)}
+
+\subsection{Survey specifications}
+
+\commentr{Volume, magnification, redshift range, galaxy number density, sky fraction, }
+
+\subsection{MCMC analysis}
+
+\commentr{Likelihood, shot noise, error due to non-linearities, number of bins, assumed fiducial model, flat prior, CMB prior, lensing, no lensing, no lensing and only auto-correlations.}
+
+\section{Results}
+\label{chapter:7:results}
+
+\commentr{Show two triangle plots corresponding to cases with and without CMB prior. Show corresponding tables. Discuss degeneracies and need of CMB information. Discuss bias on parameters. Stress discussion about limits on neutrino mass. Show figures with best fits}
+
+\section{Conclusions}
+\label{chapter:7:conclusions}
+
+\commentr{lensing convergence must be included in galaxy clustering analysis. LSS breaks degeneracies.}
+
+%The study of the large scale structure of the universe allows us to test the different cosmological models. The sky coverage and the deepness in redshift of  galaxy surveys have improved significantly in the past decades. This, in addition to the high precision CMB experiments, will able us to break the degeneracies in cosmological models that have plagued cosmology for quiet a while already. In particular, a better mapping of the matter distribution in the universe will help to put tighter constraints on the masses of neutrinos. Indeed, the clustering properties of the mass in the universe depend on the neutrino masses and possibly on their hierarchy. 
+
+%Due to the experiments carried out in particle accelerators we know that neutrinos are massive. Nevertheless, we do not have a precise estimation for their masses which, in turn, unable us to estimate their total contribution to the energetic composition of the universe. Therefore, by measuring precisely the neutrino masses we can discriminate between different cosmological models since these predict distinct clustering properties. 
+
+%In this chapter we do forecasts on the neutrino masses by using an Euclid-like survey. We use formalism of the angular power spectrum of the matter distribution and include the relevant relativistic effects, namely, lensing and redshift space distortions. The advantage of this formalism over the usual power spectrum $P(k;\, z=z_0)$ is that \dots \texttt{I must have a review of the literature and understand much better the two formalisms. A first advantage is related to the fact that the $C_{\ell}$ formalism deals with quantities which are directly observable without any model assumption. \\
+%In the Euclid teleconference of Monday 14.12.2014 a Italian guy mentioned a third formalism. \\
+%In particular, it would be important to understand why we include only the relativistic effects above. \\
+%In addition, I must clarify the differences between spectroscopy and tomographic surveys. \\
+%In connection with this last point, I should make clear what the power of Euclid will be.}
+
+%In summary, in this chapter we aim to answer the following questions. First, will Euclid be able to measure the neutrino masses ?. Second, what error do we expect for such a survey ?. Third, will we be able to distinguish between different hierarchies with a Euclid-like survey ? 
