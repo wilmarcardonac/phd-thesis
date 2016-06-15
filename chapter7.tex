@@ -68,7 +68,7 @@ In this project we have used synthetic galaxy clustering data for a survey consi
 \label{Eq:number-galaxies-per-bin}
 \N = \frac{1}{N_{\mathrm{bin}}}\int dz \dfrac{dN}{dzd\Omega};
 \end{equation}
-\item we assume a scale-independent galaxy bias 
+\item as suggested by previous studies (see, for instance, \commentr{cite SDSS paper ''The three dimensional power spectrum of galaxies from the sloan digital sky survey}) we assume a scale-independent galaxy bias 
 \begin{equation}
 b(z) = b_0\sqrt{1+z};
 \label{Eq:galaxy-bias}
@@ -164,12 +164,132 @@ We have performed the three analyses previously mentioned in two ways. First, we
 
 \subsection{Flat prior}
 
+\begin{table}[!t]
+\centering
+\begin{tabular}{@{}cccccc}
+\hline
+\multicolumn{6}{c}{i) Consistently including lensing: $\Delta \chi^2 = 0.075$} \\
+\hline
+Parameter & Mean & best fit & $\sigma$ &\hspace{-0.52cm} shift: mean & best-fit \\
+\hline
+$\omega_b$ & $0.02979$ & $0.02285 $ &$0.00624 $ &  \quad$1.2\sigma$ & $ 0.1\sigma$ \\
+$\omega_{cdm}$ & $0.1455 $ & $0.1219 $ & \quad$0.0200 $ &  \quad$1.3\sigma$ & $0.1\sigma$ \\
+$n_s$      & $0.9476 $ & $0.9642 $ & $0.0387 $ &  \quad$0.4\sigma$ & $ <0.1\sigma$ \\
+$\ln10^{10}A_s$ & $3.047 $ & $3.097$ & $0.065 $ &  \quad$0.7\sigma$ & $ <0.1\sigma$ \\
+$H_0\left[\frac{\text{km}}{\text{s}\cdot\text{Mpc}}\right]$      & $73.84$ & $67.84$ & $5.48$ &  \quad$1.2\sigma$ & $ 0.1\sigma$ \\
+$m_{\nu}$\,[eV]  & $0.29$ & $0.09$ & $0.19$ & \quad $ 1.2\sigma$ & $ 0.2\sigma$ \\
+$b_0$ & $1.018$ & $1.000$ & $0.031$ & $0.6\sigma$ & $<0.1\sigma$ \\
+\end{tabular}
+\begin{tabular}{@{}cccccc}
+\hline
+\multicolumn{6}{c}{ii) Neglecting lensing: $\Delta \chi^2 = 2063.922$} \\
+\hline
+Parameter & Mean & best fit & $\sigma$ & \hspace{-0.52cm} shift: mean & best-fit \\
+\hline
+$\omega_b$ & $0.02494$ & $0.02120 $ & $0.00556 $ &  \quad$0.5\sigma$ & $0.1\sigma$ \\
+$\omega_{cdm}$ & $0.1532$ & $0.1435$ & $0.0208$ &  \quad$1.6\sigma$ & $1.1\sigma$ \\
+$n_s$      & $0.8702$ & $0.8837$ & $0.0446$ &  \quad$2.1\sigma$ & $1.8\sigma$ \\
+$\ln10^{10}A_s$ & $ 2.867 $ & $2.965 $ & $ 0.394 $ &  \quad$0.6\sigma$ & $0.3\sigma$ \\
+$H_0\left[\frac{\text{km}}{\text{s}\cdot\text{Mpc}}\right]$      & $68.73$ & $66.76$ & $5.14$ &  \quad$0.3\sigma$ & $0.1\sigma$ \\
+$m_{\nu}$\,[eV]  & $0.43$ & $0.41$ & $0.16$ &  \quad$2.3\sigma$ & $2.2\sigma$ \\
+$b_0$ & $1.293$ & $1.200$ & $0.271$ & $1.1\sigma$ & $0.7\sigma$\\
+\end{tabular}
+\begin{tabular}{@{}cccccc}
+\hline
+\multicolumn{6}{c}{\parbox[t]{4.4cm}{iii) Neglecting lensing: \\(only auto-correlations)} $\Delta \chi^2 = 180.254$} \\
+\hline
+Parameter & Mean & best fit & $\sigma$ & \hspace{-0.52cm} shift: mean & best-fit\\
+\hline
+$\omega_b$ & $0.01982 $ & $0.01737 $ & $0.00520 $ &  \quad$0.5\sigma$ & $0.9\sigma$ \\
+$\omega_{cdm}$ & $0.1658 $ & $0.1552 $ & $0.0242 $ &  \quad$1.9\sigma$ & $1.5\sigma$ \\
+$n_s$      & $0.7539 $ & $0.7675 $ & $0.0513 $ &  \quad$4.1\sigma$ & $3.8\sigma$ \\
+$\ln10^{10}A_s$ & $2.449 $ & $2.719 $ & $0.465 $ &  \quad$1.4 \sigma$ & $0.8\sigma$ \\
+$H_0\left[\frac{\text{km}}{\text{s}\cdot\text{Mpc}}\right]$      & $61.64 $ & $59.11$ & $5.43$ &  \quad$1 \sigma$ & $1.5\sigma$ \\
+$m_{\nu}$\,[eV]  & $0.41$ & $0.41$ & $0.14$ &  \quad$2.6\sigma$ & $2.5\sigma$ \\
+$b_0$ & $1.888$ & $1.603$ & $0.428$ & $2.1\sigma$ & $1.4\sigma$ \\
+\end{tabular}
+
+\caption{MCMC results (flat prior). We show the mean and best fit values, the standard deviation and the amplitude of the shift of the mean and best-fit w.r.t the fiducial value in units of the standard deviation, $\sigma$, of the corresponding analysis. The large value of $\Delta \chi^2$ for case ii) shows that cross-correlations cannot be fitted if lensing is neglected.
+}
+\label{Table:mcmc-flat-prior}
+\end{table}
+
+\begin{figure}[bthp]
+\centering
+\includegraphics[scale=1]{figures/chapter-7/triangle_figure_MCDM_bias.pdf} 
+\caption{Two- and 1-D posteriors for the cosmological parameters inferred from the full analysis including lensing (red dotted), an analysis neglecting lensing (blue dashed) and considering only auto-correlations (gray solid).
+{The $68\%$ and $95\%$ confidence intervals are shown.}
+Intersections between vertical and horizontal lines denote the fiducial cosmology.
+}
+\label{Fig:mcmc-flat-prior}
+\end{figure}
+
 \commentr{triangle plot and table. Discuss degeneracies, bias, current limits in neutrino mass, and show spectra for best fits}
 
 \subsection{Gaussian prior}
 
 \commentr{triangle plot and table. Conclusions change w.r.t to flat priors ?}
 
+\begin{table}[!t]
+\centering
+\begin{tabular}{@{}cccccc}
+\hline
+\multicolumn{6}{c}{i) Consistently including lensing: $\Delta \chi^2 = 768.443$} \\
+\hline
+Parameter & Mean & best fit & $\sigma$ &\hspace{-0.52cm} shift: mean & best-fit \\
+\hline
+$\omega_b$ & $0.02225$ & $0.02225 $ &$0.00016 $ &  \quad$<0.1\sigma$ & $ <0.1\sigma$ \\
+$\omega_{cdm}$ & $0.1202 $ & $0.1203 $ & \quad$0.0013 $ &  \quad$0.3\sigma$ & $0.4\sigma$ \\
+$n_s$      & $0.9652 $ & $0.9636 $ & $0.0044 $ &  \quad$0.2\sigma$ & $ 0.2\sigma$ \\
+$\ln10^{10}A_s$ & $3.090 $ & $3.092$ & $0.045 $ &  \quad$0.1\sigma$ & $ <0.1\sigma$ \\
+$H_0\left[\frac{\text{km}}{\text{s}\cdot\text{Mpc}}\right]$      & $67.09$ & $67.16$ & $0.82$ &  \quad$0.2\sigma$ & $ 0.1\sigma$ \\
+$m_{\nu}$\,[eV]  & $0.09$ & $0.08$ & $0.06$ & \quad $ 0.5\sigma$ & $ 0.3\sigma$ \\
+$b_0$ & $1.006$ & $1.004$ & $0.026$ & $0.2\sigma$ & $0.2\sigma$ \\
+\end{tabular}
+\begin{tabular}{@{}cccccc}
+\hline
+\multicolumn{6}{c}{ii) Neglecting lensing: $\Delta \chi^2 = 2847.399$} \\
+\hline
+Parameter & Mean & best fit & $\sigma$ & \hspace{-0.52cm} shift: mean & best-fit \\
+\hline
+$\omega_b$ & $0.02221$ & $0.02221 $ & $0.00017 $ &  \quad$0.2\sigma$ & $0.2\sigma$ \\
+$\omega_{cdm}$ & $0.1212$ & $0.1207$ & $0.0015$ &  \quad$1\sigma$ & $0.6\sigma$ \\
+$n_s$      & $0.9638$ & $0.9637$ & $0.0049$ &  \quad$0.1\sigma$ & $0.2\sigma$ \\
+$\ln10^{10}A_s$ & $ 2.368 $ & $2.446 $ & $ 0.428 $ &  \quad$1.7\sigma$ & $1.5\sigma$ \\
+$H_0\left[\frac{\text{km}}{\text{s}\cdot\text{Mpc}}\right]$      & $65.83$ & $65.96$ & $0.92$ &  \quad$1.6\sigma$ & $1.4\sigma$ \\
+$m_{\nu}$\,[eV]  & $0.35$ & $0.33$ & $0.06$ &  \quad$4.8\sigma$ & $4.5\sigma$ \\
+$b_0$ & $1.574$ & $1.479$ & $0.339$ & $1.7\sigma$ & $1.4\sigma$\\
+\end{tabular}
+\begin{tabular}{@{}cccccc}
+\hline
+\multicolumn{6}{c}{\parbox[t]{4.4cm}{iii) Neglecting lensing: \\ \hspace*{0.9cm} (only auto-correlations)} $\Delta \chi^2 = 998.208$} \\
+\hline
+Parameter & Mean & best fit & $\sigma$ & \hspace{-0.52cm} shift: mean & best-fit\\
+\hline
+$\omega_b$ & $0.02219 $ & $0.02219 $ & $0.00017 $ &  \quad$0.3\sigma$ & $0.4\sigma$ \\
+$\omega_{cdm}$ & $0.1222 $ & $0.1221 $ & $0.0014 $ &  \quad$1.7\sigma$ & $1.6\sigma$ \\
+$n_s$      & $0.9640 $ & $0.9646 $ & $0.0050 $ &  \quad$0.1\sigma$ & $<0.1\sigma$ \\
+$\ln10^{10}A_s$ & $1.672 $ & $1.488 $ & $0.427 $ &  \quad$3.3 \sigma$ & $3.8\sigma$ \\
+$H_0\left[\frac{\text{km}}{\text{s}\cdot\text{Mpc}}\right]$      & $63.90 $ & $63.89$ & $0.98$ &  \quad$3.4 \sigma$ & $3.4\sigma$ \\
+$m_{\nu}$\,[eV]  & $0.49$ & $0.49$ & $0.06$ &  \quad$7.1\sigma$ & $7\sigma$ \\
+$b_0$ & $2.295$ & $2.461$ & $0.454$ & $2.9\sigma$ & $3.2\sigma$ \\
+\end{tabular}
+
+\caption{MCMC results (Gaussian prior). We show the mean and best fit values, the standard deviation and the amplitude of the shift of the mean and best-fit w.r.t the fiducial value in units of the standard deviation, $\sigma$, of the corresponding analysis. The large value of $\Delta \chi^2$ for case ii) shows that cross-correlations cannot be fitted if lensing is neglected.
+}
+\label{Table:mcmc-gaussian-prior}
+\end{table}
+
+
+\begin{figure}[bthp]
+\centering
+\includegraphics[scale=1]{figures/chapter-7/triangle_figure_MCDM_bias_cmb_prior.pdf}
+\caption{Two- and 1-D posteriors for the cosmological parameters inferred from the full analysis including lensing (red dotted), an analysis neglecting lensing (blue dashed) and considering only auto-correlations (gray solid).
+{The $68\%$ and $95\%$ confidence intervals are shown.}
+Intersections between vertical and horizontal lines denote the fiducial cosmology.
+}
+\label{fig:mcmc-cmb-prior}
+\end{figure}
 \section{Conclusions}
 \label{chapter:7:conclusions}
 
