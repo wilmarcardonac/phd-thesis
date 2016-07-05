@@ -15,8 +15,7 @@
 \usepackage[parfill]{parskip}  
 \usepackage{makeidx}
 \usepackage{color}
-%\usepackage{ucs}
-%\DeclareUnicodeCharacter{00A0}{~}
+\usepackage{lpic}
 \newcommand{\captionfonts}{\it}
 \makeatletter
 \long\def\@makecaption#1#2{%
@@ -35,92 +34,67 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{red}{rgb}{1,0,0} 
 \def\commentr#1{\textcolor{red}{\tt [#1]}}
-\def\be{\begin{equation}}
-\def\ee{\end{equation}}
+%\def\be{\begin{equation}}
+%\def\ee{\end{equation}}
 
-%\def\bea{\begin{eqnarray}}
-%\def\eea{\end{eqnarray}}
-%\def\deu{{\delta}^{(1)}}
-%\def\ded{{\delta}^{(2)}}
-%\def\de3{{\delta}^{(3)}}
 \def\H{\,{\mathcal  H}}
 \def\N{\,{\mathcal N}}
 \def\L{\,{\mathcal L}}
-\def\eff{\mathrm{eff}}
 \def\fsky{\mathrm{sky}}
-%\def\cal H{\,{\mathcal  H}}
-%\def\calm{{\cal M}}
-%\def\calp{{\cal P}}
-%\def\calr{{\cal R}}
-%\newcommand\bfa{{\bf a}}
-%\newcommand\bfb{{\bf b}}
-%\newcommand\bfc{{\bf c}}
-%\newcommand\bfd{{\bf d}}
-%\newcommand\bfe{{\bf e}}
-%\newcommand\bff{{\bf f}}
-%\newcommand\bfg{{\bf g}}
-%\newcommand\bfh{{\bf h}}
-%\newcommand\bfi{{\bf i}}
-%\newcommand\bfj{{\bf j}}
-%\newcommand\bfk{{\bf k}}
-%\newcommand\bfl{{\bf l}}
-%\newcommand\bfm{{\bf m}}
-%\newcommand\bfn{{\bf n}}
-%\newcommand\bfo{{\bf o}}
-%\newcommand\bfp{{\bf p}}
-%\newcommand\bfq{{\bf q}}
-%\newcommand\bfr{{\bf r}}
-%\newcommand\bfs{{\bf s}}
-%\newcommand\bft{{\bf t}}
-%\newcommand\bfu{{\bf u}}
-%\newcommand\bfv{{\bf v}}
-%\newcommand\bfw{{\bf w}}
-%\newcommand\bfx{{\bf x}}
-%\newcommand\bfy{{\bf y}}
-%\newcommand\bfz{{\bf z}}
-%\newcommand{\fNLl} {f_{\rm NL}^{\rm local}}
-%\newcommand{\fNLe} {f_{\rm NL}^{\rm equil}}
-%\newcommand{\fNLo} {f_{\rm NL}^{\rm ortog}}
-%
+\newcommand{\obs}{\mathrm{obs}}
+\newcommand{\pred}{\mathrm{pred}}
+\newcommand{\eff}{\mathrm{eff}}
+\newcommand{\intt}{\mathrm{int}}
+\newcommand{\LMC}{\mathrm{LMC}}
+\newcommand{\MW}{\mathrm{MW}}
+\newcommand{\Cepheid}{\mathrm{Cepheid}}
+\newcommand{\Anchors}{\mathrm{Anchors}}
+\newcommand{\SNe}{\mathrm{SNe\,Ia}}
+\newcommand{\km}{\mathrm{km}}
+\newcommand{\second}{\mathrm{s}}
+\newcommand{\Mpc}{\mathrm{Mpc}}
+\newcommand{\MM}{{\mathcal M}}
+
 \newcommand{\fNL}  {f_{\rm NL}^{}}
-%\newcommand{\LL}{{\mathrm{L}}}
-%\newcommand{\NL}{{\mathrm{NL}}}
 
+% short-cuts
+    \newcommand{\be}{\begin{eqnarray}}
+    \newcommand{\ee}{\end{eqnarray}}
+    \newcommand{\bea}{\begin{eqnarray}}
+    \newcommand{\eea}{\end{eqnarray}}
+    \newcommand{\ba}{\begin{array}}
+    \newcommand{\ea}{\end{array}}
 
-%\def\Aa{\frac{a^{\prime}}{a}}
-%\def\Ab{\Big(\frac{a^{\prime}}{a}\Big)^2}
-%\def\Ac{\frac{a^{\prime\prime}}{a}}
-%\def\Dp{\delta^{(1)}}
-%\def\Ds{\delta^{(2)}}
-%\def\La{\partial_i \,\partial^i}
-%\def\LA{\partial_k \,\partial^k}
-%\def\deu{{\delta}^{(1)}}
-%\def\ded{{\delta}^{(2)}}
-%\def\ze{{1}^{(0)}}
-%\def\wpsi{\widetilde{\Psi}}
-%\def\simlt{\stackrel{<}{{}_\sim}}
-%\def\simgt{\stackrel{>}{{}_\sim}}
-%\def\R{{\mathcal R}}
-%\def\S{{\mathcal S}}
-%\def\C{{\mathcal C}}
-%\def\P{{\mathcal P}}
-%\def\B{{\mathcal  B}}
-%\def\T{{\mathcal  T}}
-%\def\La{\nabla^2}
-%\def\LA{\nabla^2}
-%\def\Q{{\mathcal Q}}
-%\def\k{{\mathbf k}}
-%\def\l{{\ell}}
-%\def\d{{\rm d}}
+% math abbr.
+    \newcommand{\ceff}{c_{\rm eff}}
 
-%\usepackage{natbib} 
+% brackets:
+    \renewcommand{\(}{\left(}
+    \renewcommand{\)}{\right)}
+    \renewcommand{\[}{\left[}
+    \renewcommand{\]}{\right]}
+    \newcommand{\la}{\langle}
+    \newcommand{\ra}{\rangle}
+    \newcommand{\lla}{\left\langle}
+    \newcommand{\rra}{\right\rangle}
+    \newcommand{\lcb}{\left\{}
+    \newcommand{\rcb}{\right\}}
+
+    \renewcommand{\aa}{e_\pi}
+    \newcommand{\ff}{f_\pi}
+    \let\mug\gg
+    \renewcommand{\gg}{g_\pi}
+
 \makeindex
 \date{}                                           
 
-\includeonly{intro,chapter1,chapter2,chapter3,chapter4,chapter5,
-chapter6,chapter7,chapter8,chapter9}
+%\includeonly{intro,chapter1,chapter-vsk,
+%chapter-ade,chapter-h0,chapter-mnu,chapter-outlook,appendix1-ade,appendix2-ade,appendix1-h0,appendix1-mnu,appendix2-mnu}
+
+\includeonly{intro,chapter-h0,chapter-outlook}
 
 \begin{document}
+
 \renewcommand{\figurename}{\textbf{Fig.}}
 \renewcommand{\tablename}{\textbf{Tab.}}
 
@@ -190,46 +164,46 @@ Some important points ...
 
 \tableofcontents
 
-\listoffigures
+%\listoffigures
 
-\listoftables 
+%\listoftables 
 
 \newpage
 
 \pagenumbering{arabic}
 
-
 \include{intro}
 
-\include{chapter1}
+%\include{chapter1}
 
-%\include{chapter2}
+%\include{chapter-vsk}
 
-%\include{chapter3}
+%\include{chapter-ade}
 
-%\include{chapter4}
+\include{chapter-h0}
 
-%\include{chapter5}
- 
-\include{chapter6}
+%\include{chapter-mnu}
 
-\include{chapter7}
-
-\include{chapter8}
-
-%\include{chapter9}
+\include{chapter-outlook}
 
 \addcontentsline{toc}{chapter}{Appendices}  
 \chapter*{Appendices}  
 
 \appendix
 
-\include{appendix1}
+%\include{appendix1-ade}
 
-\bibliographystyle{thesis}
-\bibliography{/home/wilmar/Dropbox/References/thesis}
- 
+%\include{appendix2-ade}
 
-%\printindex
+%\include{appendix1-h0}
+
+%\include{appendix1-mnu}
+
+%\include{appendix2-mnu}
+%
+\bibliography{H0_refs}
+\bibliographystyle{JHEP}
+%
+
 
 \end{document}  

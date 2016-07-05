@@ -1,0 +1,35 @@
+\chapter{Basic expressions for the Fisher analysis}
+\label{appendix2-mnu}
+
+The Fisher approach used in the literature~\cite{Namikawa:2011yr,Duncan:2013haa,Camera:2014sba,Raccanelli:2015vla} and applied in Section~\ref{s:fisher} for comparison with the results from our MCMC forecasts is based on the Fisher information matrix given by
+\begin{equation}
+F_{\alpha\beta} =
+\sum_{\ell} \sum_{(ij)(pq)} \frac{\partial C_\ell^{ij}}{\partial \theta_\alpha}
+\frac{\partial C_\ell^{pq}}{\partial
+\theta_\beta} {{\rm Cov}_{C_{\ell \, \rm[(ij), (pq)]}}^{-1}} \, ,
+\label{eq:Fisher}
+\end{equation}
+where $\theta_a$ denotes a given cosmological parameter.
+We compute the derivatives with a five-point stencil \cite{Montanari:2015rga}, and the derivative step for each parameter is set with an iterative procedure to be of the same size as the 1-$\sigma$ levels obtained when fixing the other parameters $\sigma_{\theta_{\alpha}}=1/\sqrt{F_{\alpha\alpha}}$.
+We verified that the final results do not depend significantly on the particular step values.
+We sum up to $\ell=400$, while the second sum is over the matrix indices $(ij)$ with $i \leq j$ and $(pq)$ with $p \leq q$ which run from 1 to the total number of bins when all bin auto- and cross-correlations are taken into account.
+Using the same notation as in Eq.~(\ref{eq:Cl_th_obs}), the covariance matrix is
+\begin{equation}
+\label{eq:err-clgt}
+{\rm Cov}_{C_{\ell \, \rm[(ij), (pq)]}} = \frac{C^{\rm A, (ip)}_{\ell} C^{\rm A, (jq)}_{\ell} + C^{\rm A, (iq)}_{\ell} C^{\rm A, (jp)}_{\ell}}{(2\ell+1)f_{\rm sky}}.
+\end{equation}
+If only auto-correlations are taken into account, the covariance must be first reduced to the relevant components, and subsequently inverted.
+We estimate the shift in the best-fit values due to the wrong model assumption $\widetilde{C}_{\ell}$ by defining the systematic error as $\Delta C_{\ell}=C_{\ell}-\widetilde{C}_{\ell}$ \cite{Knox:1998fp,Heavens:2007ka,Kitching:2008eq,Camera:2014sba}:
+\begin{equation}
+\label{eq:shift}
+\Delta_{\theta_{\alpha}}=\sum_{\beta} \left[\left(\widetilde{F}\right)^{-1}\right]_{\alpha\beta} B_{\beta} \;,
+\end{equation}
+where we defined
+\begin{equation}
+B_{\beta} = \sum_{(ij)(pq)} \sum_{\ell} \Delta C_{\ell}^{ ij} \frac{\partial \widetilde{C}_{\ell}^{pq}}{\partial \theta_{\beta}} {\rm Cov}_{\widetilde{C}_{\ell \, \rm[(ij), (pq)]}}^{-1} \;.
+\end{equation}
+A tilde always denote the quantity computed according to the wrong model $\widetilde{C}_{\ell}$.
+This expression assumes that the systematic error does not affect the covariance, and it is only valid if the shifts are small compared to the variances $\Delta^2_{\theta_{\alpha}}/\sigma^2_{\theta_{\alpha}}<1$.
+As mentioned in the text, neither of these hypothesis is satisfied in our case.
+Furthermore, note that Eq.~(\ref{eq:Fisher}) can only be used to estimate error contours by assuming that the underlying Universe is described either by $C_{\ell}$ or by $\tilde{C}_{\ell}$, and does not give information about error contours obtained when  fitting the wrong model $\tilde{C}_{\ell}$ to data consistent with the full $C_{\ell}$ spectra.
+
