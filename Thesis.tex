@@ -17,18 +17,19 @@
 \usepackage{color}
 \usepackage{lpic}
 \usepackage{longtable}
-\newcommand{\captionfonts}{\it}
-\makeatletter
-\long\def\@makecaption#1#2{%
-\vskip\abovecaptionskip
-\sbox\@tempboxa{{\captionfonts #1: #2}}%
-\ifdim \wd\@tempboxa >\hsize
-{\captionfonts #1: #2\par}
-\else
-\hbox to \hsize{\hfill\box\@tempboxa\hfill}%
-\fi
-\vskip\belowcaptionskip}
-\makeatother
+\usepackage[font={scriptsize,it}]{caption}
+%\newcommand{\captionfonts}{\it}
+%\makeatletter
+%\long\def\@makecaption#1#2{%
+%\vskip\abovecaptionskip
+%\sbox\@tempboxa{{\captionfonts #1: #2}}%
+%\ifdim \wd\@tempboxa >\hsize
+%{\captionfonts #1: #2\par}
+%\else
+%\hbox to \hsize{\hfill\box\@tempboxa\hfill}%
+%\fi
+%\vskip\belowcaptionskip}
+%\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DEFINITIONS
