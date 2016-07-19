@@ -1,0 +1,12 @@
+build/*.
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.pdf
+*.out
+*.toc
+*.log
+*.lot
+*.idx
+*.lof
