@@ -125,17 +125,17 @@ order in perturbation theory \cite{Ballesteros:2011cm}). From the two equations
 evolution equation for $\delta_{de}$ by solving the continuity equation 
 (\ref{eq:de-cont}) for $v_{de}$ and substituting that (and its derivative) into 
 the Euler equation (\ref{eq:de-eul}). We find
-\be
-  \delta''_{de} +\(1-6w\) \H \delta'_{de}
+\bea
+  \delta''_{de} &+&\(1-6w\) \H \delta'_{de}
     +3 \H \(\!\frac{\delta P_{de}}{\rho_{de}}\!\)'
-    +3 \Big[(1-3w)\H^2+\H'\Big] \(\frac{\delta P_{de}}{\rho_{de}}-w\delta_{de}\)
-    -3 \H w' \delta_{de}
-\nonumber \\
- = 3(1+w)\[\phi'' + \(1-3w +\frac{w'}{(1+w)\H}\) \H \phi' \]
-    - k^2\[ (1+w)\psi + \frac{\delta P_{de}}{\rho_{de}} -\frac{2}{3}\pi_{de} \] 
+    +3 \Big[(1-3w)\H^2+\H'\Big] \(\frac{\delta P_{de}}{\rho_{de}}-w\delta_{de}\) \nonumber \\
+    &-&3 \H w' \delta_{de}
+%\nonumber \\
+ = 3(1+w)\[\phi'' + \(1-3w +\frac{w'}{(1+w)\H}\) \H \phi' \] \nonumber \\
+    &-& k^2\[ (1+w)\psi + \frac{\delta P_{de}}{\rho_{de}} -\frac{2}{3}\pi_{de} \] 
 \,.
 \label{eq:de-secondorder}
-\ee
+\eea
 To this point we did not make any assumptions on $\delta P_{de}$, $\pi_{de}$ and 
 $w$. However, already the last term makes clear that $k^2\pi_{de}$ acts as a 
 source for $\delta_{de}$ while the pressure counteracts the gravitational 
@@ -178,7 +178,7 @@ simple we use
 \ee
 with a constant coefficient $\aa$. We will see that this term will act as an 
 additional source for $\delta_{de}$. When looking at the constraints from 
-data in section \ref{section:4} we will fix $n=0$, which is also roughly the behaviour of the effective
+data in section \ref{chapter-ade:constraints} we will fix $n=0$, which is also roughly the behaviour of the effective
 anisotropic stress in the DGP model.
 
 
@@ -301,25 +301,26 @@ on sub-horizon scales) the solutions for matter perturbations are given by (e.g.
 \label{eq:pheno4}  \label{eq:pheno5}
 \ee
 where  $ \delta_0 $ is a constant. Using the solutions (\ref{eq:pheno5}) it is possible to find a second order equation for the dark energy density perturbations (assuming that $ k^2/\H^2 \mug 9(1+w)/4\aa a^n $) during matter domination which we can write as
-\begin{align}
-&\delta''_{de}  +  \[ \frac{3 - 6 w + 4 \ff}{2 a} \] \delta'_{de}
-+ \[  \frac{9 H_0^2 \Omega_m (1 - 6 \ceff^2 ) (\ceff^2 + \frac{2 \ff}{3} - w)  + 4 \ff \gg^2 H_0^2 \Omega_m + 6 a \ceff^2 k^2 }{6 a^2 H_0^2 \Omega_m}  \] \delta_{de}  
+\begin{eqnarray}
+\delta''_{de}  &+&  \[ \frac{3 - 6 w + 4 \ff}{2 a} \] \delta'_{de} \nonumber \\
+&+& \[  \frac{9 H_0^2 \Omega_m (1 - 6 \ceff^2 ) (\ceff^2 + \frac{2 \ff}{3} - w)  + 4 \ff \gg^2 H_0^2 \Omega_m + 6 a \ceff^2 k^2 }{6 a^2 H_0^2 \Omega_m}  \] \delta_{de}  
 \nonumber \\ 
-& \hspace{3cm}
-= \frac{2 \delta_0 \aa a^n k^2}{3 H_0^2 \Omega_m}\,. \quad \,
+%& \hspace{3cm}
+&=& \frac{2 \delta_0 \aa a^n k^2}{3 H_0^2 \Omega_m}\,. \quad \,
 \label{eq:pheno7}
-\end{align}
-In Principle, this equation can be solved analytically in terms of Bessel and hypergeometric functions (see Eq.\ (\ref{eq:appendix:A1}) of Appendix \ref{appendix:2}). The argument of the Bessel functions is proportional to $\sqrt{\ceff^2}$,  and as in the case of dark energy domination in Sec.\ \ref{subsubsection:3:1:2}, the perturbations grow exponentially fast for $\ceff^2<0$ because the argument of the Bessel functions becomes imaginary. It is however more instructive to look separately at super- and sub-sound horizon limits where we can simplify the equation further and so obtain more tractable solutions. \\
+\end{eqnarray}
+In Principle, this equation can be solved analytically in terms of Bessel and hypergeometric functions (see Eq.\ (\ref{eq:appendix:A1}) of Appendix \ref{appendix2-ade}). The argument of the Bessel functions is proportional to $\sqrt{\ceff^2}$,  and as in the case of dark energy domination in Sec.\ \ref{subsubsection:3:1:2}, the perturbations grow exponentially fast for $\ceff^2<0$ because the argument of the Bessel functions becomes imaginary. It is however more instructive to look separately at super- and sub-sound horizon limits where we can simplify the equation further and so obtain more tractable solutions. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent\textbf{Super-sound horizon (but sub-horizon)}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The sound horizon is set by $\H/\ceff$, i.e.\ a given $k$ is super-sound horizon but sub-horizon if $\H\ll k\ll \H/\ceff$. So for a clean separation of scales we need $\ceff \ll 1$, which means we can just take the limit $\ceff\to 0$  in Eq.\ (\ref{eq:pheno7}). We notice from Eq.\ (\ref{eq:pheno2}) that if $ 0\leq c_s^2 \leq 1 $, then $ 0 \leq \ff \leq 3/2 $.\footnote{If $c_s^2$ can take negative values then $ \ff $ can be negative as well since $ \ff = 3c_s^2/2 $ when $\ceff = 0$. This is not a problem for the stability of the perturbations, as that is governed by $\ceff$.} We find
-\be 
-\delta''_{de} & + & \[ \frac{3 - 6 w + 4 \ff}{2 a} \] \delta'_{de} + \[ \frac{3 (2 \ff - 3 w)  + 4 \ff \gg^2 }{6 a^2}  \] \delta_{de}  = \frac{2 \delta_0 \aa a^n k^2}{3 H_0^2 \Omega_m}\,. 
+\bea 
+\delta''_{de} & + & \[ \frac{3 - 6 w + 4 \ff}{2 a} \] \delta'_{de} + \[ \frac{3 (2 \ff - 3 w)  + 4 \ff \gg^2 }{6 a^2}  \] \delta_{de}  \nonumber \\ 
+&=& \frac{2 \delta_0 \aa a^n k^2}{3 H_0^2 \Omega_m}\,. 
 \label{eq:pheno8}
-\ee
+\eea
 
 The homogeneous part of the equation clearly has power-law solutions, in general the solution for Eq.\ (\ref{eq:pheno8}) is of the form
 \be 
@@ -351,7 +352,7 @@ V_{de} & = & \frac{[B_1 (1+ 4\ff - 6w - \alpha + \beta) a^\beta + A_1 (1+4\ff -6
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=.9\textwidth]{figures/chapter-ade/expogrid1.pdf}
+\includegraphics[width=\textwidth]{figures/chapter-ade/expogrid1.pdf}
 \caption{The dark energy perturbations during matter domination in the sub-horizon but super-sound horizon regime have a power-law behaviour. Here we show the exponents of the first two terms in Eq. (\ref{eq:pheno9}) for a range of values of the parameters $\ff$ and $\gg$ (the parameter $\aa$ leads to an additional growing mode
 driven by the dark matter). Real and imaginary parts for the exponent of the first term are plotted in red dashed and magenta dot-dashed lines, respectively. For the second term the real part is plotted in blue and the imaginary part is shown in black dotted lines. Positive real parts correspond to growing modes, not necessarily instabilities.}
 \label{fig:expogrid1}
@@ -363,9 +364,9 @@ driven by the dark matter). Real and imaginary parts for the exponent of the fir
 
 The equations for dark energy velocity and density perturbations in this case are given by
 \begin{eqnarray}
-V_{de}' + \frac{1-6\ceff^2}{2a} V_{de} &=& -  \frac{\ceff^2 k^2}{H_0^2 \Omega_m}   \delta_{de} 
-+ \frac{\delta_0}{6 H_0^2\Omega_m} \[ 4 \aa a^{n+1} k^2 + 9 H_0^2(1+w)\Omega_m\] \, , \label{eq:pheno11} \\
-\delta_{de}' + \frac{3(c_s^2-w)}{a}\delta_{de}  &=& \frac{V_{de}}{a} \, . \label{eq:pheno11b}
+V_{de}' &+& \frac{1-6\ceff^2}{2a} V_{de} = -  \frac{\ceff^2 k^2}{H_0^2 \Omega_m}   \delta_{de} \nonumber \\
+&+& \frac{\delta_0}{6 H_0^2\Omega_m} \[ 4 \aa a^{n+1} k^2 + 9 H_0^2(1+w)\Omega_m\] \, , \label{eq:pheno11} \\
+\delta_{de}' &+& \frac{3(c_s^2-w)}{a}\delta_{de}  = \frac{V_{de}}{a} \, . \label{eq:pheno11b}
 \end{eqnarray}
 Here we re-introduced the second, sub-dominant term in Eq.\ (\ref{eq:pheno11})  for the special case $\aa=0$.
 Like \cite{Sapone:2009kx} we can argue that if we want to avoid large velocity perturbations, then we expect the source terms in Eq.\ (\ref{eq:pheno11}) to cancel to a high degree. It follows that 
@@ -411,7 +412,8 @@ Again we can look at both super and sub-sound horizon limits for this equation. 
 
 In the super-sound horizon limit Eq.\ (\ref{eq:pheno14}) becomes
 \be 
-\delta''_{de} &+&  \[ \frac{3 + 4 \ff - 9 w}{2 a}  \] \delta'_{de} +  \[  \frac{4 \ff (-3 + \gg^2 - 9 w) + 9 ( 3 w^2 - 2 w - 1 )  }{6 a^2}  \] \delta_{de} = 0 
+\delta''_{de} &+&  \[ \frac{3 + 4 \ff - 9 w}{2 a}  \] \delta'_{de}   \nonumber \\
+&+& \[  \frac{4 \ff (-3 + \gg^2 - 9 w) + 9 ( 3 w^2 - 2 w - 1 )  }{6 a^2}  \] \delta_{de} = 0 
 \label{eq:pheno15}
 \ee
 
@@ -433,14 +435,14 @@ For velocity and matter perturbations we have
 \label{eq:pheno16b}
 V_{de} &=& \frac{a^{\frac{1-\alpha_3 - \beta_3}{2}}}{2}  \[  B_3 a^{\beta_3} (1+6c_s^2 -6w - \alpha_3 + \beta_3)  + A_3 ( 1+6c_s^2 -6w - \alpha_3 - \beta_3 ) \] \nonumber \\
 \delta_m &=& 6(1+2\ff)a^{\frac{1-\alpha_3 - \beta_3}{2}} \[ \frac{B_3 a^{\beta_3}}{(1-\alpha_3 +\beta_3)(2-3w-\alpha_3 + \beta_3)}  \right. \nonumber \\
-&& + \left.  \frac{A_3}{(-1+\alpha_3 + \beta_3)(-2+3w+\alpha_3 + \beta_3)}\] + \delta_0 \nonumber \\
-V_m &=& \frac{3(1+2\ff) a^{\frac{1-\alpha_3 - \beta_3}{2}} \[ A_3 (-2+3w+\alpha_3 - \beta_3)  + B_3 a^{\beta_3} (-2+3w+\alpha_3 + \beta_3) \] }{(2-3w-\alpha_3 +\beta_3)(-2+3w+\alpha_3 + \beta_3)}
+&& + \left.  \frac{A_3}{(-1+\alpha_3 + \beta_3)(-2+3w+\alpha_3 + \beta_3)}\] + \delta_0  \\
+V_m &=& \frac{3(1+2\ff) a^{\frac{1-\alpha_3 - \beta_3}{2}} \[ A_3 (-2+3w+\alpha_3 - \beta_3)  + B_3 a^{\beta_3} (-2+3w+\alpha_3 + \beta_3) \] }{(2-3w-\alpha_3 +\beta_3)(-2+3w+\alpha_3 + \beta_3)} \nonumber
 \end{eqnarray}
 where we have neglected a decaying mode in the matter density perturbation. We can see that the dark matter density perturbation $\delta_m$ follows the dark energy perturbations and grows at the same rate (in addition to a constant mode). \\
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=.9\textwidth]{figures/chapter-ade/expogrid3.pdf}
+\includegraphics[width=\textwidth]{figures/chapter-ade/expogrid3.pdf}
 \caption{The dark energy perturbations during dark energy domination in the sub-horizon but super-sound horizon regime have a power-law behaviour,
 with the exponents given here for a range of values of the parameters $\ff$ and $\gg$. Here we plot the exponents of the two terms in Eq. (\ref{eq:pheno16}): red dashed (real part) and magenta dot-dashed (imaginary part) lines correspond to the first term whereas blue (real part) and black dotted (imaginary part) lines correspond to the second term.}
 \label{fig:expogrid3}
@@ -500,13 +502,14 @@ We also note that we recover the solutions found in \cite{Sapone:2009kx} in the 
 
 \begin{table}[h!]
 \centering
+\resizebox{\textwidth}{3.cm}{
 \begin{tabular}{|c|c|c|c|}
 \hline 
 \multicolumn{2}{|c|}{scales} & \multicolumn{2}{|c|}{rapid growth} \\ \cline{3-4}   
 \multicolumn{2}{|c|}{} & matter dominance & dark energy dominance ($\aa=0$) \\ \cline{1-4}
 \multicolumn{1}{|c|}{\multirow{2}{*}{sub-horizon}} & \multirow{1}{*}{sub-sound}  & $ \phantom{\Bigg|} \ceff^2<0 \phantom{\Bigg|}$  &  $\displaystyle \ceff^2<0 $ \\ \cline{2-4}
  & \multirow{1}{*}{super-sound} & $\phantom{\Bigg|} \ff \ll \dfrac{9w}{2(3+2\gg^2)} \phantom{\Bigg|}$ & $\ff \ll \dfrac{27w^2 -18w -9}{4(3-\gg^2+9w)} $ \\ \cline{1-4}
-\end{tabular}
+\end{tabular}}
 \caption{Regimes and regions in parameter space where dark energy perturbations grow rapidly.}
 \label{tab:stability}
 \end{table}
@@ -525,7 +528,7 @@ the model 1 defined by Eq.\ (\ref{eq:model:1}).
 
 \begin{figure}[tb]
 \centering
-\includegraphics[scale=.76]{figures/chapter-ade/comparison.pdf} 
+\includegraphics[width=\textwidth]{figures/chapter-ade/comparison.pdf} 
 \caption{The figure shows the behaviour of the variables $ \delta_{de} $ and $ v_{de} $ for $k=1.5\times 10^{-2}$, $c_s^2 = 10^{-1}$, $w=-1.05$, $ n=0 $ (the power in Eq. (\ref{eq:model:1})) and different combinations of parameters $\aa$, $\ff$ and $\gg$. The blue and cyan curves are the numerical solutions. Green dashed and magenta dot-dashed curves are analytical solutions on super horizon scales, Eqs. (\ref{eq:pheno23})-(\ref{eq:pheno24}). On the other hand, the red dashed and black dot-dashed curves are analytical solutions on sub-sound horizon scales given by Eqs. (\ref{eq:pheno12})-(\ref{eq:pheno13}). The vertical lines give the scale factor at which the mode enters the effective sound horizon (dashed line) and the Hubble horizon (dotted line). We consider  a longer dynamic range in $a$ to illustrate the transition from super-horizon to sub-sound horizon scales more clearly, without however including radiation in the numerical solution.}
 \label{fig:comparison}
 \end{figure}
@@ -563,7 +566,7 @@ In addition to the base model, we vary or fix the values of the parameters that 
 
 \begin{figure}[tb]
 \centering
-\begin{lpic}[clean]{figures/chapter-ade/PWHiBSwefc_tri(15.5cm,)}
+\begin{lpic}[clean]{figures/chapter-ade/PWHiBSwefc_tri(14.cm,)}
 \lbl[l]{90,185; \footnotesize\textcolor{blue}{\bf ---}\quad CMB =
 Planck + WP + highL}
 \lbl[l]{90,175; \footnotesize\textcolor{red}{\bf ---}\quad CMB + BAO}
@@ -584,7 +587,7 @@ Thus, if we had additional observables that even more strongly prefer $\ceff=1$,
 
 \begin{figure}[tb]
 \centering
-\begin{lpic}[clean]{figures/chapter-ade/PWHiBSwefc_models_tri(15.5cm,)}
+\begin{lpic}[clean]{figures/chapter-ade/PWHiBSwefc_models_tri(14.cm,)}
 \lbl[l]{90,186; \footnotesize\textcolor{green}{\bf ---}\quad
 $(\aa,f_\pi,\,\log_{10}g_\pi)=(0,0,0)\,$, varying
 $(w,\,\log_{10}\ceff^2)$ }
@@ -608,7 +611,7 @@ Next, let us study the anisotropic stress model parameters. In figure \ref{fig:2
 \begin{figure}[tb]
 \centering
 \vspace{2 cm}
-\begin{lpic}[clean,nofigure]{figures/chapter-ade/fig-6-nolabel(15.5cm,)}
+\begin{lpic}[clean,nofigure]{figures/chapter-ade/fig-6-nolabel(14.cm,)}
 \lbl[l]{10,175; \footnotesize\textcolor{black}{\bf ---}\quad
 CMB$ + $BAO$ + $SNe}
 \lbl[l]{10,166; \footnotesize\textcolor{red}{\bf ---}\quad
@@ -763,10 +766,11 @@ On the other hand, if we consider solutions on super-horizon scales, that is, Eq
 \Delta_{de} \approx \Delta_m \[  \frac{4 \aa a^n - 3(1+w)}{-3} \] \, ,
 \label{eq:parametrisations:3}
 \ee 
-\be 
-Q =  1 + \[ -\frac{4}{3} \aa a^n + (1+w)\] \frac{\rho_{de}}{\rho_m} \quad \Rightarrow \quad \frac{1}{\eta} = 1 + \frac{6 \aa a^n \rho_{de}}{3 \rho_m - \[ 4\aa a^n - 3(1+w)\]\rho_{de}}
+\bea 
+Q &=&  1 + \[ -\frac{4}{3} \aa a^n + (1+w)\] \frac{\rho_{de}}{\rho_m} \quad \nonumber \\
+&\Rightarrow & \quad \frac{1}{\eta} = 1 + \frac{6 \aa a^n \rho_{de}}{3 \rho_m - \[ 4\aa a^n - 3(1+w)\]\rho_{de}}
 \label{eq:parametrisations:4}
-\ee
+\eea
 The last equation shows that on horizon scales dark energy can cluster even if $\aa=0$. This is the reason why 
 there is no `clean' intersection of the curves at $Q=1$, $\eta=1$ in the lower row of Fig.\ \ref{fig:3d}.
 
