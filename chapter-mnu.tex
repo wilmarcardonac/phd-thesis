@@ -99,49 +99,47 @@ Having the survey specifications we can compute angular matter power spectrum as
 \section{Methodology}
 \label{chapter-mnu:methodology}
 
-In order to show the importance of inclusion of lensing convergence in galaxy clustering analyses, we perform a Markov Chain Monte Carlo (MCMC) analysis \commentr{cite paper by Lewis and Sarah B.} both including and neglecting the lensing effect. Studies analysing the bias on cosmological parameters due to neglecting lensing convergence can be found in the literature, but they do Fisher matrix analysis and focus on either the primordial non-Gaussianity (i.e., $\fNL$) \commentr{cite paper by Namikawa} or dark energy parameters (e.g., $w,\, \Omega_\Lambda$) \commentr{cite paper by Alan Heavens}. Although in this project we stress the neutrino mass, we also discuss other parameters in the concordance model.  
+In order to show how important the inclusion of lensing convergence in galaxy clustering analyses is, we perform a Markov Chain Monte Carlo (MCMC) analysis \cite{Lewis:2002ah,Verde:2003ey,Tegmark:2003ud} both including and neglecting the lensing effect. Studies analysing the bias on cosmological parameters due to neglecting lensing convergence can be found in the literature, but they do Fisher matrix analyses and focus on either the primordial non-Gaussianity parameter (i.e., $\fNL$) \cite{Namikawa:2011yr} or dark energy parameters (e.g., $w,\, \Omega_\Lambda$) \cite{Duncan:2013haa}. Although in this project we stress on the neutrino mass, we also discuss other parameters in the concordance model.  
 
-The MCMC technique is more suitable than a Fisher matrix method. Current Boltzmann codes such as CLASS \commentr{Julien's paper} or CAMB \commentr{paper by Lewis and Challinor} are accurate to $1\%$ (with nominal precision settings), but it is possible for random numerical errors to exceed this. Future surveys will provide more precise Large Scale Structure (LSS) measurements and therefore these effects might become problematic for approaches that rely on computation of derivatives as a function of parameters (e.g., Fisher matrix). Since our MCMC approach average over $\sim 10^5$ galaxy number counts spectra, it is much less sensitive to those numerical errors than the Fisher matrix approach. 
+The MCMC technique is more suitable than a Fisher matrix method. Current Boltzmann codes such as CLASS \cite{Lesgourgues:2011re} or CAMB \cite{Lewis:1999bs} are accurate to $1\%$ (with nominal precision settings), but it is possible for random numerical errors to exceed this. Future surveys will provide more precise Large Scale Structure (LSS) measurements and therefore these effects might become problematic for approaches that rely on computation of derivatives as a function of parameters (e.g., Fisher matrix). Since our MCMC approach average over $\sim 10^5$ galaxy number counts spectra, it is much less sensitive to those numerical errors than the Fisher matrix approach. 
 
-We assume a fiducial flat $\Lambda CDM$ model consistent with results from the Planck collaboration \commentr{Planck paper cosmological parameters}, including massive neutrinos with a normal mass hierarchy (dominated by the heaviest neutrino mass eigenstate). The cosmological parameters of our fiducial model are the reduced baryon density parameter, $\omega_{\mathrm{b}} = 2.225\times 10^{-2}$, the cold dark matter density parameter, $\omega_{\mathrm{cdm}}=0.1198$, the scalar spectral index, $n_{\mathrm{s}}=0.9645$, the amplitude of curvature fluctuations, $\ln 10^{10} A_{\mathrm{s}}=3.094$, the Hubble constant, $H_0 = 67.27\, \mathrm{km\, s^{-1}\, Mpc^{-1}}$, and the sum of the neutrino masses, $\sum m_\nu = 0.06\, \mathrm{eV}$.  
+We assume a fiducial flat $\Lambda CDM$ model consistent with results from the Planck collaboration \cite{Ade:2015xua}, including massive neutrinos with a normal mass hierarchy (dominated by the heaviest neutrino mass eigenstate). The cosmological parameters of our fiducial model are the reduced baryon density parameter, $\omega_{\mathrm{b}} = 2.225\times 10^{-2}$, the cold dark matter density parameter, $\omega_{\mathrm{cdm}}=0.1198$, the scalar spectral index, $n_{\mathrm{s}}=0.9645$, the amplitude of curvature fluctuations, $\ln 10^{10} A_{\mathrm{s}}=3.094$, the Hubble constant, $H_0 = 67.27\, \mathrm{km\, s^{-1}\, Mpc^{-1}}$, and the sum of the neutrino masses, $\sum m_\nu = 0.06\, \mathrm{eV}$.  
      
-To take into account theoretical error on non-linear scales we use Halofit \commentr{cite reference 52 in Francesco's paper} to rescale all linear transfer functions. The rescaling for the matter power spectrum in models including massive neutrinos has been already implemented in CLASSgal. Transfer functions are rescaled by the square root of 
+To take into account a theoretical error on non-linear scales we use Halofit \cite{Smith:2002dz} to rescale all linear transfer functions. The rescaling for the matter power spectrum in models including massive neutrinos has been already implemented in CLASSgal. Transfer functions are rescaled by the square root of 
 \begin{equation}
 \alpha(k,z) = \frac{\ln [1 + k/k_{\mathrm{NL}(z)}]}{1 + \ln [1 + k/k_{\mathrm{NL}(z)}]}f_{\mathrm{th}},
 \label{Eq:rescaling-factor-transfer-functions}
 \end{equation}
-where $k_{\mathrm{NL}}$ is the non-linear scale determined by the Halofit algorithm, and $f_{\mathrm{th}}$ is the error percentage on non-linear scales which we have chosen to be $f_{\mathrm{th}}=10\%$. The theoretical error power spectra $E_\ell^{ij}$ are then computed by taking the absolute value of the resulting $C_\ell^{ij}$. Because computing $E_\ell^{ij}$ with high accuracy is time-computing demanding, in this project we compute the error power spectra only for the fiducial model, that is, we ignore the parameter dependence on the theoretical error.
-
-Since perturbation on the number density of galaxies is not a continuous field, it is usually assumed that galaxies form a Poisson sample of the density field \commentr{cite paper by Hume et al.} and therefore there is a shot-noise contribution $\N^{-1}$ to the error budget in the angular power spectra.
+where $k_{\mathrm{NL}}$ is the non-linear scale determined by the Halofit algorithm, and $f_{\mathrm{th}}$ is the error percentage on non-linear scales that we have chosen to be $f_{\mathrm{th}}=10\%$. The theoretical error power spectra $E_\ell^{ij}$ are then computed by taking the absolute value of the resulting $C_\ell^{ij}$. Because computing $E_\ell^{ij}$ with high accuracy is time-computing demanding, in this project we compute the error power spectra only for the fiducial model, that is, we ignore the parameter dependence on the theoretical error. In addition, since the  perturbation on the number density of galaxies is not a continuous field, it is usually assumed that galaxies form a Poisson sample of the density field \cite{Feldman:1993ky} and therefore there is a shot-noise contribution $\N^{-1}$ to the error budget in the angular power spectra.
 
 Finally, the galaxy number counts are modelled as 
 \begin{equation}
 \label{Eq:GNC-modelled-angular-power-spectra}
 C_\ell^{A,\,ij} = C_\ell^{ij} + E_\ell^{ij} + \N^{-1} \delta^{ij},
 \end{equation}
-where $A=\mathrm{obs},\,\mathrm{th}$ and $i,j = 1,...,N_{\mathrm{bin}}$ are red-shift bin indices. Here $C_\ell^{\mathrm{obs}}$ stands for spectra computed for our fiducial model which includes the effect of lensing convergence, and $C_\ell^{\mathrm{th}}$ stands for models which might or might not include lensing convergence. In the next Section we will see what the impact of switching lensing convergence off in $C_\ell^{\mathrm{th}}$ is when fitting this kind of models to our fiducial $C_\ell^{\mathrm{obs}}$.   
+where $A=\mathrm{obs},\,\mathrm{th}$ and $i,j = 1,...,N_{\mathrm{bin}}$ are red-shift bin indices. Here $C_\ell^{\mathrm{obs}}$ stands for spectra computed for our fiducial model which includes the effect of lensing convergence, and $C_\ell^{\mathrm{th}}$ stands for models which might or might not include lensing convergence. In the next Section we will study the impact of switching lensing convergence off in $C_\ell^{\mathrm{th}}$ when fitting this kind of models to our fiducial $C_\ell^{\mathrm{obs}}$.   
      
-Following the cosmic shear implementation in \commentr{cite B. Audren's paper} we have implemented a Gaussian likelihood for an Euclid-like survey. For given observed and theoretical power spectra in Eq. \eqref{Eq:GNC-modelled-angular-power-spectra}, let us define the determinants
+Following the cosmic shear implementation in \cite{Audren:2012vy} we have implemented a Gaussian likelihood for an Euclid-like survey. For given observed and theoretical power spectra in Eq. \eqref{Eq:GNC-modelled-angular-power-spectra}, let us define the determinants
 \begin{eqnarray}
 \label{Eq:determinants-Gaussian-likelihood}
 d_\ell^{\mathrm{th}} & = & \det \left( C_\ell^{\mathrm{th},\,ij}\right),\\
 d_\ell^{\mathrm{obs}} & = & \det \left( C_\ell^{\mathrm{obs},\,ij}\right). 
 \end{eqnarray}
-Additionally, one can define a mixed determinant $d_\ell^{\mathrm{mix}}$ formed from $d_\ell^{\mathrm{th}}$: one takes each term in $d_\ell^{\mathrm{th}}$ and replaces one at a time $C_\ell^{\mathrm{th},\,ij}$ by the corresponding $C_\ell^{\mathrm{obs},\,ij}$. If we worked $2$ red-shift bins, the mixed determinant would read
+Additionally, one can define a mixed determinant $d_\ell^{\mathrm{mix}}$ formed from $d_\ell^{\mathrm{th}}$: one takes each term in $d_\ell^{\mathrm{th}}$ and replaces one at a time $C_\ell^{\mathrm{th},\,ij}$ by the corresponding $C_\ell^{\mathrm{obs},\,ij}$. If we worked with $2$ red-shift bins, the mixed determinant would read
 \begin{equation}
 \label{Eq:example-mixed-determinant}
 d_\ell^{\mathrm{mix}} = C_\ell^{\mathrm{obs},\,11}C_\ell^{\mathrm{th},\,22} + C_\ell^{\mathrm{th},\,11}C_\ell^{\mathrm{obs},\,22} - 2 C_\ell^{\mathrm{th},\,12}C_\ell^{\mathrm{obs},\,12}.
 \end{equation}
                         
-We know that in an ideal full-sky experiment, the different multipoles in an spherical harmonics expansion of a given function are uncorrelated. Then in this simple case one can write the Gaussian likelihood
+It is known that in an ideal full-sky experiment, the different multipoles in an spherical harmonics expansion of a given function are uncorrelated. Then in this simple case one can write the Gaussian likelihood
 \begin{equation}
 \label{Eq:GNC-Gaussian-likelihood}
-\L = \tilde{\N} \Pi_\ell \left\lbrace \frac{1}{(d_\ell^{\mathrm{th}})^{\frac{2\ell+1}{2}}} \exp \left[ -\frac{(2\ell+1)}{2} \frac{d_\ell^{\mathrm{mix}}}{d_\ell^{\mathrm{th}}}\right] \right\rbrace,                         
+\L = \widetilde{\N} \Pi_\ell \left\lbrace \frac{1}{(d_\ell^{\mathrm{th}})^{\frac{2\ell+1}{2}}} \exp \left[ -\frac{(2\ell+1)}{2} \frac{d_\ell^{\mathrm{mix}}}{d_\ell^{\mathrm{th}}}\right] \right\rbrace,                         
 \end{equation}
-where $\tilde{\N}$ is a normalisation constant. The effective chi square is defined as
+where $\widetilde{\N}$ is a normalisation constant. The effective chi square is defined as
 \begin{equation}
 \label{Eq:GNC-effective-chi2}
-\chi^2_\eff \equiv -2 \ln \L = -2 \ln \tilde{\N} + \sum_\ell (2\ell+1)\left( \ln d_\ell^{\mathrm{th}} + \frac{d_\ell^{\mathrm{mix}}}{d_\ell^{\mathrm{th}}} \right), 
+\chi^2_\eff \equiv -2 \ln \L = -2 \ln \widetilde{\N} + \sum_\ell (2\ell+1)\left( \ln d_\ell^{\mathrm{th}} + \frac{d_\ell^{\mathrm{mix}}}{d_\ell^{\mathrm{th}}} \right), 
 \end{equation}
 which is minimal for $d_\ell^{\mathrm{mix}}= N_{\mathrm{bin}} d_\ell^{\mathrm{th}} = N_{\mathrm{bin}} d_\ell^{\mathrm{obs}}$. Having into account the partial sky coverage these definitions lead to a $\chi^2$ relative to the fiducial model given by                     
 \begin{equation}
@@ -217,7 +215,7 @@ We first determine the bias of the parameters due to neglecting the lensing term
 
 \begin{figure*}[bthp]
   \centering
-  \includegraphics[scale=1.2]{figures/chapter-mnu/triangle_figure_MCDM_bias_w_legend.pdf}
+  \includegraphics[width=\textwidth]{figures/chapter-mnu/triangle_figure_MCDM_bias_w_legend.pdf}
   \caption{Two- and 1-D posteriors for the cosmological parameters inferred from the full analysis including lensing (red dotted), an analysis neglecting lensing (blue dashed) and considering only auto-correlations (gray solid).
     The 68\% and 95\% confidence intervals are shown.
     Intersections between vertical and horizontal lines denote the fiducial cosmology.
@@ -402,7 +400,7 @@ Hence, while the details of the analysis are important in determining the actual
 
 \begin{figure}[bthp]
   \centering
-  \includegraphics[scale=1.2]{figures/chapter-mnu/triangle_figure_MCDM_bias_cmb_prior.pdf}
+  \includegraphics[width=\textwidth]{figures/chapter-mnu/triangle_figure_MCDM_bias_cmb_prior.pdf}
   \caption{Two- and 1-D posteriors for the cosmological parameters inferred using Planck priors. We show the full analysis including lensing (red dotted), an analysis neglecting lensing (blue dashed) and considering only auto-correlations (gray solid).
     The 68\% and 95\% confidence intervals are shown.
     Intersections between vertical and horizontal lines denote the fiducial cosmology.
