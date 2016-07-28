@@ -147,22 +147,24 @@ which is minimal for $d_\ell^{\mathrm{mix}}= N_{\mathrm{bin}} d_\ell^{\mathrm{th
 \Delta \chi^2 = \sum_{\ell=2}^{\ell_{\mathrm{max}}} (2\ell+1) f_\fsky \left( \ln \frac{d_\ell^{\mathrm{th}} }{d_\ell^{\mathrm{obs}}} + \frac{d_\ell^{\mathrm{mix}}}{d_\ell^{\mathrm{th}}} - N_{\mathrm{bin}} \right),
 \end{equation}                           
 where to be conservative in the treatment of non-linear effects we use $\ell_{\mathrm{max}}=400$. In order to optimise the computation of the angular power spectra $C_\ell^{\mathrm{A},\,ij}$ we use the Limber approximation and adjust the precision parameters in CLASSgal to have $\Delta \chi^2 \lesssim 0.2$ for $C_\ell^{\mathrm{th}}$ including lensing evaluated at the fiducial model. These adjustments are necessary to make feasible our MCMC approach and mean that our computations are accurate up to $\Delta \chi^2 \lesssim 0.2$.                              
-                     
-With the approach explained above we have performed three analyses, namely:
+                                                                      
+\section{Results}
+\label{chapter-mnu:results}
+
+Utilising the approach explained in Section \ref{chapter-mnu:methodology}, we have performed the three following MCMC  analyses:
+
 \begin{enumerate}
 \item $C_\ell^{\mathrm{th}}$ including lensing convergence.
 \item $C_\ell^{\mathrm{th}}$ neglecting lensing convergence.
 \item $C_\ell^{\mathrm{th}}$ neglecting lensing convergence, but including only auto-correlations.
 \end{enumerate}
-                                                  
-\section{Results}
-\label{chapter-mnu:results}
 
-We have performed the three analyses previously mentioned in two ways. First, we assume no knowledge about cosmological parameters and use flat priors. Second, we have added CMB information by using Gaussian priors with widths given by the Planck results for their analysis which have a varying neutrino mass. 
+We have done these analyses in two ways. First, we assume no previous information and use wide, flat prior distributions for the cosmological parameters. Second, we consider a more realistic scenario where information from a full-sky CMB experiment is provided. In this case we assume a Gaussian prior distribution for the pertinent cosmological parameters; we compute the covariance matrix for a model with varying neutrino mass from information provided by the Planck collaboration. In addition to these two analyses, we do a Fisher matrix analysis no using priors and compare results with the corresponding MCMC analysis. We close this section by estimating the significance of lensing detection with an Euclid-like survey.
 
-\subsection{MCMC with flat prior}
+\subsection{MCMC with wide, flat priors}
 
-We first determine the bias of the parameters due to neglecting the lensing term assuming nearly no prior knowledge. Of course we have to assume some priors for the MCMC chain but they are very wide and flat.
+The Figure \ref{fig:mcmc} shows two- and 1-D posteriors for the three mentioned analyses using wide, flat priors on the cosmological parameters. The corresponding constraints are shown in Table \ref{Table:1}. Red contours indicate results for the analysis that consistently includes lensing convergence in the theoretical model fitting the mock data. The analysis neglecting lensing convergence, but including only red-shift bin auto-correlations (i.e.\ $C_\ell(z,z)$), is depicted in gray. Blue contours show the analysis neglecting lensing, but including all possible red-shift bin correlations (i.e.\ $C_\ell(z,z')$).      
+
 % \begin{table}[!tbhp]
 \begin{table}[!t]
   \centering
@@ -224,36 +226,47 @@ We first determine the bias of the parameters due to neglecting the lensing term
   \label{fig:mcmc}
 \end{figure*}
 
-We have  fitted the generated $C_\ell^{ij}$ data in three different ways,  where lensing convergence is: i) consistently included, ii) neglected, iii) neglected and only redshift bin auto-correlations are taken into account. The results are shown in Table~\ref{Table:1} and Figure~\ref{fig:mcmc}. Fig.~\ref{fig:mcmc} shows 2D contours and 1D probability distribution functions for the marginalized posteriors of the cosmological parameters obtained from these analyses. The red contours (dotted 1D distributions) show the full analysis. They should reproduce the fiducial model. In the analyses shown by the gray (1D solid) and blue (1D dashed) contours lensing is neglected. Furthermore, in the gray  contours only auto-correlations (i.e.\ $C_\ell(z,z)$) are considered, while the blue contours use both auto- and cross-correlations (i.e.\ $C_\ell(z,z')$ for all combinations of redshift bins).
-The auto-correlation case is closer to the standard $P(k)$ analysis which is usually performed in redshift bins, but caution should be taken in comparing the two analyses since binning in redshift has significantly different effects.
+%We have  fitted the generated $C_\ell^{ij}$ data in three different ways,  where lensing convergence is: i) consistently included, ii) neglected, iii) neglected and only redshift bin auto-correlations are taken into account. 
 
-From the red contours in Fig.~\ref{fig:mcmc} it is evident that we cannot determine the baryon and cold dark matter densities very well with our configuration. The rather large redshift bins of our analysis with $\Delta z\gtrsim 0.3$ significantly smear out the baryon acoustic oscillations (BAO's), leaving only the dominant features in the power spectrum which are fixed by the equality scale, $k_{\rm eq} \propto \omega_m/H_0$ (at fixed radiation content and measured in $h/$Mpc) and the ratio $\omega_b/\omega_{\mathrm{cdm}}$. This  leads to a significant  degeneracy between $\omega_b$, $\omega_{\rm cdm}$ and $H_0$, only the slopes of the $(\omega_x,H_0)$ and the $(\omega_b, \omega_{\rm cdm})$  contours are well determined. The large uncertainties in these parameters, as well as the prior $m_\nu\geq 0$, push the posterior mean value away from the best fit (which is always very close to the input value). We did not add realization noise in our likelihood, since it is not relevant for the present study.
-Our aim here is not to derive optimal parameter constraints, but to demonstrate the importance of the lensing contribution in such an analysis. For this reason our approach is far from optimal but  conservative and simple, and even in this case we find that not including lensing leads to wrong results.
-Optimizing error contours by, e.g., introducing more non-linear scales in the analysis is expected to lead to even more biased results, given  that  the relevance of lensing increases at higher multipoles.
+%The results are shown in Table~\ref{Table:1} and Figure~\ref{fig:mcmc}. Fig.~\ref{fig:mcmc} shows 2D contours and 1D probability distribution functions for the marginalized posteriors of the cosmological parameters obtained from these analyses. The red contours (dotted 1D distributions) show the full analysis. They should reproduce the fiducial model. In the analyses shown by the gray (1D solid) and blue (1D dashed) contours lensing is neglected. Furthermore, in the gray  contours only auto-correlations (i.e.\ $C_\ell(z,z)$) are considered, while the blue contours use both auto- and cross-correlations (i.e.\ $C_\ell(z,z')$ for all combinations of redshift bins).
+%The auto-correlation case is closer to the standard $P(k)$ analysis which is usually performed in redshift bins, but caution should be taken in comparing the two analyses since binning in redshift has significantly different effects.
+
+The analysis that consistently includes lensing convergence (red contours in Figure \ref{fig:mcmc}) should output the fiducial model. The corresponding constraints in Table \ref{Table:1} show that the best fitting parameters are indeed very close to the input fiducial parameters (see the amplitude of the shift of the best fit). The amplitude of the shifts of the mean of some parameters (i.e., $m_\nu$, $H_0$, $\omega_{cdm}$, $\omega_b$) reveal the limitations of our analysis. On the one hand, since the main impact of massive neutrinos occurs on small scales and we treat non-linear scales very conservatively, an improvement on the constraints of the neutrino absolute mass scale is expected in an analysis including, for instance, scales up to $\ell=2000$. On the other hand, the universe's expansion rate, the reduced baryon density parameter, and the cold dark matter density parameter are not well constrained due to degeneracies in these parameters (see Figure \ref{fig:mcmc}). These degeneracies come from the dominant contributions in the matter transfer function that are basically fixed by the ratio $\omega_b/\omega_{\mathrm{cdm}}$ and by the scale of the particle horizon at the radiation-matter equality epoch $z_{\mathrm{eq}}$ \cite{Eisenstein:1997ik}. The equality scale $k_{\rm eq}$ behaves like  
+\begin{equation}
+k_{\rm eq} \propto \frac{\omega_m}{H_0},
+\end{equation}      
+where we assume a fixed radiation content and measure $k_{\rm eq}$ in $h/ \Mpc$.  
+%From the red contours in Fig.~\ref{fig:mcmc} it is evident that we cannot determine the baryon and cold dark matter densities very well with our configuration. The rather large redshift bins of our analysis with $\Delta z\gtrsim 0.3$ significantly smear out the baryon acoustic oscillations (BAO's), leaving only the dominant features in the power spectrum which are fixed by the equality scale, $k_{\rm eq} \propto \omega_m/H_0$ (at fixed radiation content and measured in $h/$Mpc) and the ratio $\omega_b/\omega_{\mathrm{cdm}}$. This  leads to a significant  degeneracy between $\omega_b$, $\omega_{\rm cdm}$ and $H_0$, only the slopes of the $(\omega_x,H_0)$ and the $(\omega_b, \omega_{\rm cdm})$  contours are well determined. The large uncertainties in these parameters, as well as the prior $m_\nu\geq 0$, push the posterior mean value away from the best fit (which is always very close to the input value). We did not add realization noise in our likelihood, since it is not relevant for the present study.
+%Our aim here is not to derive optimal parameter constraints, but to demonstrate the importance of the lensing contribution in such an analysis. For this reason our approach is far from optimal but  conservative and simple, and even in this case we find that not including lensing leads to wrong results.
+%Optimizing error contours by, e.g., introducing more non-linear scales in the analysis is expected to lead to even more biased results, given  that  the relevance of lensing increases at higher multipoles.
+
+Gray contours in Figure \ref{fig:mcmc} show the analysis neglecting lensing, but including only red-shift bin auto-correlations. The effective $\Delta \chi^2$ for this case is greater than in the case consistently including lensing, thus suggesting that the model neglecting lensing has difficulties in fitting the mock data. The spectral index and the neutrino mass are significantly biased ($>2.5\sigma$) from the input fiducial parameters. Moreover, a degeneracy between the bias parameter $b_0$ and the amplitude of scalar fluctuations $A_s$ appears. This comes from the fact that the product $A_s b_0^2$ determines the overall amplitude of matter fluctuations and therefore its increase (decrease) signifies an enhancement (decrement) of power on all scales. The bias on $n_s$ and $m_\nu$ can be understood as follows. Since the magnification bias in $s(z)$ Eq. \eqref{Eq:magnification-bias} is relatively large (see Appendix \ref{appendix1-mnu}), the density-lensing correlation term
+\begin{equation}
+b(z)(5s(z)-2)\langle D \kappa \rangle,
+\end{equation}   
+contributes to the power with a positive (negative) sign for red-shift bins with $z>1$ ($z<1$). Because correlations of relatively small red-shifts bins probe mainly small scales, the decrement of power on small scales due to lensing convergence must be corrected in a model no including lensing. This correction can be achieved by lowering the spectral index -- since $P(k) \propto k^{n_s -1}$ -- and increasing the neutrino mass.
+
+Finally, we focus our attention on the analysis that neglects lensing convergence, but includes all red-shift bin correlations (blue contours in Figure \ref{fig:mcmc}). Although bias on cosmological parameters appear to be smaller in this case -- as compared to the gray contours --, this improvement is not significant. Since the lensing term might actually dominate the radial power spectrum at large scales \cite{Bonvin:2011bg}, it is even more difficult for a model that neglects lensing and includes cross-correlations to fit the mock data. This is easily seen with the value of the effective $\Delta \chi^2$ in Table \ref{Table:1}. The $\Delta \chi^2$ increases from $\Delta \chi_{\rm auto}^2\simeq 180$ for the five auto-correlation bins to more than $\Delta \chi_{\rm a+c}^2\gtrsim2000$ when adding the 10 cross-correlation bins. If one naively gives each bin the same weight,  one would expect an increase by a factor 3. We however find an increase
+$\Delta \chi_{\rm a+c}^2/\Delta \chi_{\rm auto}^2\gtrsim 11$.   
+
+Models with additional parameters, but neglecting lensing convergence are likely to weaken the constraints -- introducing new degeneracies -- and produce even stronger biases on the cosmological parameters. Therefore, from the analyses presented above, we conclude that to go beyond the current state and derive accurate estimates of the absolute neutrino mass scale with galaxy surveys absolutely requires taking lensing convergence into account. Figure \ref{fig:cl}   shows number counts angular power spectra for analyses including and neglecting lensing computed at the corresponding best fit (see Table \ref{Table:1}). The thick red lines indicate the model including lensing and the thin blue lines show the model neglecting lensing (including all red-shift bin cross-correlations). For the spectra of the model consistently including lensing, we show 1-$\sigma$ error bars that were computed by assuming Gaussian spectra (see Eq.~(2.13) of \cite{Montanari:2015rga}). Correlations between the red-shift bins $(ij)=(11), ~(55)$ and $(15)$ are shown. One can see that when neglecting lensing, the spectrum for the cross-correlation between red-shift bins $1$ and $5$ lies outside the 1-$\sigma$ error bars around the fiducial spectrum including lensing. This clearly evidences that a  model neglecting lensing convergence cannot fit the mock data.
+
+%If lensing is neglected in the analysis, several parameters
+%show a significant bias with respect to the input parameters (given by the vertical dashed lines)  cf. also Table~\ref{Table:1}.
+%First of all, there is a very strong degeneracy between the scalar amplitude $A_s$ and the bias $b_0$.  When including lensing which does not depend on $b_0$ this degeneracy is broken and both, $b_0$ and $A_s$ are determined accurately. Furthermore, lensing (together with the magnification bias for Euclid specifications) enhances clustering. Compensating this with a larger value of $b_0^2A_s$ leads to too much clustering on small scales, which, in turn, is compensated by reducing the spectral index by $(2-4)\sigma$ and by increasing the neutrino mass.   The preferred neutrino mass
+%is around $0.4\, \mathrm{eV}$, which corresponds just about to the current limits from cosmology~\cite{Ade:2015xua}.
+%From the degeneracy directions in the two-dimensional contours in Fig.~\ref{fig:mcmc}
+%we can also read off that forcing $m_\nu \rightarrow m_\nu^{\rm (fid)} = 0.06\, \mathrm{eV}$ would lead to
+%an even larger bias in the scalar spectral index.
 
 
-If lensing is neglected in the analysis, several parameters
-show a significant bias with respect to the input parameters (given by the vertical dashed lines)  cf. also Table~\ref{Table:1}.
-First of all, there is a very strong degeneracy between the scalar amplitude $A_s$ and the bias $b_0$.  When including lensing which does not depend on $b_0$ this degeneracy is broken and both, $b_0$ and $A_s$ are determined accurately. Furthermore, lensing (together with the magnification bias for Euclid specifications) enhances clustering. Compensating this with a larger value of $b_0^2A_s$ leads to too much clustering on small scales, which, in turn, is compensated by reducing the spectral index by $(2-4)\sigma$ and by increasing the neutrino mass.   The preferred neutrino mass
-is around $0.4\, \mathrm{eV}$, which corresponds just about to the current limits from cosmology~\cite{Ade:2015xua}.
-From the degeneracy directions in the two-dimensional contours in Fig.~\ref{fig:mcmc}
-we can also read off that forcing $m_\nu \rightarrow m_\nu^{\rm (fid)} = 0.06\, \mathrm{eV}$ would lead to
-an even larger bias in the scalar spectral index.
-Therefore, to go beyond the current state and derive accurate estimates of the neutrino masses with galaxy surveys absolutely requires taking lensing into account.
+%It is interesting that taking cross-correlations into account helps somewhat to reduce the bias on the parameters. The scalar spectral index best-fit in this case has a bias of $1.8\sigma$,  as compared to $3.8\sigma$ for auto-correlations only, and the neutrino mass is shifted by $2.2 \sigma$ compared to $2.5\sigma$,
+%see Table~\ref{Table:1}. But this `improvement' is actually not real. It comes to a big extent from the fact that cross-correlations simply cannot be fitted without the lensing term as discussed below and shown in Fig.\ \ref{fig:cl}.  This is most manifest in the  total $\Delta \chi^2$ which increases from $\Delta \chi_{\rm auto}^2\simeq 180$ for the five auto-correlation bins to more than $\Delta \chi_{\rm a+c}^2\gtrsim2000$ when adding the 10 cross-correlation bins. Giving each bin naively the same weight we would expect an increase by a factor 3, instead we have
+%$\Delta \chi_{\rm a+c}^2/\Delta \chi_{\rm auto}^2\gtrsim 11$.
+%The increase in the size of the parameter contours for some parameters appears at first counter-intuitive as including more data improves our knowledge and therefore should reduce the errors.
+%This simple logic, however, only applies if the data can actually be fitted by the model at hand or if the likelihoods are Gaussian. Otherwise, different data may prefer different model parameters and lead to an increase not only in the total $\Delta \chi^2$ but also in the size of the confidence contours.
 
-For models with additional parameters, the possibilities to improve the fit by choosing `wrong' values of the parameters increase and we may see even larger biases, leading to even stronger spurious detections of new physics.
 
-It is interesting that taking cross-correlations into account helps somewhat to reduce the bias on the parameters. The scalar spectral index best-fit in this case has a bias of $1.8\sigma$,  as compared to $3.8\sigma$ for auto-correlations only, and the neutrino mass is shifted by $2.2 \sigma$ compared to $2.5\sigma$,
-see Table~\ref{Table:1}. But this `improvement' is actually not real. It comes to a big extent from the fact that cross-correlations simply cannot be fitted without the lensing term as discussed below and shown in Fig.\ \ref{fig:cl}.  This is most manifest in the  total $\Delta \chi^2$ which increases from $\Delta \chi_{\rm auto}^2\simeq 180$ for the five auto-correlation bins to more than $\Delta \chi_{\rm a+c}^2\gtrsim2000$ when adding the 10 cross-correlation bins. Giving each bin naively the same weight we would expect an increase by a factor 3, instead we have
-$\Delta \chi_{\rm a+c}^2/\Delta \chi_{\rm auto}^2\gtrsim 11$.
-The increase in the size of the parameter contours for some parameters appears at first counter-intuitive as including more data improves our knowledge and therefore should reduce the errors.
-This simple logic, however, only applies if the data can actually be fitted by the model at hand or if the likelihoods are Gaussian. Otherwise, different data may prefer different model parameters and lead to an increase not only in the total $\Delta \chi^2$ but also in the size of the confidence contours.
-
-We can understand our results by looking at the differences in the harmonic power spectra shown in Fig.\ \ref{fig:cl}.
-The thick red and thin blue lines are the angular spectra computed at the best fit values shown in Table~\ref{Table:1} for the consistent case including lensing, and for the one neglecting it, respectively (we include all redshift bin correlations).
-For the consistent spectra including lensing, we compute 1-$\sigma$ error bars at each multipole by assuming, as for Eq.~(\ref{eq:chi2}), Gaussian spectra (see Eq.~(2.13) of \cite{Montanari:2015rga}).
-We consider the representative correlations between the redshift bins $(ij)=(11), ~(55)$ and $(15)$ .
-The plot shows that, when neglecting lensing, the spectrum for the cross-correlation between redshift bins 1 and 5 lies outside the 1-$\sigma$ error bars around the fiducial spectrum including lensing. This confirms that the model cannot fit the mock data.
 
 \begin{figure}[tp]
   \centering
