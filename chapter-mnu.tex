@@ -61,8 +61,9 @@ In this project we have used synthetic galaxy clustering data for a survey consi
 \item the number of galaxies per red-shift and per steradian 
 \begin{equation}
 \label{Eq:dNdzdOmega}
-\dfrac{dN}{dzd\Omega} = 3.5\times 10^8 z^2 \exp \left[-\left( \frac{z}{z_0} \right)^{3/2} \right] \qquad z_0=0.637; 
+\dfrac{dN}{dzd\Omega} = 3.5\times 10^8 z^2 \exp \left[-\left( \frac{z}{z_0} \right)^{3/2} \right] \qquad z_0=0.637, 
 \end{equation}
+is shown in Figure \ref{fig:dNdz};
 \item the number of galaxies per steradian within a given red-shift bin is 
 \begin{equation}
 \label{Eq:number-galaxies-per-bin}
@@ -84,8 +85,30 @@ with $s_0 = 0.1194,\, s_1 = 0.2122,\, s_2 = -0.0671,\, s_3 = 0.1031$;
 f_{\mathrm{evo}}(z) \equiv \dfrac{\partial \ln \left( a^3 \dfrac{dN}{dzd\Omega}  \right)}{\partial \ln a},
 \label{Eq:evolution-bias}
 \end{equation}    
-where $a$ is the scale factor and we assume that the survey observes all the galaxies in the windows.
+where $a$ is the scale factor and we assume that the survey observes all the galaxies in the windows. The galaxy bias and the magnification bias are shown in Figure \ref{fig:bs}.
 \end{itemize}   
+
+\begin{figure}[hbtp]
+%\vspace{0.3cm}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/chapter-mnu/euclid_5bin.pdf}
+\end{center}
+\caption{Euclid photometric galaxy density distribution (black line) with a division into 5 bins containing the same number of galaxies.
+}
+\label{fig:dNdz}
+\end{figure}
+
+%
+\begin{figure}[hbtp]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/chapter-mnu/bs.pdf}
+\end{center}
+\caption{Galaxy bias $b_G(z)$ and magnification bias $s(z)$ for Euclid. The
+magnification bias is computed at the limiting magnitude $m_{\rm lim}=24.5$.
+As a reference, we also plot the value $s=0.4$ at which the lensing contribution to number counts changes sign.
+}
+\label{fig:bs}
+\end{figure}
 
 Having the survey specifications we can compute angular matter power spectrum as in Eq. \eqref{Eq:binned-angular-matter-power-spectrum}. We have utilised the code CLASSgal \cite{DiDio:2013bqa} where galaxy number counts have been implemented including relativistic corrections in Eq. \eqref{Eq:galaxy-number-counts-perturbation}. In Figure \ref{Fig:comparison-massive-massless-Cls} we compare galaxy number counts angular power spectrum for a model with massive neutrinos and a model where neutrinos are massless. In the next section we study the importance of including the effect of lensing convergence in galaxy clustering analyses when determining the neutrino mass. 
 
@@ -240,7 +263,7 @@ where we assume a fixed radiation content and measure $k_{\rm eq}$ in $h/ \Mpc$.
 %Our aim here is not to derive optimal parameter constraints, but to demonstrate the importance of the lensing contribution in such an analysis. For this reason our approach is far from optimal but  conservative and simple, and even in this case we find that not including lensing leads to wrong results.
 %Optimizing error contours by, e.g., introducing more non-linear scales in the analysis is expected to lead to even more biased results, given  that  the relevance of lensing increases at higher multipoles.
 
-Gray contours in Figure \ref{fig:mcmc} show the analysis neglecting lensing, but including only red-shift bin auto-correlations. The effective $\Delta \chi^2$ for this case is greater than in the case consistently including lensing, thus suggesting that the model neglecting lensing has difficulties in fitting the mock data. The spectral index and the neutrino mass are significantly biased ($>2.5\sigma$) from the input fiducial parameters. Moreover, a degeneracy between the bias parameter $b_0$ and the amplitude of scalar fluctuations $A_s$ appears. This comes from the fact that the product $A_s b_0^2$ determines the overall amplitude of matter fluctuations and therefore its increase (decrease) signifies an enhancement (decrement) of power on all scales. The bias on $n_s$ and $m_\nu$ can be understood as follows. Since the magnification bias in $s(z)$ Eq. \eqref{Eq:magnification-bias} is relatively large (see Appendix \ref{appendix1-mnu}), the density-lensing correlation term
+Gray contours in Figure \ref{fig:mcmc} show the analysis neglecting lensing, but including only red-shift bin auto-correlations. The effective $\Delta \chi^2$ for this case is greater than in the case consistently including lensing, thus suggesting that the model neglecting lensing has difficulties in fitting the mock data. The spectral index and the neutrino mass are significantly biased ($>2.5\sigma$) from the input fiducial parameters. Moreover, a degeneracy between the bias parameter $b_0$ and the amplitude of scalar fluctuations $A_s$ appears. This comes from the fact that the product $A_s b_0^2$ determines the overall amplitude of matter fluctuations and therefore its increase (decrease) signifies an enhancement (decrement) of power on all scales. The bias on $n_s$ and $m_\nu$ can be understood as follows. Since the magnification bias in $s(z)$ Eq. \eqref{Eq:magnification-bias} is relatively large (see Figure \ref{fig:bs}), the density-lensing correlation term
 \begin{equation}
 b(z)(5s(z)-2)\langle D \kappa \rangle,
 \end{equation}   
