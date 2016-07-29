@@ -348,40 +348,29 @@ While the Fisher formalism is reliable for a qualitative understanding of parame
 
 \subsection{Fisher analysis without priors}\label{s:fisher}
 
-The shift of best fit parameters  and the change in the figure of merit due to neglecting relativistic corrections (hence, in particular, neglecting lensing) has been studied previously, see e.g.~\cite{Namikawa:2011yr,Duncan:2013haa,Camera:2014sba,Raccanelli:2015vla}. However, these previous works did not include massive neutrinos and they used a Fisher matrix analysis which gives quantitative estimates for shifts only if these are significantly less than one standard deviation.
-Hence the results obtained in these works can only be trusted qualitatively while the MCMC study presented here gives quantitative results and demonstrates that large biases, exceeding by far $1\sigma$, are to be expected even for not very ambitious survey specifications.
+An alternative, widely used approach to make forecasts is the Fisher matrix method \cite{Namikawa:2011yr,Duncan:2013haa,Camera:2014sba,Raccanelli:2015vla}. In this subsection, we compare how well a Fisher matrix technique performs as compared to the MCMC method of the precedent subsection. Since we have seen the biases on cosmological parameters might reach several standard deviations when neglecting lensing convergence in the analysis, we expect the Fisher matrix forecasts to be not very reliable (see Section \ref{chapter-mnu:methodology}). The basic expressions of the Fisher matrix formalism are explained in the Appendix \ref{appendix2-mnu}.
+ 
+The figure \ref{fig:fisher} shows two- and 1-D posteriors for two Fisher analyses. Red contours indicate forecasts for an analysis consistently including lensing convergence, whereas yellow contours show results for an analysis where lensing is neglected (not only in the model, but also in the underlying universe). Red contours in both Figure \ref{fig:mcmc} and Figure \ref{fig:fisher} can therefore be directly compared. The shifts of the best fit parameters for analyses neglecting lensing are computed as explained in Appendix \ref{appendix2-mnu} and shown in Table \ref{Table:Fisher}. The standard deviations $\sigma$ in this Table refer to the model neglecting lensing which provides more conservative information about the importance of the systematic error. 
+%We stress that in both cases, without and with lensing, Fisher matrices only forecast error contours around a universe described by the fiducial parameters and assume a Gaussian likelihood.
+%  While the MCMC analysis allows us to fit the wrong or the correct model to the data, in the Fisher context this is not possible.
+%  E.g., in the case without lensing we ask the outcome of fitting a model without lensing to a Universe without lensing.
+%  Hence, while the red dotted contours `with lensing' can be compared between Figures \ref{fig:mcmc} and \ref{fig:fisher}, the other contours have no correspondence between the two figures.
 
-We illustrate this here by repeating our analysis with a Fisher matrix technique.
-The results are presented in Figure \ref{fig:fisher}, where we also show the shifts of the best fit values estimated via Fisher matrices (see appendix~\ref{app:fisher} for details).
-  Fisher matrix contours are reported for both cases, without and including lensing.
-  This information is also reported in Table \ref{Table:Fisher}, where the standard deviations, $\sigma$, refer to the case without lensing, which provides more conservative information about the importance of the systematic error.
-  We stress that in both cases, without and with lensing, Fisher matrices only forecast error contours around a universe described by the fiducial parameters and assume a Gaussian likelihood.
-  While the MCMC analysis allows us to fit the wrong or the correct model to the data, in the Fisher context this is not possible.
-  E.g., in the case without lensing we ask the outcome of fitting a model without lensing to a Universe without lensing.
-  Hence, while the red dotted contours `with lensing' can be compared between Figures \ref{fig:mcmc} and \ref{fig:fisher}, the other contours have no correspondence between the two figures.
-  In our case Fisher matrices provide a good qualitative description of degeneracy between different parameter constraints. The 68\% confidence intervals are in disagreement with MCMC results by a factor 2-3, but the shape and inclination of the ellipses very roughly follow the MCMC contours.
-  However, the magnitude and direction of the best-fit shift in parameter space due to neglecting lensing is seriously misestimated.
-  Indeed, the first-order formalism that we use to estimate the shift in the best-fits due to a systematic error is only valid to the extent that the shift is small compared to the errors (error contours are themselves meaningful only close enough to the fiducial cosmology), and also assuming that the systematic error does not affect the ellipse contours \cite{Kitching:2008eq}.
-  Neither of these conditions is actually satisfied.
+Comparing Figures \ref{fig:mcmc} and \ref{fig:fisher}, we can see that the Fisher matrix analysis provides a good qualitative description of degeneracy between different parameter constraints. Although the 68\% confidence intervals are in disagreement with MCMC results by a factor 2-3, the shape and inclination of the ellipses very roughly follow the MCMC contours. On the other hand, the Fisher matrix analysis badly fails in determining the magnitude and direction of the best-fit shift in parameter space. Indeed, the first-order formalism that we use to estimate the shift in the best-fitting parameters due to a systematic error -- neglecting lensing convergence -- is valid as long as the shift is small compared to the errors, and it also assumes that the systematic error does not affect the ellipse contours \cite{Kitching:2008eq}. The results from the MCMC approach in the previous subsection and the contours depicted in Figure \ref{fig:fisher} clearly show that these assumptions are not fulfilled in the present case.
 
 \subsection{MCMC with Planck Gaussian prior}
 
-A more realistic analysis makes use of prior knowledge of parameters from previous experiments. We therefore
-repeat our MCMC analysis using Planck priors for all the cosmological parameters except the bias, which is not measured in {\it Planck}, and the neutrino mass. The latter is our most interesting parameter and we want to test how strongly it is biased in an analysis which neglects lensing.
+As discussed above, degeneracies in parameter space limit the constraints from measurements of the galaxy power spectrum. This difficulty is usually tackled by applying a variety of priors or constraints on parameters, and combining the galaxy clustering data with other cosmological measures, such as CMB experiments \cite{Tegmark:2003ud}. We therefore
+repeat our MCMC analysis using Planck priors for all the cosmological parameters except the bias $b_0$, which is not measured in {\it Planck}, and the neutrino mass. The latter is our most interesting parameter and we want to test how strongly it is biased in an analysis which neglects lensing.
 
-{\it Planck} chains are publicly available through the \textit{Planck Legacy Archive}. In this paper we use the chain for the extended model with a free neutrino mass based on the {\it Planck} TT, TE, EE + lowP likelihoods (Equation [54c] in \cite{Ade:2015xua}). We compute the covariance matrix $\mathbf{C}$ for the cosmological parameters $\vec{x}=(\omega_b,\omega_{\mathrm{cdm}},n_s,A_s,H_0)$ and assume a Gaussian distribution for the prior. The $\chi^2$ relative to the fiducial model including the Planck prior is then the $\Delta \chi^2$ in Eq. \eqref{eq:chi2} plus
+{\it Planck} chains are publicly available through the \textit{Planck Legacy Archive}. In this paper we use the chain for the extended model with a free neutrino mass based on the {\it Planck} TT, TE, EE + lowP likelihoods (Equation [54c] in \cite{Ade:2015xua}). We compute the covariance matrix $\mathbf{C}$ for the cosmological parameters $\vec{x}=(\omega_b,\omega_{\mathrm{cdm}},n_s,A_s,H_0)$ and assume a Gaussian distribution for the prior. The $\chi^2$ relative to the fiducial model including the Planck prior is then the $\Delta \chi^2$ in Eq. \eqref{Eq:relative-chi2} plus
 \begin{equation}
 \Delta \chi^2_{\mathrm{prior}} = \sum_{i,j} (x_i - x^{\mathrm{fid}}_i)^2 C^{-1}_{ij} (x_j - x^{\mathrm{fid}}_j)^2,
 \label{Eq:chi2-prior}
 \end{equation}
-where $\vec{x}^{\mathrm{fid}}$ denotes parameters of the fiducial model and $\mathbf{C^{-1}}$ is the inverse of the covariance matrix.
-In this way we marginalize the Planck prior over the neutrino mass and the optical depth, $\tau$, which are parameters that we want to leave free since we want to determine the first and our survey is not sensitive to the second. The results are shown in Table~\ref{Table:2} and Fig.~\ref{fig:mcmc-cmb-prior}.
+where $\vec{x}^{\mathrm{fid}}$ denotes parameters of the fiducial model and $\mathbf{C^{-1}}$ is the inverse of the covariance matrix. In this way we marginalize the Planck prior over the neutrino mass and the optical depth, $\tau$, which are parameters that we want to leave free since we want to determine the first and our survey is not sensitive to the second. The results are shown in Table~\ref{Table:2} and Fig.~\ref{fig:mcmc-cmb-prior}.
 
-
-Cosmological parameters in this case are clearly better determined than for the case without priors.
-While the spectral index $n_s$ shows now a smaller relative shift, the neutrino masses and galaxy bias actually acquire larger shifts.
-The incompatibility of data and model pulls the Hubble parameter $H_0$ away from the fiducial value by over $4\sigma$ in spite of the Planck prior.
-Hence, while the details of the analysis are important in determining the actual size of error bars and degeneracies in parameter space, a large bias $2\sigma$--$9\sigma$ in the neutrino masses is a feature that persists in all the analyses here performed.
+Red contours in Figure \ref{fig:mcmc-cmb-prior} indicate the full analysis including lensing convergence. Adding CMB information clearly helps to remove degeneracies and cosmological parameters are now better determined than for the case with wide, flat priors. Blue and gray contours show analyses neglecting lensing convergence. While the spectral index $n_s$ shows now a smaller relative shift, the neutrino masses and galaxy bias actually acquire larger shifts. Since the model neglecting lensing must correct the number counts angular power spectrum on small scales by increasing neutrino mass and lowering spectral index, the Hubble parameter $H_0$ is pulled away from the fiducial value by over $4\sigma$ in spite of the Planck prior. Hence, while the details of the analysis are important in determining the actual size of error bars and degeneracies in parameter space, a large bias $2\sigma$--$9\sigma$ in the neutrino masses is a feature that persists in all the analyses here performed. Lensing convergence must be included when analysing data from future galaxy surveys, otherwise constraints on the neutrino mass will be in a high degree biased.  
 
 
 \begin{table}[!t]
@@ -449,13 +438,15 @@ Hence, while the details of the analysis are important in determining the actual
 
 We can quantify the strength with which we detect the lensing signal in our setup with the help of Bayesian model probabilities, comparing the case with lensing to the case without lensing. To do this, we introduce formally an extended model $\MM_L$ with an additional `lensing amplitude' parameter $A_L$ that multiplies the lensing contribution in the model. For the `with lensing' model $\MM_1$ we then set $A_L = 1$, while the `without lensing' case $\MM_0$ corresponds to $A_L=0$. In this way the two models are nested within the extended model and we can use the Savage-Dickey density ratio (SDDR) method to derive model probabilities (see e.g.\ \cite{Trotta:2005ar} for an explanation of the SDDR, and section 3 of \cite{Dirian:2016puz} for a more detailed description of the same reasoning as the one used here): with the SDDR, the Bayes factor $B$ between the case with fixed $A_L$ and the general case is given by the posterior for $A_L$ (marginalised over all other parameters) of the general model divided by prior, both taken at the nested point,
 \begin{equation}
-B_x \equiv \frac{P(D|\MM_x)}{P(D|\MM_L)} = \frac{P(A_L=x|D,\MM_L)}{P(A_L=x|\MM_L)} \, .
+B_x \equiv \frac{P(D|\MM_x)}{P(D|\MM_L)} = \frac{P(A_L=x|D,\MM_L)}{P(A_L=x|\MM_L)} \, ,
 \end{equation}
-Here $P$ denote probabilities, $D$ the data and $x$ is either 0 or 1.
+where $P$ denote probabilities, $D$ the data and $x$ is either 0 or 1.
 %$\theta$ the other parameters in the model.
-The Bayes factor between two models with given fixed values for $A_L$ is then simply the ratio of the Bayes factors relative to the extend model,
+The Bayes factor between two models with given fixed values for $A_L$ is then simply the ratio of the Bayes factors relative to the extend model, 
+\begin{equation}
+B_{xy} \equiv \frac{P(D|\MM_x)}{P(D|\MM_y)} \nonumber
+\end{equation}
 \begin{eqnarray}
-B_{xy} &\equiv& \frac{P(D|\MM_x)}{P(D|\MM_y)} \nonumber \\
 &=& \frac{P(D|\MM_x)}{P(D|\MM_L)} \frac{P(D|\MM_L)}{P(D|\MM_y)} = \frac{B_x}{B_y} \nonumber \\
  &=& \frac{P(A_L=x|D,\MM_L)}{P(A_L=y|D,\MM_L)} \, ,
 \end{eqnarray}
@@ -471,16 +462,21 @@ This also confirms the result of~\cite{Montanari:2015rga}, which found that the 
 \section{Conclusions}
 \label{chapter-mnu:conclusions}
 
-In this paper we have shown that neglecting  lensing convergence leads to large shifts in the best fit values of cosmological parameters for the data sets
-available from future surveys. As in the CMB, where the lensing of the power spectra is detected at over $10\sigma$ \cite{Ade:2015xua},
-it will become mandatory to include lensing also in the analysis of galaxy surveys.
+Future galaxy surveys will probe scales comparable to the horizon. The come of all this new data will make necessary very careful analyses and appropriate modelling of the statistical properties of the matter density field. In this chapter we have investigated the impact of lensing convergence on constraints of cosmological parameters. We have utilised both MCMC and Fisher matrix approaches to study the importance of including lensing convergence when analysing galaxy clustering data. Although the Fisher matrix formalism provides qualitative information about degeneracies in the parameter space, it badly fails in determining quantitative estimations of shifts in the best fitting parameters. When performing the analysis with a MCMC approach we have found that biases of best fitting cosmological parameters might reach several standard deviations when lensing convergence is neglected in the analysis. Since the Fisher matrix technique is reliable only for shifts relatively small, this explains why Fisher matrix results wrongly estimate the bias on cosmological parameters: for shifts bigger than $2\sigma$ the linear approximation in the Fisher formalism breaks down. A MCMC method is therefore suitable as we have shown.
 
-In the case studied here we have seen mainly an increase in the neutrino mass $m_\nu$ and a decrease in the spectral index $n_s$ when neglecting lensing. Also the product $A_sb_0^2$ which determines the amplitude of fluctuations increases. This comes from the fact that the magnification bias for the Euclid specifications is relatively large~\cite{Montanari:2015rga} (see also Appendix~\ref{apa}), so that the  density-lensing correlation in bins with $z>1$ contributes with a positive sign. At smaller redshifts which mainly measure correlations on smaller scales this has to be corrected since there the total lensing term $\propto (5s-2)\kappa$ contributes negatively. This can be achieved by lowering $n_s$ and increasing the neutrino mass.
+We have seen that analysis neglecting lensing convergence lead to biased cosmological constraints. The spectral index $n_s$ and the neutrino mass $m_\nu$ are particularly affected. When neglecting lensing a degeneracy between the amplitude of scalar fluctuations $A_s$ and the galaxy bias parameter $b_0$ appears. One understands this by noting that the product $b_0^2 A_s$ determines the amplitude of the matter power spectrum, so $b_0^2 A_s$ increases in analysis neglecting lensing to enhance power on all scales. Since the density-lensing contribution to the number counts angular power spectrum can become negative for small red-shift bins, therefore decreasing power on small scales, its effect can be mimic by changes on $n_s$ and $m_\nu$: decreasing the spectral index and increasing the neutrino mass one obtains a damped matter power spectrum on small scales.
 
-We note that
-the specific shifts which we have obtained in our analysis depend  on the details of the survey. The main, generic result is that in order to estimate cosmological parameters reliably with future galaxy surveys, we have to correctly include lensing with the measured magnification bias function, $s(z)$, defined by
-$$ s(z)  \equiv \frac{\partial\log_{10} N(z,m<m_*)}{\partial m_*}\,,  $$
-where $m_*$ is the limiting magnitude of the survey and $N(z,m)$ is the galaxy luminosity function of the survey at redshift $z$.
+Finally, we conclude by noting that the specific shifts on the best fitting cosmological parameters depend on the details of the survey. Although in this project we have used specifications for an Euclid-like survey, the important point is that a consistent analysis of galaxy clustering data must take into account the magnification bias defined by      
+%In this paper we have shown that neglecting  lensing convergence leads to large shifts in the best fit values of cosmological parameters for the data sets
+%available from future surveys. As in the CMB, where the lensing of the power spectra is detected at over $10\sigma$ \cite{Ade:2015xua},
+%it will become mandatory to include lensing also in the analysis of galaxy surveys.
 
-The fact that deep galaxy surveys are so sensitive to lensing, however, is not only a curse but also a blessing. It means that these surveys will allow us to determine a map of the lensing potential at different redshifts, i.e.\ perform `lensing tomography' with galaxy clustering. This will be a very interesting alternative to lensing tomography with shear measurements proposed, e.g.\
+%In the case studied here we have seen mainly an increase in the neutrino mass $m_\nu$ and a decrease in the spectral index $n_s$ when neglecting lensing. Also the product $A_sb_0^2$ which determines the amplitude of fluctuations increases. This comes from the fact that the magnification bias for the Euclid specifications is relatively large~\cite{Montanari:2015rga} (see also Appendix~\ref{apa}), so that the  density-lensing correlation in bins with $z>1$ contributes with a positive sign. At smaller redshifts which mainly measure correlations on smaller scales this has to be corrected since there the total lensing term $\propto (5s-2)\kappa$ contributes negatively. This can be achieved by lowering $n_s$ and increasing the neutrino mass.
+
+%We note that
+%the specific shifts which we have obtained in our analysis depend  on the details of the survey. The main, generic result is that in order to estimate cosmological parameters reliably with future galaxy surveys, we have to correctly include lensing with the measured magnification bias function, $s(z)$, defined by
+\begin{equation}
+s(z)  \equiv \frac{\partial\log_{10} N(z,m<m_*)}{\partial m_*}\,,
+\end{equation}
+where $m_{\mathrm{lim}}$ is the limiting magnitude of the survey and $N(z,m)$ is the galaxy luminosity function of the survey at redshift $z$. Our results show that a correct modelling of number counts might lead to detection of lensing with high significance as in the case of CMB. The fact that deep galaxy surveys are so sensitive to lensing, however, is not only a curse but also a blessing. It means that these surveys will allow us to determine a map of the lensing potential at different redshifts, i.e.\ perform `lensing tomography' with galaxy clustering. This will be a very interesting alternative to lensing tomography with shear measurements proposed, e.g.\
 in~\cite{Heavens:2003jx}. Both techniques are challenging but they have different systematic errors and allow valuable cross-checks. So clearly both paths should be pursued.

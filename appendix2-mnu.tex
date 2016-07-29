@@ -1,35 +1,37 @@
 \chapter{Basic expressions for the Fisher analysis}
 \label{appendix2-mnu}
 
-The Fisher approach used in the literature~\cite{Namikawa:2011yr,Duncan:2013haa,Camera:2014sba,Raccanelli:2015vla} and applied in Section~\ref{s:fisher} for comparison with the results from our MCMC forecasts is based on the Fisher information matrix given by
+The Fisher information matrix $F_{\alpha\beta}$ is given by
 \begin{equation}
 F_{\alpha\beta} =
-\sum_{\ell} \sum_{(ij)(pq)} \frac{\partial C_\ell^{ij}}{\partial \theta_\alpha}
+\sum_{\ell=2}^{\ell_{\mathrm{max}}} \sum_{(ij)(pq)} \frac{\partial C_\ell^{ij}}{\partial \theta_\alpha}
 \frac{\partial C_\ell^{pq}}{\partial
 \theta_\beta} {{\rm Cov}_{C_{\ell \, \rm[(ij), (pq)]}}^{-1}} \, ,
 \label{eq:Fisher}
 \end{equation}
-where $\theta_a$ denotes a given cosmological parameter.
-We compute the derivatives with a five-point stencil \cite{Montanari:2015rga}, and the derivative step for each parameter is set with an iterative procedure to be of the same size as the 1-$\sigma$ levels obtained when fixing the other parameters $\sigma_{\theta_{\alpha}}=1/\sqrt{F_{\alpha\alpha}}$.
-We verified that the final results do not depend significantly on the particular step values.
-We sum up to $\ell=400$, while the second sum is over the matrix indices $(ij)$ with $i \leq j$ and $(pq)$ with $p \leq q$ which run from 1 to the total number of bins when all bin auto- and cross-correlations are taken into account.
-Using the same notation as in Eq.~(\ref{eq:Cl_th_obs}), the covariance matrix is
+where $\theta_a$ denotes a given cosmological parameter, $C_\ell^{ij}$ is the number counts angular power spectrum of Eq. \eqref{Eq:binned-angular-matter-power-spectrum}, and the covariance matrix ${{\rm Cov}_{C_{\ell \, \rm[(ij), (pq)]}}^{-1}}$ is
 \begin{equation}
 \label{eq:err-clgt}
-{\rm Cov}_{C_{\ell \, \rm[(ij), (pq)]}} = \frac{C^{\rm A, (ip)}_{\ell} C^{\rm A, (jq)}_{\ell} + C^{\rm A, (iq)}_{\ell} C^{\rm A, (jp)}_{\ell}}{(2\ell+1)f_{\rm sky}}.
+{\rm Cov}_{C_{\ell \, \rm[(ij), (pq)]}} = \frac{C^{\rm A, (ip)}_{\ell} C^{\rm A, (jq)}_{\ell} + C^{\rm A, (iq)}_{\ell} C^{\rm A, (jp)}_{\ell}}{(2\ell+1)f_{\rm sky}},
 \end{equation}
-If only auto-correlations are taken into account, the covariance must be first reduced to the relevant components, and subsequently inverted.
-We estimate the shift in the best-fit values due to the wrong model assumption $\widetilde{C}_{\ell}$ by defining the systematic error as $\Delta C_{\ell}=C_{\ell}-\widetilde{C}_{\ell}$ \cite{Knox:1998fp,Heavens:2007ka,Kitching:2008eq,Camera:2014sba}:
+where $A=\mathrm{obs},\,\mathrm{th}$; $i,j,p,q = 1,...,N_{\mathrm{bin}}$; and $f_{\mathrm{sky}}$ is the covered sky fraction. The derivatives in Eq. \eqref{eq:Fisher} are computed with a five-point stencil \cite{Montanari:2015rga}; we  choose the step for each parameter with an iterative procedure: the step is chosen to be of the same size as the 1-$\sigma$ widths obtained when fixing the other parameters $\sigma_{\theta_{\alpha}}=1/\sqrt{F_{\alpha\alpha}}$.
+We have verified that our results are not significantly affected by the particular step values. Since we treat non-linearities in a conservative way, we sum up to $\ell_{\mathrm{max}}=400$. The second sum in Eq. \eqref{eq:Fisher} is over the couple of matrix indices $(ij)$ and $(pq)$ with $i \leq j$ and $p \leq q$ which run from $1$ to the total number of bins $N_{\mathrm{bin}}$ when all bin auto- and cross-correlations are taken into account.
+
+In an analysis only including auto-correlations the covariance matrix \eqref{eq:err-clgt} must be first reduced to the relevant components, and subsequently inverted. We denote the number counts angular power spectrum of a model neglecting lensing convergence by $\widetilde{C}_{\ell}$. The shift in the best-fit values due to neglecting lensing convergence is estimated through the systematic error \cite{Knox:1998fp,Heavens:2007ka,Kitching:2008eq,Camera:2014sba}
+\begin{equation}
+\Delta C_{\ell}=C^{\obs}_{\ell}-\widetilde{C}_{\ell}
+\end{equation}  
+where $C^{\obs}_{\ell}$ consistently includes lensing convergence. The bias induced by incomplete modelling of number counts angular power spectrum is then given by
 \begin{equation}
 \label{eq:shift}
 \Delta_{\theta_{\alpha}}=\sum_{\beta} \left[\left(\widetilde{F}\right)^{-1}\right]_{\alpha\beta} B_{\beta} \;,
 \end{equation}
-where we defined
+where
 \begin{equation}
-B_{\beta} = \sum_{(ij)(pq)} \sum_{\ell} \Delta C_{\ell}^{ ij} \frac{\partial \widetilde{C}_{\ell}^{pq}}{\partial \theta_{\beta}} {\rm Cov}_{\widetilde{C}_{\ell \, \rm[(ij), (pq)]}}^{-1} \;.
+B_{\beta} \equiv \sum_{(ij)(pq)} \sum_{\ell} \Delta C_{\ell}^{ ij} \frac{\partial \widetilde{C}_{\ell}^{pq}}{\partial \theta_{\beta}} {\rm Cov}_{\widetilde{C}_{\ell \, \rm[(ij), (pq)]}}^{-1} \;,
 \end{equation}
-A tilde always denote the quantity computed according to the wrong model $\widetilde{C}_{\ell}$.
-This expression assumes that the systematic error does not affect the covariance, and it is only valid if the shifts are small compared to the variances $\Delta^2_{\theta_{\alpha}}/\sigma^2_{\theta_{\alpha}}<1$.
-As mentioned in the text, neither of these hypothesis is satisfied in our case.
-Furthermore, note that Eq.~(\ref{eq:Fisher}) can only be used to estimate error contours by assuming that the underlying Universe is described either by $C_{\ell}$ or by $\tilde{C}_{\ell}$, and does not give information about error contours obtained when  fitting the wrong model $\tilde{C}_{\ell}$ to data consistent with the full $C_{\ell}$ spectra.
+and a tilde always denote the quantity computed according to the model neglecting lensing convergence.
+This expression assumes that the systematic error does not affect the covariance. Moreover, it is only valid if the shifts \eqref{eq:shift} are small compared to the variances $\Delta^2_{\theta_{\alpha}}/\sigma^2_{\theta_{\alpha}}<1$.
+The MCMC analysis shows that biases in cosmological parameters due to neglecting lensing convergence easily reach several standard deviations, so none of these assumptions is satisfied in our case.
+Another point worth noticing is that Eq.~(\ref{eq:Fisher}) can only be used to estimate error contours by assuming that the underlying universe is described either by $C_{\ell}$ or by $\tilde{C}_{\ell}$, and does not give information about error contours obtained when  fitting the wrong model $\tilde{C}_{\ell}$ to data consistent with the full $C_{\ell}$ spectra. This signifies an advantage of the MCMC approach over the Fisher matrix technique, as shown in Chapter \ref{chapter-mnu}.
 
