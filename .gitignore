@@ -3,10 +3,10 @@ build/*.
 *.bbl
 *.blg
 *.dvi
-*.pdf
 *.out
 *.toc
 *.log
 *.lot
 *.idx
 *.lof
+Thesis.pdf
