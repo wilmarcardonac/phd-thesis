@@ -94,10 +94,19 @@ In Fig. \ref{Fig:1} we show angular power spectra for the V-map, S-map, and the 
 
 \begin{figure}
 \centering
+\includegraphics[scale=0.4]{figures/chapter-vsk/vmap-inpainted-smica.pdf}\\
+\includegraphics[scale=0.4]{figures/chapter-vsk/smap-inpainted-smica.pdf}\\
+\includegraphics[scale=0.4]{figures/chapter-vsk/kmap-inpainted-smica.pdf}
+\caption{$N'_{side = 2}$ V-map (\textit{upper}), S-map (\textit{middle}), and K-map (\textit{lower}) for the $N_{side} = 2048$ inpainted SMICA CMB estimate.}
+\label{Fig:3}
+\end{figure}
+
+\begin{figure}
+\centering
 \includegraphics[scale=0.3]{figures/chapter-vsk/Inp_Vl.pdf}
 \includegraphics[scale=0.3]{figures/chapter-vsk/Inp_Sl.pdf}\\
 \includegraphics[scale=0.3]{figures/chapter-vsk/Inp_Kl.pdf}
-\caption{Angular power spectra for the $N'_{side} = 4$ V-map, S-map, and K-map computed out of the full-sky $N_{side} = 2048$ inpainted CMB estimates. The red solid line indicates the mean for $1000$ Monte Carlo simulations and the shaded dark and light gray regions indicate the $68$ per cent and $95$ per cent confidence regions, respectively.}
+\caption{Angular power spectra for the $N'_{side} = 2$ V-map, S-map, and K-map computed out of the full-sky $N_{side} = 2048$ inpainted CMB estimates. The red solid line indicates the mean for $1000$ Monte Carlo simulations and the shaded dark and light gray regions indicate the $68$ per cent and $95$ per cent confidence regions, respectively.}
 \label{Fig:1}
 \end{figure}
 
@@ -112,7 +121,7 @@ In Fig. \ref{Fig:1} we show angular power spectra for the V-map, S-map, and the 
 
 \begin{table}
 \centering
-\caption{Lower-tail probability for the V, S, K estimators at different resolutions, for the $N_{side} = 2048$ inpainted \texttt{SMICA} and \texttt{NILC}.}
+\caption{Lower-tail probability for the V, S, K estimators, for the $N_{side} = 2048$ inpainted \texttt{SMICA} and \texttt{NILC}.}
 \label{table:1}
 \begin{tabular}{@{}lcccc}
 \hline 
@@ -121,17 +130,20 @@ In Fig. \ref{Fig:1} we show angular power spectra for the V-map, S-map, and the 
 CMB estimate & V & S & K \\ 
 \hline  
  & & $N'_{side}=2$ & \\
-\texttt{SMICA} & $0.977$ & $0.355$ & $0.038$ \\ 
-\texttt{NILC} & $0.972$ & $0.781$ & $1.0$  \\
- & & $ N'_{side} = 4 $ & \\
-\texttt{SMICA} & $0.998$ & $0.718$ & $0.585$ \\
-\texttt{NILC} & $0.985$ & $0.988$ & $1.0$ \\
- & & $N'_{side} = 8$ & \\
- \texttt{SMICA} & $1.0$ & $0.374$ & $0.745$ \\
- \texttt{NILC} & $0.995$ & $0.385$ & $1.0$ \\
- & & $N'_{side} = 16$ & \\
- \texttt{SMICA} & $1.0$ & $0.241$ & $0.786$ \\
- \texttt{NILC} & $1.0$ & $0.093$ & $1.0$ \\
+\texttt{SMICA} & $0.939$ & $0.388$ & $0.096$ \\ 
+\texttt{NILC} & $0.939$ & $0.022$ & $1.0$  \\
+%\texttt{SMICA} & $0.977$ & $0.355$ & $0.038$ \\ 
+%\texttt{NILC} & $0.972$ & $0.781$ & $1.0$  \\
+% & & $ N'_{side} = 4 $ & \\
+%\texttt{SMICA} & $0.998$ & $0.718$ & $0.585$ \\
+%\texttt{NILC} & $0.985$ & $0.988$ & $1.0$ \\
+% & & $N'_{side} = 8$ & \\
+% \texttt{SMICA} & $1.0$ & $0.374$ & $0.745$ \\
+% \texttt{NILC} & $0.995$ & $0.385$ & $1.0$ \\
+% & & $N'_{side} = 16$ & \\
+% \texttt{SMICA} & $1.0$ & $0.241$ & $0.786$ \\
+% \texttt{NILC} & $1.0$ & $0.093$ & $1.0$ \\
+\hline
 \end{tabular} 
 \end{table}
 
