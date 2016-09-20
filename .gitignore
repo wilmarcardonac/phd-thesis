@@ -10,3 +10,6 @@ build/*.
 *.idx
 *.lof
 Thesis.pdf
+./Talk/seminar.nav
+./Talk/seminar.pdf
+./Talk/seminar.snm
