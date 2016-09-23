@@ -10,6 +10,10 @@ build/*.
 *.idx
 *.lof
 Thesis.pdf
-./Talk/seminar.nav
-./Talk/seminar.pdf
-./Talk/seminar.snm
+/Talk/seminar.nav
+/Talk/seminar.pdf
+/Talk/seminar.snm
+Table4.1.pdf
+Table4.2.pdf
+Table4.3.pdf
+soutenance.pdf
