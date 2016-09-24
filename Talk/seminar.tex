@@ -9,6 +9,14 @@
 
 \usecolortheme{wolverine}
 
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -35,6 +43,9 @@
 
 \definecolor{white}{gray}{1}
 \def\wct#1{\textcolor{white}{#1}}
+\definecolor{orange}{RGB}{255,165,0}
+\definecolor{aquamarine}{RGB}{127,255,212}
+\definecolor{dodger}{RGB}{30,144,255}
 
 \newcommand{\obs}{\mathrm{obs}}
 \newcommand{\pred}{\mathrm{pred}}
@@ -60,43 +71,13 @@
 %\institute[]{University of Geneva}
 %\date{18th June, 2012}
 
-\title[Cosmological constraints: the Hubble constant]{Cosmological constraints: the Hubble constant}
+\title[A new measurement of the Hubble constant]{A new measurement of the Hubble constant}
 \subject{Cosmology}
 
-
+\setbeamercolor{frametitle}{bg=dodger}
 \beamerdefaultoverlayspecification{<+->}
 \setbeamertemplate{footline}[frame number]
 \begin{document}
-
-%\begin{frame}{\textit{Planck} (and some external data sets) constraints}
-%\begin{columns}
-%\begin{column}{0.45\textwidth}
-%\centering
-%\only<1-3>{TT+TE+EE+lowP+BAO
-%\includegraphics[scale=0.65]{./Neff-H0.pdf}
-%} 
-%\only<4-7>{TT+lowP+BAO+JLA
-%\includegraphics[scale=0.65]{./w-H0.pdf}
-%}
-%\end{column}
-%\begin{column}{0.45\textwidth}
-%\centering
-%\only<1-3>{TT+lowP+lensing
-%\includegraphics[scale=0.65]{./mnu-H0.pdf}} 
-%\only<5-7>{Direct vs. Indirect 
-%\includegraphics[scale=0.3]{./H0_values.pdf}}
-%%\only<4>{Inpainted NILC 
-%%\includegraphics[scale=0.2]{../../../../../projects/B/ksv-maps/planck-nside/nilc/192c/inpainted/vmap.pdf}}
-%\end{column}
-%\end{columns}
-%\begin{center}
-%\only<6>{Theoretical attempts ?}
-%\only<7>{Issues in the statistical analysis ?}
-%\end{center}
-
-%A figure showing degeneracies (e.g, $w,\, m_\nu$).
-%A figure comparing $H_0$ from direct measurements and from WMAP and PLANCK: WMAP9, R09, R11, PLANCK13, E15, PLANCK15. Discuss differences between R09 and R11, between R11 and E15 (rejection algorithm, new data for NGC4258), direct and derived $H_0$. Mention failed theoretical attempts to explain discrepancy by Ruth and Iggy.  
-%\end{frame}
 
 \begin{frame}
   \titlepage
@@ -108,17 +89,17 @@
 
 \section{The concordance model of cosmology}
 
-\begin{frame}{The concordance model of cosmology}{A good phenomenological description of the Universe}
+\begin{frame}{A good phenomenological description of the Universe}
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}
 \end{figure}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{Two important observational facts from the past century}
+\begin{frame}{Two important observational facts from the past century}
 \only<1>{The Universe is expanding (1929)}
 \only<2>{The Universe is expanding (1929): $v \propto D = a(t) d$ }
-\only<3>{The Universe is speeding up: $\ddot{a(t)}>0$}
+\only<3>{The Universe is speeding up (1998): $\ddot{a(t)}>0$}
 \begin{figure}[hbtp]
 \centering
 \only<1>{
@@ -130,7 +111,7 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{Gravity}
+\begin{frame}{Gravity}
 \only<1>{General Relativity: (geometry) $G_{\mu\nu} \propto T_{\mu\nu} $ (energy)}
 \only<2>{Matter collapses}
 \begin{figure}[hbtp]
@@ -144,7 +125,7 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{Flatness and isotropy}
+\begin{frame}{Flatness and isotropy}
 \only<1>{Possible geometries in the standard model}
 \only<2>{Planck constrains $|\Omega_K|<0.005$}
 \only<3>{CMB is very isotropic: $\Delta T << \bar{T}=2.7$K}
@@ -160,7 +141,7 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{Visible matter}
+\begin{frame}{Visible matter}
 \only<2>{$\sum m_\nu$ ?}
 \begin{figure}[hbtp]
 \centering
@@ -172,7 +153,7 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{Dark Matter and Dark Energy}
+\begin{frame}{Dark Matter and Dark Energy}
 \only<2>{$\nu$ are the only known DM candidates}
 \only<3>{Since DE dominates now, its pressure must be negative}
 \begin{figure}[hbtp]
@@ -188,7 +169,7 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{A few shortcomings}
+\begin{frame}{A few shortcomings}
 \begin{itemize}
 \item Flatness ($|\Omega_K|<0.005 $) ? 
 \item Horizon 
@@ -196,7 +177,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{Inflation}
+\begin{frame}{Inflation}
 \only<1>{The potential energy of an evolving scalar field would have dominated the energy content in the very early universe, so that its pressure was negative and $\ddot{a(t)}>0$}
 \only<2>{Quantum fluctuations of the scalar field would have seeded the density perturbations we see today: CMB anisotropies and LSS}  
 \begin{figure}[hbtp]
@@ -204,13 +185,13 @@
 \only<1>{
 \includegraphics[width=0.9\textwidth]{../figures/fig_horizon_problem_inflation_simp.png}}
 \only<2>{
-\includegraphics[width=0.7\textwidth]{../figures/Timeline_portrait.jpg}
+\includegraphics[width=0.7\textwidth]{../figures/quantum-fluctuations.jpg}
 }
 \end{figure}
  
 \end{frame}
 
-\begin{frame}{The concordance model of cosmology}{$\Lambda$CDM phenomenologically successful, but...}
+\begin{frame}{$\Lambda$CDM phenomenologically successful, but...}
 \only<1>{What is DM ? and $\sum m_\nu$ ?}
 \only<2>{What is driving the accelerating expansion of the Universe ? DE ? Modified gravity ?} 
 \only<3>{What mechanism produced inflation ?} 
@@ -322,19 +303,20 @@
 %
 %\end{frame}
 
-\begin{frame}{This thesis}
-\begin{itemize}
-\item Constraints on Anisotropic Dark Energy: Dark Eenrgy vs Modified Gravity
-\item Importance of lensing convergence for constraints of $\sum m_\nu$ with upcoming galaxy surveys
-\item A test of statistical isotropy with Planck data
-\item Measurement of the Hubble constant without rejecting data  
-\end{itemize}
-\end{frame}
+%\begin{frame}{This thesis}
+%\begin{itemize}
+%\item Constraints on Anisotropic Dark Energy: Dark Eenrgy vs Modified Gravity
+%\item Importance of lensing convergence for constraints of $\sum m_\nu$ with upcoming galaxy surveys
+%\item A test of statistical isotropy with Planck data
+%\item Measurement of the Hubble constant without rejecting data  
+%\end{itemize}
+%\end{frame}
 
+\setbeamercolor{frametitle}{bg=aquamarine}
 
 \section{Measuring the Hubble constant}
 
-\begin{frame}{Measuring the Hubble constant}{Why do we care about a local measurement of $H_0$?}
+\begin{frame}{Why do we care about a local measurement of $H_0$?}
 \only<1-2>{\begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.65]{../figures/chapter-h0/mnu-H0.pdf}
@@ -377,7 +359,7 @@ Need to confirm $3.4\sigma$ tension and prove it robust against different statis
 %
 %\end{frame}
 
-\begin{frame}{Measuring the Hubble constant}{How do we measure $H_0$?}
+\begin{frame}{How do we measure $H_0$?}
 \only<1-4>{\begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.8]{../figures/chapter-h0/light-candles.jpg}
@@ -430,7 +412,7 @@ d_L(z) \equiv \frac{cz}{H_0}  ( 1+\delta(z)) %%\approx \frac{cz}{H_0} \left\{ 1 
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Measuring the Hubble constant}{How do we measure $H_0$?}
+\begin{frame}{How do we measure $H_0$?}
 \begin{itemize}
 \only<1-3>{
 \item Use now simultaneously $\SNe$ and Cepheid stars
@@ -452,56 +434,73 @@ m_{Y,i,j}^{\Cepheid} = \mu_{0,i} + M_Y^{\Cepheid} + b_Y (\log P_{i,j}-1) + Z_Y \
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Measuring the Hubble constant}{How do we measure $H_0$?}
-\only<1-2>{
-\begin{figure}
-\includegraphics[scale=0.4]{../figures/chapter-h0/effective_HP_cepheids_LMC.pdf} 
-\end{figure}}
-
-\begin{itemize}
+\begin{frame}{How do we measure $H_0$?}
 \only<1>{
-\item Need to determine the best fitting parameters in the relations above, but data sets include outliers...}
+%\item
+Need to determine the best fitting parameters in the relations above, but data sets include outliers...}
 \only<2>{
-\item Outlier rejection algorithm or a Bayesian treatment ?}
-\only<3-6>{
-\item Usually assumed data points drawn from a Gaussian PDF
+%\item
+Outlier rejection algorithm or a Bayesian treatment ?}
+
+%\begin{itemize}
+\only<3>{
+%\item 
+Usually assumed data points drawn from a Gaussian PDF
 \begin{equation*}\label{Eq:Gaussian-likelihood}
 P_G(D_i|\vec{w}) = \tilde{N}_i \, \frac{\exp(-\chi^2_i(\vec{w})/2)}{\sqrt{2\pi}}
 \end{equation*}}
-\only<4-6>{
-\item Drop this and assume error bars can be underestimated: introduce hyper-parameters for each datum $\sigma_i \rightarrow \sigma_i/\sqrt{\alpha_i}$}
-\only<5-6>{
-\item Starting from usual Gaussian PDF with usual $\chi^2$, but allow error bars to become greater and take into account every possible value for the rescaling (marginalise over HPs)}
+\only<4>{
+%\item 
+Drop this and assume error bars can be underestimated: introduce hyper-parameters for each datum $\sigma_i \rightarrow \sigma_i/\sqrt{\alpha_i}$}
+\only<5>{
+%\item 
+Starting from usual Gaussian PDF with usual $\chi^2$, but allow error bars to become greater and take into account every possible value for the rescaling (marginalise over HPs)}
 \only<6>{
-\item End up with a new PDF: a Gaussian HP PDF 
+%\item 
+End up with a new PDF: a Gaussian HP PDF 
 \begin{equation*}
 P(D_i|\vec{w}\,) = \tilde{N}_i \, \left(\frac{ \mathrm{Erf}\left( \frac{\chi_i(\vec{w})}{\sqrt{2}} \right)  -\sqrt{\frac{2}\pi} \chi_i(\vec{w}) \exp(-\chi^2_i(\vec{w})/2)}{ \chi^3_i(\vec{w})} \right)
 \end{equation*}}
-\only<7-8>{
-\item Maximise likelihood and compute effective HPs for each datum (given the best fitting parameters)
+\only<7>{
+
+ 
+}
+\only<8>{
+%\item 
+Maximise likelihood and compute effective HPs for each datum (given the best fitting parameters)
 \begin{eqnarray*}
 \alpha^{\eff}_i & = 1,\quad \mathrm{if} \quad \chi^2_i\leq1
 \\
 \label{Eq:effective-HP-2}
 \alpha^{\eff}_i & = \frac{1}{\chi^2_i},\quad \mathrm{if} \quad \chi^2_i> 1.
 \end{eqnarray*}}
-\only<8>{
-\item Asses compatibility of data sets through normalised weights
+\only<9>{
+%\item
+Asses compatibility of data sets through normalised weights
 \begin{equation*}
 || \alpha^{j} || \equiv \frac{\sum_{i=1}^{K_j} \alpha_{i,j}}{K_j},
 \label{Eq:normalised-weights}
 \end{equation*}} 
-\end{itemize}
+%\end{itemize}
+%
+\begin{figure}[hbtp]
+\centering
+\only<1-2>{
+\includegraphics[scale=0.4]{effective_HP_cepheids_LMC.pdf}}
+\only<7>{ 
+\includegraphics[scale=0.7]{../figures/chapter-h0/PDF.pdf}}
+\end{figure}
+
 \end{frame}
 
-\begin{frame}{Measuring the Hubble constant}{What data do we use ?}
+\begin{frame}{What data do we use ?}
 \begin{itemize}
 \item The R11 data set: $8$ galaxies simultaneously hosting $\SNe$ and Cepheid stars, three anchor distances ($\mu_0^\LMC$, $\mu_0^\NGC$, 13 $\MW$ Cepheid stars parallaxes)
 \item The R16 data set: $19$ galaxies simultaneously hosting $\SNe$ and Cepheid stars, four anchor distances ($\mu_0^\LMC$, $\mu_0^\NGC$, $\mu_0^\MAnd$, 15 $\MW$ Cepheid stars parallaxes)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Measuring the Hubble constant}{Results: the R11 data set}
+\begin{frame}{Results: the R11 data set}
 
 \only<1>{
 \begin{table}[tbp]
@@ -533,12 +532,12 @@ Fit & Galaxy & $M_W$ & $b_W$ & $\sigma_{\intt}$ \\
 \end{figure}}
 \only<4>{
 \begin{figure}
-\includegraphics[scale=0.4]{../figures/chapter-h0/effective_HP_SNIa.pdf} 
+\includegraphics[scale=0.5]{../figures/chapter-h0/effective_HP_SNIa.pdf} 
 \end{figure}}
 
 \only<6>{
 \begin{figure}
-\includegraphics[scale=0.4]{../figures/chapter-h0/H0_values_anchor_combination.pdf} 
+\includegraphics[scale=0.5]{../figures/chapter-h0/H0_values_anchor_combination.pdf} 
 \end{figure}
 }
 
@@ -562,7 +561,7 @@ Fit & Galaxy & $M_W$ & $b_W$ & $\sigma_{\intt}$ \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Measuring the Hubble constant}{Results: the R16 data set}
+\begin{frame}{Results: the R16 data set}
 
 \only<1-2>{
 \begin{figure}
@@ -570,7 +569,7 @@ Fit & Galaxy & $M_W$ & $b_W$ & $\sigma_{\intt}$ \\
 \end{figure}}
 \only<3>{
 \begin{figure}
-\includegraphics[scale=0.4]{../figures/chapter-h0/effective_HP_SNIa_R16.pdf} 
+\includegraphics[scale=0.5]{../figures/chapter-h0/effective_HP_SNIa_R16.pdf} 
 \end{figure}}
 
 \only<6>{
@@ -922,6 +921,8 @@ H_0 = 73.75 \pm 2.11\,\km\, \second^{-1}\, \Mpc^{-1},
 %\end{columns}
 %\end{frame}
 
+\setbeamercolor{frametitle}{bg=orange}
+
 \section{Conclusions}
 
 \begin{frame}{Conclusions}
@@ -933,9 +934,11 @@ H_0 = 73.75 \pm 2.11\,\km\, \second^{-1}\, \Mpc^{-1},
 \end{itemize}
 \end{frame}
 
+\setbeamercolor{frametitle}{bg=dodger}
+
 \section*{Project 1: testing statistical isotropy with Planck data}
 
-\begin{frame}{Project 1: testing a fundamental assumption of the standard model of cosmology}{CMB anisotropies}
+\begin{frame}{CMB anisotropies}
 \begin{figure}[hbtp]
 \centering
 \only<1,5>{
@@ -951,7 +954,7 @@ H_0 = 73.75 \pm 2.11\,\km\, \second^{-1}\, \Mpc^{-1},
 \end{figure}
 \end{frame}
 
-\begin{frame}{Project 1: testing statistical isotropy with Planck data}{VSK method}
+\begin{frame}{VSK method}
 \only<1>{Statistical isotropy is fundamental in the concordance model}
 \only<2>{Statistical properties of CMB allow to test assumptions}
 \only<3>{CMB anisotropies... isotropic and Gaussian distributed ?} 
@@ -1121,9 +1124,11 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 
 %\end{frame}
 
+\setbeamercolor{frametitle}{bg=aquamarine}
+
 \section*{Project 2: constraints on anisotropic dark energy}
 
-\begin{frame}{Project 2: constraints on anisotropic dark energy}{Why do we care about anisotropic dark energy ?}
+\begin{frame}{Why do we care about anisotropic dark energy ?}
 \begin{itemize}
 \item No clear explanation for the accelerating expansion of the universe
 \item Two leading approaches: an unobserved fluid dubbed dark energy (DE) or modify Einstein's theory of gravity on large scales
@@ -1133,16 +1138,16 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Project 2: constraints on anisotropic dark energy}{How do we constrain anisotropic stress ?}
+\begin{frame}{How do we constrain anisotropic stress ?}
 \begin{itemize}
-\item Adopt a phenomenological approach: a DE model including a range of approaches (e.g., )
+\item Adopt a phenomenological approach: a DE model including a range of approaches
 \item Find approximate solutions for DE perturbations
 \item Implement the model in CAMB and do MCMC with COSMOMC 
 \item Data from Planck, BAO, supernovae, but exclude $P(k)$ and $H_0$
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Project 2: constraints on anisotropic dark energy}{Results}
+\begin{frame}{Results}
 \begin{itemize}
 \item The effect of anisotropic stress on CMB angular power spectrum and on the matter power spectrum
 \item Constrains do not show evidence of non-zero anisotropic stress. 
@@ -1157,9 +1162,11 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 
 \end{frame}
 
+\setbeamercolor{frametitle}{bg=orange}
+
 \section*{Project 3: upcoming galaxy surveys, the lensing convergence and the neutrino mass}
 
-\begin{frame}{Project 3: upcoming galaxy surveys, the lensing convergence and the neutrino mass}{Why do we care about massive neutrinos ?}
+\begin{frame}{Why do we care about massive neutrinos ?}
 \begin{itemize}
 \item Underlying physics in the standard model of cosmology remains unknown
 \item Cold Dark Matter (CDM) constitutes  about $30\%$ of the energy content
@@ -1168,7 +1175,7 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Project 3: upcoming galaxy surveys, the lensing convergence and the neutrino mass}{How do we observe the effect of massive neutrinos ?}
+\begin{frame}{How do we observe the effect of massive neutrinos ?}
 \begin{itemize}
 \item Signatures of massive neutrinos in observations: CMB anisotropies and galaxy distribution
 \item Neutrinos change background evolution. For small neutrino masses, CMB can only provide upper limit 
@@ -1180,7 +1187,7 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 
 \end{frame}
 
-\begin{frame}{Project 3: upcoming galaxy surveys, the lensing convergence and the neutrino mass}{Galaxy number counts angular power spectrum $C_\ell(z,z')$}
+\begin{frame}{Galaxy number counts angular power spectrum $C_\ell(z,z')$}
 \begin{itemize}
 \item $P(k,z)$ is not an observable. $C_\ell(z,z')$ is an observable
 \item Galaxy number counts for a survey with limiting magnitude
@@ -1190,7 +1197,7 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Project 3: upcoming galaxy surveys, the lensing convergence and the neutrino mass}{How do we estimate the importance of neglecting lensing convergence ?}
+\begin{frame}{How do we estimate the importance of neglecting lensing convergence ?}
 \begin{itemize}
 \item Fit a model neglecting the effect to data ()
 \item Fit a model neglecting the effect to data, but only use auto-correlations (close to $P(k)$ analysis)
@@ -1202,7 +1209,7 @@ $8$ & $ 0.685 $ & $ 0.099 $ & $ 0.428 $  \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Project 3: upcoming galaxy surveys, the lensing convergence and the neutrino mass}{Results}
+\begin{frame}{Results}
 \begin{itemize}
 \item Triangle plot including CMB information
 \item Table showing biased parameters: spurious detection of neutrino mass
