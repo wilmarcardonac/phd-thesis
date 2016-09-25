@@ -67,7 +67,8 @@
 %\def\eea{\end{eqnarray}}
 
 
-\author[Wilmar Alberto Cardona Castro]{Wilmar Alberto Cardona Castro}
+\author[Wilmar Alberto Cardona Castro]{Wilmar Alberto Cardona Castro\\
+(In collaboration with Martin Kunz and Valeria Pettorino)}
 %\institute[]{University of Geneva}
 %\date{18th June, 2012}
 
@@ -87,121 +88,157 @@
   \tableofcontents
 \end{frame}
 
-\section{The concordance model of cosmology}
+\section{Introduction}
+
+\begin{frame}{The concordance model of cosmology}
+\begin{figure}[hbtp]
+\centering
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\only<1-7>{
+\put(0,5){\includegraphics[width=0.2\textwidth]{../figures/standard_model_ai_s2.png}}
+\put(3,4.7){\includegraphics[scale=0.15]{../figures/Planck-only_Cosmic-recipe-pie-chart.jpg}}
+\put(0,2.5){\includegraphics[scale=0.15]{albert-einstein21.jpg}}
+\put(3.8,4.3){Inflation}}
+\only<2-7>{
+\put(3.8,3.8){Cold Dark Matter}}
+\only<3-7>{
+\put(3.8,3.3){$w=-1$}}
+\only<4-7>{
+\put(3.8,2.8){Flatness}}
+\only<5-7>{
+\put(1,2){$\Omega_{\rm cdm}$, $\Omega_b$, $n_s$, $A_s$, $\tau$, $\mathbf{H_0}$}}
+
+\only<6-7>{
+\put(7,5){\includegraphics[scale=0.12]{Planck-600x600.jpg} }
+\put(7,2.8){\includegraphics[width=0.3\textwidth]{../figures/2015_SMICA_CMB.png}}}
+
+\only<7>{
+\put(0,1){Statistical properties}
+\put(0,0.5){of the model}
+\put(7,1){Statistical properties}
+\put(7,0.5){of the data}}
+\end{picture}
+\end{figure}
+\end{frame}
 
 \begin{frame}{A good phenomenological description of the Universe}
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\put(0,0.5){\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}}
+\put(5,6){$H_0=66.93\pm0.62 \mathrm{km/s/Mpc}$}
+\end{picture}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Two important observational facts from the past century}
-\only<1>{The Universe is expanding (1929)}
-\only<2>{The Universe is expanding (1929): $v \propto D = a(t) d$ }
-\only<3>{The Universe is speeding up (1998): $\ddot{a(t)}>0$}
-\begin{figure}[hbtp]
-\centering
-\only<1>{
-\includegraphics[width=\textwidth]{../figures/doppler_effect.jpg}} 
-\only<2>{
-\includegraphics[width=\textwidth]{../figures/Hubble-law.pdf}}
-\only<3>{
-\includegraphics[scale=0.4]{../figures/Union21_Hubble_slide.pdf}}
-\end{figure}
-\end{frame}
+%\begin{frame}{Two important observational facts from the past century}
+%\only<1>{The Universe is expanding (1929)}
+%\only<2>{The Universe is expanding (1929): $v \propto D = a(t) d$ }
+%\only<3>{The Universe is speeding up (1998): $\ddot{a(t)}>0$}
+%\begin{figure}[hbtp]
+%\centering
+%\only<1>{
+%\includegraphics[width=\textwidth]{../figures/doppler_effect.jpg}} 
+%\only<2>{
+%\includegraphics[width=\textwidth]{../figures/Hubble-law.pdf}}
+%\only<3>{
+%\includegraphics[scale=0.4]{../figures/Union21_Hubble_slide.pdf}}
+%\end{figure}
+%\end{frame}
 
-\begin{frame}{Gravity}
-\only<1>{General Relativity: (geometry) $G_{\mu\nu} \propto T_{\mu\nu} $ (energy)}
-\only<2>{Matter collapses}
-\begin{figure}[hbtp]
-\centering
-\only<1>{
-\includegraphics[width=0.6\textwidth]{../figures/GR.jpg} 
-}
-\only<2>{
-\includegraphics[width=0.9\textwidth]{../figures/galaxyevolution.jpg} 
-} 
-\end{figure}
-\end{frame}
+%\begin{frame}{Gravity}
+%\only<1>{General Relativity: (geometry) $G_{\mu\nu} \propto T_{\mu\nu} $ (energy)}
+%\only<2>{Matter collapses}
+%\begin{figure}[hbtp]
+%\centering
+%\only<1>{
+%\includegraphics[width=0.6\textwidth]{../figures/GR.jpg} 
+%}
+%\only<2>{
+%\includegraphics[width=0.9\textwidth]{../figures/galaxyevolution.jpg} 
+%} 
+%\end{figure}
+%\end{frame}
 
-\begin{frame}{Flatness and isotropy}
-\only<1>{Possible geometries in the standard model}
-\only<2>{Planck constrains $|\Omega_K|<0.005$}
-\only<3>{CMB is very isotropic: $\Delta T << \bar{T}=2.7$K}
-\begin{figure}[hbtp]
-\centering
-\only<1>{
-\includegraphics[width=0.6\textwidth]{../figures/flatness.jpg}}
-\only<2>{
-\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}}
-\only<3>{
-\includegraphics[width=\textwidth]{../figures/2015_SMICA_CMB.png}
-}
-\end{figure}
-\end{frame}
+%\begin{frame}{Flatness and isotropy}
+%\only<1>{Possible geometries in the standard model}
+%\only<2>{Planck constrains $|\Omega_K|<0.005$}
+%\only<3>{CMB is very isotropic: $\Delta T << \bar{T}=2.7$K}
+%\begin{figure}[hbtp]
+%\centering
+%\only<1>{
+%\includegraphics[width=0.6\textwidth]{../figures/flatness.jpg}}
+%\only<2>{
+%\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}}
+%\only<3>{
+%\includegraphics[width=\textwidth]{../figures/2015_SMICA_CMB.png}
+%}
+%\end{figure}
+%\end{frame}
 
-\begin{frame}{Visible matter}
-\only<2>{$\sum m_\nu$ ?}
-\begin{figure}[hbtp]
-\centering
-\only<1>{
-\includegraphics[width=\textwidth]{../figures/Timeline_portrait.jpg}}
-\only<2>{
-\includegraphics[width=0.6\textwidth]{../figures/standard_model_ai_s2.png} 
-}
-\end{figure}
-\end{frame}
+%\begin{frame}{Visible matter}
+%\only<2>{$\sum m_\nu$ ?}
+%\begin{figure}[hbtp]
+%\centering
+%\only<1>{
+%\includegraphics[width=\textwidth]{../figures/Timeline_portrait.jpg}}
+%\only<2>{
+%\includegraphics[width=0.6\textwidth]{../figures/standard_model_ai_s2.png} 
+%}
+%\end{figure}
+%\end{frame}
 
-\begin{frame}{Dark Matter and Dark Energy}
-\only<2>{$\nu$ are the only known DM candidates}
-\only<3>{Since DE dominates now, its pressure must be negative}
-\begin{figure}[hbtp]
-\centering
-\only<1>{
-\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}}
-\only<2>{
-\includegraphics[width=0.8\textwidth]{../figures/Planck-only_Cosmic-recipe-pie-chart.jpg} 
-}
-\only<3>{
-\includegraphics[width=0.4\textwidth]{../figures/dark-energy-4.jpg} 
-}
-\end{figure}
-\end{frame}
+%\begin{frame}{Dark Matter and Dark Energy}
+%\only<2>{$\nu$ are the only known DM candidates}
+%\only<3>{Since DE dominates now, its pressure must be negative}
+%\begin{figure}[hbtp]
+%\centering
+%\only<1>{
+%\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}}
+%\only<2>{
+%\includegraphics[width=0.8\textwidth]{../figures/Planck-only_Cosmic-recipe-pie-chart.jpg} 
+%}
+%\only<3>{
+%\includegraphics[width=0.4\textwidth]{../figures/dark-energy-4.jpg} 
+%}
+%\end{figure}
+%\end{frame}
 
-\begin{frame}{A few shortcomings}
-\begin{itemize}
-\item Flatness ($|\Omega_K|<0.005 $) ? 
-\item Horizon 
-\item What is the origin of the density perturbations $\delta \rho_i/\rho_i$ we observe today: (e.g., CMB anisotropies, galaxies) ? 
-\end{itemize}
-\end{frame}
+%\begin{frame}{A few shortcomings}
+%\begin{itemize}
+%\item Flatness ($|\Omega_K|<0.005 $) ? 
+%\item Horizon 
+%\item What is the origin of the density perturbations $\delta \rho_i/\rho_i$ we observe today: (e.g., CMB anisotropies, galaxies) ? 
+%\end{itemize}
+%\end{frame}
 
-\begin{frame}{Inflation}
-\only<1>{The potential energy of an evolving scalar field would have dominated the energy content in the very early universe, so that its pressure was negative and $\ddot{a(t)}>0$}
-\only<2>{Quantum fluctuations of the scalar field would have seeded the density perturbations we see today: CMB anisotropies and LSS}  
-\begin{figure}[hbtp]
-\centering
-\only<1>{
-\includegraphics[width=0.9\textwidth]{../figures/fig_horizon_problem_inflation_simp.png}}
-\only<2>{
-\includegraphics[width=0.7\textwidth]{../figures/quantum-fluctuations.jpg}
-}
-\end{figure}
- 
-\end{frame}
+%\begin{frame}{Inflation}
+%\only<1>{The potential energy of an evolving scalar field would have dominated the energy content in the very early universe, so that its pressure was negative and $\ddot{a(t)}>0$}
+%\only<2>{Quantum fluctuations of the scalar field would have seeded the density perturbations we see today: CMB anisotropies and LSS}  
+%\begin{figure}[hbtp]
+%\centering
+%\only<1>{
+%\includegraphics[width=0.9\textwidth]{../figures/fig_horizon_problem_inflation_simp.png}}
+%\only<2>{
+%\includegraphics[width=0.7\textwidth]{../figures/quantum-fluctuations.jpg}
+%}
+%\end{figure}
+% 
+%\end{frame}
 
-\begin{frame}{$\Lambda$CDM phenomenologically successful, but...}
-\only<1>{What is DM ? and $\sum m_\nu$ ?}
-\only<2>{What is driving the accelerating expansion of the Universe ? DE ? Modified gravity ?} 
-\only<3>{What mechanism produced inflation ?} 
-\only<4>{To what extent are valid the assumptions of the standard model ?}
-\begin{figure}[hbtp]
-\centering
-\only<1-4>{
-\includegraphics[width=0.7\textwidth]{../figures/Timeline_portrait.jpg}}
-\end{figure}
-\end{frame}
+%\begin{frame}{$\Lambda$CDM phenomenologically successful, but...}
+%\only<1>{What is DM ? and $\sum m_\nu$ ?}
+%\only<2>{What is driving the accelerating expansion of the Universe ? DE ? Modified gravity ?} 
+%\only<3>{What mechanism produced inflation ?} 
+%\only<4>{To what extent are valid the assumptions of the standard model ?}
+%\begin{figure}[hbtp]
+%\centering
+%\only<1-4>{
+%\includegraphics[width=0.7\textwidth]{../figures/Timeline_portrait.jpg}}
+%\end{figure}
+%\end{frame}
 
 %\begin{frame}
 %\begin{figure}[hbtp]
@@ -275,34 +312,6 @@
 %\end{itemize}
 %\end{frame}
 
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-%
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-%
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-%
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-%
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-%
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-%
-%\begin{frame}{Brief introduction: the concordance model of cosmology}
-%
-%\end{frame}
-
 %\begin{frame}{This thesis}
 %\begin{itemize}
 %\item Constraints on Anisotropic Dark Energy: Dark Eenrgy vs Modified Gravity
@@ -312,126 +321,186 @@
 %\end{itemize}
 %\end{frame}
 
+\begin{frame}{Why do we care about a local measurement of $H_0$?}
+\only<1-2>{\begin{figure}[hbtp]
+\centering
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\put(-0.5,2.5){\includegraphics[scale=0.65]{../figures/chapter-h0/mnu-H0.pdf}
+\includegraphics[scale=0.65]{../figures/chapter-h0/Neff-H0.pdf}}
+\only<1>{
+%\item
+\put(0,2){Crucial for understanding the standard model of cosmology:}
+\put(0,1.5){It sets cosmological scales and break degeneracies}}
+\only<2>{
+%\item 
+\put(0,2){Inferred determinations are model dependent (e.g., properties of}
+\put(0,1.5){neutrinos, theory of gravity, nature of dark energy) and might be}
+\put(0,1){affected by assumed prior probability distributions}}
+\end{picture}
+\end{figure}}
+\end{frame}
+
+\begin{frame}{Recent measurements of the Hubble constant}
+\only<1>{Historical figure}
+\only<3-6>{\begin{figure}[hbtp]
+\centering
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\put(0.5,2){\includegraphics[scale=0.4]{../figures/chapter-h0/dependent-vs-independent.jpg}}
+\only<3>{
+\put(0,1.5){There is a $3.4\sigma$ tension between direct and inferred determinations}
+\put(0,1){of $H_0$. This is interesting!}}
+\only<4>{
+\put(0,1.5){New physics (e.g., modifying assumptions in the concordance model),}
+\put(0,1){contributions of the local gravitational potential, unaccounted}
+\put(0,0.5){second-order corrections to the background distance-redshift relation ? }}
+\only<5>{
+\put(0,1.5){Issues with statistical analysis (e.g., outlier rejection algorithms,}
+\put(0,1){anchors choice, period cut-off and assumptions in the Leavitt law,}
+\put(0,0.5){unaccounted systematics) ?}}
+\only<6>{ 
+\put(0,1.5){Need to confirm $3.4\sigma$ tension and prove it robust against}
+\put(0,1){different statistical approaches.}}
+\end{picture}
+\end{figure}}
+
+\end{frame}
+
 \setbeamercolor{frametitle}{bg=aquamarine}
 
 \section{Measuring the Hubble constant}
 
-\begin{frame}{Why do we care about a local measurement of $H_0$?}
-\only<1-2>{\begin{figure}[hbtp]
+\begin{frame}{Standard candles}
+\begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.65]{../figures/chapter-h0/mnu-H0.pdf}
-\includegraphics[scale=0.65]{../figures/chapter-h0/Neff-H0.pdf}
-\end{figure}}
-\only<3-6>{\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{../figures/chapter-h0/dependent-vs-independent.jpg}
-\end{figure}}
-
-%\begin{itemize}
-\only<1>{
-%\item
- Crucial for understanding the standard model of cosmology (i.e., it sets cosmological scales, tackle cosmological parameters and break degeneracies)}
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\only<1-2>{\put(-0.5,4.5){\includegraphics[scale=0.4]{../figures/chapter-h0/light-candles.jpg}}
+\put(3.5,6){
+$\mu_0 \equiv m - M = 5 \log_{10} \left(\frac{d_L}{1 \mathrm{Mpc}} \right) + 25$
+}}
 \only<2>{
-%\item 
-Inferred determinations are model dependent (e.g., properties of neutrinos, theory of gravity, nature of dark energy) and might be affected by assumed prior probability distributions}
-\only<3>{
-%\item
-There is a $3.4\sigma$ tension between direct and inferred determinations of $H_0$}
-\only<4>{
-%\item 
-New physics (e.g., modifying assumptions in the concordance model), contributions of the local gravitational potential, unaccounted second-order corrections to the background distance-redshift relation ? }
-\only<5>{
-%\item 
-Issues with statistical analysis (e.g., outlier rejection algorithms, anchors choice, period cut-off and assumptions in the Leavitt law, unaccounted systematics) ?
-}
-\only<6>{
-%\item 
-Need to confirm $3.4\sigma$ tension and prove it robust against different statistical approaches. 
-}
-%\end{itemize}
+\put(0,4){Exploding stars:}
+\put(0,3.5){Supernovae type Ia}
+\put(-0.5,0.5){\includegraphics[scale=0.109]{../figures/chapter-h0/sntypeia.jpg}} 
+\put(5,0.5){\includegraphics[scale=0.45]{../figures/chapter-h0/cepheid.jpg}}
+\put(5.5,4){Pulsating stars:}
+\put(5.5,3.5){Cepheid variables}}
+\end{picture}
+\end{figure}
 \end{frame}
 
-%\begin{frame}{Project 4: measuring the Hubble constant}{Why do we care about a local measurement of $H_0$?}
-%\begin{itemize}
-%
-% 
-%\end{itemize}
-%
-%\end{frame}
-
 \begin{frame}{How do we measure $H_0$?}
-\only<1-4>{\begin{figure}[hbtp]
+\begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.8]{../figures/chapter-h0/light-candles.jpg}
-\end{figure}}
-\only<8>{\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.8]{../figures/chapter-h0/Hubble-diagram.jpg}
-\end{figure}}
+\includegraphics[width=\textwidth]{../figures/chapter-h0/hubblefindsu.jpg}
+\end{figure}
 
+\end{frame}
+
+
+
+\begin{frame}{Where does $H_0$ enter ?}
+%\only<1-3>{
+%\begin{figure}[hbtp]
+%\centering
+%\includegraphics[scale=0.8]{../figures/chapter-h0/light-candles.jpg}
+%\end{figure}}
+%\only<4>{\begin{figure}[hbtp]
+%\centering
+%\includegraphics[scale=0.8]{../figures/chapter-h0/Hubble-diagram.jpg}
+%\end{figure}}
+
+%\begin{itemize}
+%\only<1>{
+%\item Estimate distances through luminosity distance
+%\begin{equation*}
+%d_L \equiv \left(\frac{L}{4\pi l} \right)^{1/2} \, \label{Eq:luminosity-distance-obs}
+%\end{equation*}}
+%\only<2-3>{
+%\item Define logarithmic measures of the luminosity%: absolute and apparent magnitudes
+%\only<2>{
+%\begin{equation*}\label{Eq:apparent-luminosity}
+%l = 10^{-2m/5}\times 2.52 \times 10^{-5}\, \mathrm{erg/ cm^2}\, \second
+%\end{equation*}}
+%\only<3>{
+%\begin{equation*}\label{Eq:absolute-luminosity}
+%L = 10^{-2M/5} \times 3.02 \times 10^{35}\, \mathrm{erg/}\second.
+%\end{equation*}}}
+%\only<4>{
+%\item Express luminosity distance through the distance modulus
+%\begin{equation*}
+%\mu_0 \equiv m - M = 5 \log_{10} \left(\frac{d_L}{1 \mathrm{Mpc}} \right) + 25 \,  \label{Eq:distance-modulus}
+%\end{equation*}}
 \begin{itemize}
-\only<1>{
-\item Estimate distances through luminosity distance
-\begin{equation*}
-d_L \equiv \left(\frac{L}{4\pi l} \right)^{1/2} \, \label{Eq:luminosity-distance-obs}
-\end{equation*}}
-\only<2-3>{
-\item Define logarithmic measures of the luminosity%: absolute and apparent magnitudes
-\only<2>{
-\begin{equation*}\label{Eq:apparent-luminosity}
-l = 10^{-2m/5}\times 2.52 \times 10^{-5}\, \mathrm{erg/ cm^2}\, \second
-\end{equation*}}
-\only<3>{
-\begin{equation*}\label{Eq:absolute-luminosity}
-L = 10^{-2M/5} \times 3.02 \times 10^{35}\, \mathrm{erg/}\second.
-\end{equation*}}}
-\only<4>{
-\item Express luminosity distance through the distance modulus
-\begin{equation*}
-\mu_0 \equiv m - M = 5 \log_{10} \left(\frac{d_L}{1 \mathrm{Mpc}} \right) + 25 \,  \label{Eq:distance-modulus}
-\end{equation*}}
-\only<5>{
-\item Assuming flat FLRW metric one can compute luminosity distance
+\item[] Assuming flat FLRW metric, one can compute luminosity distance
 \begin{equation*}\label{Eq:luminosity-distance-the}
 d_L(z) = (1+z) c \int_0^z \frac{dz'}{H(z')} \, 
-\end{equation*}}
-\only<6-7>{
-\item For relatively small redshift one has
+\end{equation*}
+%\only<2-3>{
+\item[] For relatively small redshift one has
 \begin{equation*}\label{Eq:luminosity-distance-the-small-z}
 d_L(z) \equiv \frac{cz}{H_0}  ( 1+\delta(z)) %%\approx \frac{cz}{H_0} \left\{ 1 + \frac{1}{2} [1-q_0] z - \frac{1}{6} [1-q_0 - 3 q_0^2 + j_0] z^2 + O(z^3) \right\}
 \end{equation*}
-\item Recalling
+\item[] Distance modulus
 \begin{equation*}
 \mu_0 \equiv m - M = 5 \log_{10} \left(\frac{d_L}{1 \mathrm{Mpc}} \right) + 25 \,  \label{Eq:distance-modulus}
-\end{equation*}}
-\only<8>{
-\item Determine constant $a_X$ with Supernova type Ia ($\SNe$))
-\begin{equation*}\label{Eq:av-definition}
-5 \log_{10} ( c z ( 1+\delta(z) )) - m_X = 5 \log_{10} H_0 - M_X - 25 \equiv 5 a_X \, 
-\end{equation*}}
+\end{equation*}%}
 \end{itemize}
+%\only<4>{
+%\item 
+%Determine constant $a_X$ with Supernova type Ia ($\SNe$))
+%\begin{equation*}\label{Eq:av-definition}
+%5 \log_{10} ( c z ( 1+\delta(z) )) - m_X = 5 \log_{10} H_0 - M_X - 25 \equiv 5 a_X \, 
+%\end{equation*}}
+%\end{itemize}
 \end{frame}
 
-\begin{frame}{How do we measure $H_0$?}
-\begin{itemize}
-\only<1-3>{
-\item Use now simultaneously $\SNe$ and Cepheid stars
-\begin{figure}
-\includegraphics[scale=0.11]{../figures/chapter-h0/sntypeia.jpg}%\hspace{1mm} 
-\includegraphics[scale=0.45]{../figures/chapter-h0/cepheid.jpg} 
-\end{figure}}
 
+\begin{frame}{Where does $H_0$ enter ?}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.8]{../figures/chapter-h0/Hubble-diagram.jpg}
+\end{figure}
+
+Determine constant $a_X$ with $\SNe$
+\begin{equation*}\label{Eq:av-definition}
+5 \log_{10} ( c z ( 1+\delta(z) )) - m_X = 5 \log_{10} H_0 - M_X - 25 \equiv 5 a_X 
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Modelling Cepheids and $\SNe$ apparent magnitudes}
+\begin{itemize}
 \item $\SNe$ apparent magnitudes
 \begin{equation*}
-m_X^{\SNe} =  5 \log_{10} H_0 + \mu_0 - 5 a_X - 25 \, %. \label{Eq:apparent-magnitude-H0}
+m_{X,i}^{\SNe} =  5 \log_{10} H_0 + \mu_{0,i} - 5 a_X - 25 \, %. \label{Eq:apparent-magnitude-H0}
 \end{equation*}
 \item Cepheid variables apparent magnitudes 
 \begin{equation*}\label{Eq:P-L-equation}
 m_{Y,i,j}^{\Cepheid} = \mu_{0,i} + M_Y^{\Cepheid} + b_Y (\log P_{i,j}-1) + Z_Y \Delta \log[O/H]_{i,j}%,
 \end{equation*}
-\item Galaxies hosting both $\SNe$ and Cepheid stars
-\item A few anchor distances: $\mu_0^\LMC$, $\mu_0^\NGC$, $\mu_0^\MAnd$, $\MW$ Cepheid stars parallaxes 
+%\item Galaxies hosting both $\SNe$ and Cepheid stars
+%\item A few anchor distances: $\mu_0^\LMC$, $\mu_0^\NGC$, $\mu_0^\MAnd$, $\MW$ Cepheid stars parallaxes 
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Summarising, to measure $H_0$:}
+\begin{enumerate}
+\item Calibrate distance ladder with geometrical distance estimates (e.g., Milky Way Cepheids, $\NGC$, $\LMC$, $\MAnd$)
+\item Find galaxies simultaneously hosting $\SNe$ and Cepheid stars
+\item Use distant $\SNe$ to calibrate low red-shift $\SNe$ and find $H_0$ through a global fit of Cepheid and $\SNe$ apparent magnitudes:
+\end{enumerate}
+\begin{equation*}
+m_{X,i}^{\SNe} =  5 \log_{10} H_0 + \mu_{0,i} - 5 a_X - 25 \, %. \label{Eq:apparent-magnitude-H0}
+\end{equation*}
+\begin{equation*}\label{Eq:P-L-equation}
+m_{Y,i,j}^{\Cepheid} = \mu_{0,i} + M_Y^{\Cepheid} + b_Y (\log P_{i,j}-1) + Z_Y \Delta \log[O/H]_{i,j}%,
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Current analyses: Riess et al. and G. Efstathiou}
+
 \end{frame}
 
 \begin{frame}{How do we measure $H_0$?}
