@@ -80,6 +80,40 @@
 \begin{document}
 
 \begin{frame}
+%\begin{center}
+%\\
+%\vspace{1cm}
+%\\
+%\vspace{1cm}
+%\\
+%\vspace{1cm}
+%
+%\end{center}
+\begin{figure}[hbtp]
+\centering
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\put(0,0){\includegraphics[scale=0.5]{UNIGE50.jpg}}
+\put(1,6){\textbf{Cosmological constraints: anisotropic dark energy,}}
+\put(1.5,5.5){\textbf{the Hubble constant, and the neutrino mass}}
+\put(2.5,4){Wilmar Alberto Cardona Castro}
+\put(3.,2.5){Supervisor: Martin Kunz}
+\put(3.4,1){September 27, 2016}
+\end{picture}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item \textbf{The traces of anisotropic dark energy in light of Planck} in collaboration with Lukas Hollenstein and Martin Kunz
+\item \textbf{Lensing convergence and the neutrino mass scale in galaxy redshift surveys} in collaboration with Ruth Durrer, Martin Kunz, and Francesco Montanari
+\item \textbf{Testing isotropy and Gaussianity in the Planck CMB estimates}
+\item \textbf{Determining $H_0$ with Bayesian hyper-parameters} in collaboration with Martin Kunz and Valeria Pettorino 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
   \titlepage
 \end{frame}
 
@@ -128,6 +162,7 @@
 \begin{picture}(10,7)
 \put(0,0.5){\includegraphics[width=\textwidth]{../figures/2015_TTSpectrum.png}}
 \put(4.4,6){$H_0=66.93\pm0.62\, \km\, \second^{-1}\, \Mpc^{-1}$}
+\put(0,0){Credit:Planck Collaboration}
 \end{picture}
 \end{figure}
 \end{frame}
@@ -139,6 +174,7 @@
 \begin{picture}(10,7)
 \put(-0.5,2.5){\includegraphics[scale=0.65]{../figures/chapter-h0/mnu-H0.pdf}
 \includegraphics[scale=0.65]{../figures/chapter-h0/Neff-H0.pdf}}
+\put(0,7){Credit:Planck Collaboration}
 \only<1>{
 %\item
 \put(0,2){Cosmological scales and break degeneracies:}
@@ -152,7 +188,7 @@
 \end{figure}}
 \end{frame}
 
-\begin{frame}{Recent measurements of the Hubble constant}
+\begin{frame}{Recent direct and inferred determinations of $H_0$}
 \only<1>{
 \begin{figure}[hbtp]
 \centering
@@ -195,20 +231,21 @@
 \begin{picture}(10,7)
 \put(0.5,2){\includegraphics[scale=0.4]{../figures/chapter-h0/dependent-vs-independent.jpg}}
 \only<7>{
-\put(0,1.5){Interesting: there is a $3.4\sigma$ tension between direct and inferred }
-\put(0,1){determinations of $H_0$. At least two possible reasons.}}
+\put(0,1.5){Interesting: there is a $\mathbf{3.4\sigma}$ \textbf{tension} between direct (\textbf{Riess et al. 2016})}
+\put(0,1){and inferred (\textbf{Planck Collaboration 2016}) determinations of $H_0$.}
+\put(0,0.5){At least two possible reasons.}}
 \only<8>{
-\put(0,1.5){1. New physics (e.g., modifying assumptions in the concordance}
+\put(0,1.5){1. \textbf{New physics} (e.g., modifying assumptions in the concordance}
 \put(0,1){model)?}}
 %\put(0,1){contributions of the local gravitational potential, unaccounted}
 %\put(0,0.5){second-order corrections to the background distance-redshift relation? }}
 \only<9>{
-\put(0,1.5){2. Issues with statistical analysis (e.g., outlier rejection algorithms,}
-\put(0,1){anchors choice, period cut-off and assumptions in the Leavitt law,}
+\put(0,1.5){2. \textbf{Issues with statistical analysis} (e.g., \textbf{outlier rejection algorithms},}
+\put(0,1){\textbf{anchors choice}, \textbf{period cut-off} and assumptions in the Leavitt law,}
 \put(0,0.5){unaccounted systematics)?}}
 \only<10>{ 
-\put(0,1.5){Need to confirm $3.4\sigma$ tension and prove it robust against}
-\put(0,1){different statistical approaches.}}
+\put(0,1.5){Need to confirm $\mathbf{3.4\sigma}$ \textbf{tension} and prove it \textbf{robust against}}
+\put(0,1){\textbf{different statistical approaches}.}}
 \end{picture}
 \end{figure}}
 
@@ -224,7 +261,8 @@
 \setlength{\unitlength}{0.1\textwidth}
 \begin{picture}(10,7)
 \only<1-2>{\put(-0.5,4.5){\includegraphics[scale=0.4]{../figures/chapter-h0/light-candles.jpg}}
-\put(3.5,6){
+\put(3.5,6){Distance modulus}
+\put(3.5,5.5){
 $\mu_0 \equiv m - M = 5 \log_{10} \left(\frac{d_L}{1 \mathrm{Mpc}} \right) + 25$
 }}
 \only<2>{
@@ -241,7 +279,11 @@ $\mu_0 \equiv m - M = 5 \log_{10} \left(\frac{d_L}{1 \mathrm{Mpc}} \right) + 25$
 \begin{frame}{How do we measure $H_0$?}
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{../figures/chapter-h0/hubblefindsu.jpg}
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\put(0,0.5){\includegraphics[width=\textwidth]{../figures/chapter-h0/hubblefindsu.jpg}}
+\put(0,0){Credit:NASA}
+\end{picture}
 \end{figure}
 
 \end{frame}
@@ -312,7 +354,11 @@ d_L(z) \equiv \frac{cz}{H_0}  ( 1+\delta(z)) %%\approx \frac{cz}{H_0} \left\{ 1 
 %Determine constant $a_X$ with $\SNe$
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.8]{../figures/chapter-h0/Hubble-diagram.jpg}
+\setlength{\unitlength}{0.1\textwidth}
+\begin{picture}(10,7)
+\put(1.5,2.5){\includegraphics[scale=0.8]{../figures/chapter-h0/Hubble-diagram.jpg}}
+\put(1.5,2){Credit:Riess et al. 2016}
+\end{picture}
 \end{figure}
 
 
@@ -348,18 +394,18 @@ m_{Y,i,j}^{\Cepheid} = \mu_{0,i} + M_Y^{\Cepheid} + b_Y (\log P_{i,j}-1) + Z_Y \
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Current analyses: Riess et al. and G. Efstathiou}
+\begin{frame}{Weak points in current analyses: Riess et al. and G. Efstathiou}
 \begin{itemize}
-\item Need to determine $H_0$, but data sets include outliers...
-\item Riess et al. and G. Efstathiou used standard $\chi^2$ minimisation and outlier rejection algorithms to deal with outliers
-\item G. Efstathiou used a period cut-off of $60$ days in the period luminosity relation. Riess et al. did not use period cut-off
-\item G. Efstathiou did not use neither Milky Cepheid stars nor direct measurement to the LMC as anchor distances
-\item Discarding data involves arbitrary choices (e.g., Chauvenet's criterion) and might hinder understanding of data sets
+\item Need to determine $H_0$, but \textbf{data sets include outliers}...
+\item Riess et al. and G. Efstathiou used standard $\chi^2$ minimisation and \textbf{outlier rejection algorithms} to deal with outliers
+\item G. Efstathiou used a \textbf{period cut-off} of $60$ days in the period luminosity relation. Riess et al. did not use period cut-off
+\item G. Efstathiou did not use neither Milky Cepheid stars nor direct measurement to the LMC as \textbf{anchor distances}
+\item \textbf{Discarding data involves arbitrary choices} (e.g., Chauvenet's criterion) and might hinder understanding of data sets
 \item Can we do better? 
 \end{itemize}
 \end{frame}
 
-\begin{frame}{$\chi^2$ analysis including outliers has problems}
+\begin{frame}{$\chi^2$ analysis including outliers may bias constraints}
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.95\textwidth]{effective_HP_cepheids_LMC.pdf}
@@ -438,7 +484,7 @@ $K_j$: number of data points of kind $j$
 \end{frame}
 
 \setbeamercolor{frametitle}{bg=dodger}
-\begin{frame}{Results: the R11 data set}{No reasons to discard data}
+\begin{frame}{Results: the R11 data set: No reasons to discard data}
 
 G. Efstathiou excluded both MW parallaxes and direct distance to LMC as anchor distances
 
@@ -462,7 +508,7 @@ Fit & Galaxy & $M_W$ & $b_W$ & $\sigma_{\intt}$ \\
 We found no reasons to exclude data sets: period-luminosity relation compatible with direct distance determinations
 \end{frame}
 
-\begin{frame}{Results: the R11 data set}{Uncertainty of $H_0$ depends on number of HP}
+\begin{frame}{Uncertainty of $H_0$ depends on number of HP}
 \begin{center}
 %\item[]
 \only<1>{Standard $\chi^2$ analysis with outlier rejection algorithm}
@@ -513,25 +559,25 @@ We found no reasons to exclude data sets: period-luminosity relation compatible 
 %
 %\end{frame}
 
-\begin{frame}{Results: the R11 data set}{Cepheid stars}
+\begin{frame}{$28\%$ Cepheid stars effectively down-weighted}
 \begin{center}
-Down-weighted fraction in Cepheid sample: $|| \alpha^{\Cepheid}|| = 0.72$
+Normalised weight in Cepheid sample: $|| \alpha^{\Cepheid}|| = 0.72$
 \end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{../figures/chapter-h0/effective_HP_histogram.pdf} 
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results: the R11 data set}{$\SNe$}
+\begin{frame}{Inconsistencies in $\SNe$ data}
 \begin{center}
-Inconsistencies in $\SNe$ data: $|| \alpha^{\SNe}|| = 0.74 $
+Normalised weight in $\SNe$ data: $|| \alpha^{\SNe}|| = 0.74 $
 \end{center}
 \begin{figure}
 \includegraphics[scale=0.45]{../figures/chapter-h0/effective_HP_SNIa.pdf} 
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results: the R11 data set}
+\begin{frame}{Anchor choice plays a part in the analysis}
 \begin{figure}
 \includegraphics[scale=0.5]{../figures/chapter-h0/H0_values_anchor_combination.pdf} 
 \end{figure}
@@ -552,10 +598,11 @@ H_0 = 73.75 \pm 2.11\,\km\, \second^{-1}\, \Mpc^{-1}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Results: the R16 data set}{Comparing compatibility in R11 and R16 data sets}
-\begin{center}
-Improvement of compatibility of different kinds of data
-\end{center}
+\begin{frame}{Comparing compatibility in R11 and R16 data sets}
+\begin{itemize}
+\item Riess et al. 2011 rejects about $20\%$ of Cepheids (outliers were released)
+\item Riess et al. 2016 rejects about $2\%$ of Cepheids (outliers were not released)
+\end{itemize}
 \begin{table}[tbp]
 \centering
 \begin{tabular}{@{}ccccc}
@@ -575,24 +622,24 @@ Data set &$|| \alpha^{\Cepheid}||$ & $|| \alpha^{\SNe}||$ & $|| \alpha^{\Anchors
 \end{table}
 \end{frame}
 
-\begin{frame}{Results: the R16 data set}
+\begin{frame}{Comparison of our two baselines fits}
 \begin{figure}
 \includegraphics[scale=0.5]{../figures/chapter-h0/triangle_plot_fit_29_44.pdf} 
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results: the R16 data set}
+\begin{frame}{$14\%$ Cepheid stars effectively down-weighted}
 \begin{center}
-No outliers released in the Cepheid sample, however there are down-weighted data points in the Cepheid sample: $|| \alpha^{\Cepheid}|| = 0.86$
+Normalised weight in the Cepheid sample: $|| \alpha^{\Cepheid}|| = 0.86$
 \end{center}
 \begin{figure}
 \includegraphics[scale=0.4]{../figures/chapter-h0/effective_HP_histogram_R16.pdf} 
 \end{figure}
 \end{frame}
 
-\begin{frame}{Results: the R16 data set}
+\begin{frame}{Inconsistencies in $\SNe$ data}
 \begin{center}
-Inconsistencies in $\SNe$ data: $|| \alpha^{\SNe}|| = 0.78 $
+Normalised weight in $\SNe$ data: $|| \alpha^{\SNe}|| = 0.78 $
 \end{center}
 \begin{figure}
 \includegraphics[scale=0.45]{../figures/chapter-h0/effective_HP_SNIa_R16.pdf} 
@@ -617,9 +664,11 @@ Inconsistencies in $\SNe$ data: $|| \alpha^{\SNe}|| = 0.78 $
 %\item Data is consistent with zero dark energy anisotropic stress
 %\item Lensing convergence must be included in analyses of upcoming galaxy surveys
 
-\item Developed a method to measure the Hubble constant and asses consistency of data sets 
-\item Universe appears to expand faster ($9-10\%$) than predicted by the  concordance model of cosmology. If not an error, it could be key to understand $95\%$ of the Universe
+\item Developed a method to measure the Hubble constant and asses consistency of data sets
+\item Hyper-parameter analysis avoids the use of arbitrary outlier rejection algorithms
+\item Anchor distances play a part in the determination of $H_0$. We did not find evident reasons to discard any of them. 
 \item Confirmed ($3.1\sigma$) tension between CMB and local measurements of $H_0$. This might suggest new physics or unaccounted systematics in the data sets
+\item Universe appears to expand faster ($9$-$10\%$) than predicted by the  concordance model of cosmology. If not an error, it could be key to understand $95\%$ of the Universe
 %\item New measurements of Milky Way Cepheid stars by Gaia (2022) will be important to improve the distance ladder and therefore reduce uncertainty of $H_0$.    
 \end{itemize}
 \end{frame}
