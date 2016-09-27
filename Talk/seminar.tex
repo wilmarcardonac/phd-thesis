@@ -255,7 +255,7 @@
 
 \section{Measuring the Hubble constant}
 
-\begin{frame}{Standard candles}
+\begin{frame}{Standard candles: Cepheid stars and $\SNe$}
 \begin{figure}[hbtp]
 \centering
 \setlength{\unitlength}{0.1\textwidth}
@@ -348,10 +348,12 @@ d_L(z) \equiv \frac{cz}{H_0}  ( 1+\delta(z)) %%\approx \frac{cz}{H_0} \left\{ 1 
 
 
 \begin{frame}{Where does $H_0$ enter?}
+%\only<1-2>{
 \begin{equation*}\label{Eq:av-definition}
 5 \log_{10} ( c z ( 1+\delta(z) )) - m_X = 5 \log_{10} H_0 - M_X - 25 \equiv 5 a_X 
 \end{equation*}
 %Determine constant $a_X$ with $\SNe$
+%\only<2>{
 \begin{figure}[hbtp]
 \centering
 \setlength{\unitlength}{0.1\textwidth}
@@ -382,8 +384,8 @@ m_{Y,i,j}^{\Cepheid} = \mu_{0,i} + M_Y^{\Cepheid} + b_Y (\log P_{i,j}-1) + Z_Y \
 \begin{frame}{Summarising, to measure $H_0$ you have to:}
 \begin{enumerate}
 \item Calibrate distance ladder with geometrical distance estimates (e.g., Milky Way Cepheids, $\NGC$, $\LMC$, $\MAnd$)
-\item Find galaxies simultaneously hosting $\SNe$ and Cepheid stars
-\item Use distant $\SNe$ to calibrate low redshift $\SNe$ and find $H_0$ through a global fit of Cepheid and $\SNe$ apparent magnitudes:
+\item Find galaxies (low redshift) simultaneously hosting $\SNe$ and Cepheid stars
+\item Use distant $\SNe$ to probe the expanding Universe and find $H_0$ through a global fit of Cepheid and $\SNe$ (low redshift) apparent magnitudes:
 \item[]
 \begin{equation*}
 m_{X,i}^{\SNe} =  5 \log_{10} H_0 + \mu_{0,i} - 5 a_X - 25 \, %. \label{Eq:apparent-magnitude-H0}
@@ -416,21 +418,21 @@ m_{Y,i,j}^{\Cepheid} = \mu_{0,i} + M_Y^{\Cepheid} + b_Y (\log P_{i,j}-1) + Z_Y \
 
 \section{Determining $H_0$ with Bayesian hyper-parameters}
 
-\begin{frame}{Our method to determine $H_0$}
+\begin{frame}{Our method to determine $H_0$: a HP Gaussian PDF}
 
 \begin{itemize}
 \item It is usually assumed that data points are drawn from a Gaussian PDF
 \begin{equation*}
 P_G(D_i|\vec{w}) = \tilde{N}_i \, \frac{\exp(-\chi^2_i(\vec{w})/2)}{\sqrt{2\pi}}
 \end{equation*}
-\item We drop this assumption and consider error bars could have been underestimated. Hyper-parameters (HP) can rescale error bars (if needed) 
+\item We drop this assumption and consider error bars could have been underestimated. We introduce hyper-parameters (HP) that can rescale error bars (if needed) 
 \begin{equation*}
 \sigma_i \rightarrow \sigma_i/\sqrt{\alpha_i}
 \end{equation*}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Our method to determine $H_0$}
+\begin{frame}{Our method to determine $H_0$: a HP Gaussian PDF}
 \only<3>{
 \begin{figure}[hbtp]
 \centering
@@ -440,7 +442,7 @@ P_G(D_i|\vec{w}) = \tilde{N}_i \, \frac{\exp(-\chi^2_i(\vec{w})/2)}{\sqrt{2\pi}}
 \begin{itemize}
 \only<1-2>{
 \item We start from a Gaussian PDF with usual $\chi^2$, but allow error bars to become greater $\alpha_i \in [0,1]$ and take into account every possible value for the rescaling (marginalise over HPs)
-\item We obtain a new PDF: a Gaussian HP PDF 
+\item We obtain a new PDF: a HP Gaussian PDF 
 \begin{equation*}
 P(D_i|\vec{w}\,) = \tilde{N}_i \, \left(\frac{ \mathrm{Erf}\left( \frac{\chi_i(\vec{w})}{\sqrt{2}} \right)  -\sqrt{\frac{2}\pi} \chi_i(\vec{w}) \exp(-\chi^2_i(\vec{w})/2)}{ \chi^3_i(\vec{w})} \right)
 \end{equation*}}
@@ -448,7 +450,7 @@ P(D_i|\vec{w}\,) = \tilde{N}_i \, \left(\frac{ \mathrm{Erf}\left( \frac{\chi_i(\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Our method to determine $H_0$}
+\begin{frame}{Our method to determine $H_0$: effective HP}
 \begin{itemize}
 \item Next, we maximise the likelihood and compute effective HPs for each datum (given the best fitting parameters)
 \begin{eqnarray*}
