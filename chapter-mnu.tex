@@ -368,7 +368,7 @@ repeat our MCMC analysis using Planck priors for all the cosmological parameters
 
 {\it Planck} chains are publicly available through the \textit{Planck Legacy Archive}. In this paper we use the chain for the extended model with a free neutrino mass based on the {\it Planck} TT, TE, EE + lowP likelihoods (Equation [54c] in \cite{Ade:2015xua}). We compute the covariance matrix $\mathbf{C}$ for the cosmological parameters $\vec{x}=(\omega_b,\omega_{\mathrm{cdm}},n_s,A_s,H_0)$ and assume a Gaussian distribution for the prior. The $\chi^2$ relative to the fiducial model including the Planck prior is then the $\Delta \chi^2$ in Eq. \eqref{Eq:relative-chi2} plus
 \begin{equation}
-\Delta \chi^2_{\mathrm{prior}} = \sum_{i,j} (x_i - x^{\mathrm{fid}}_i)^2 C^{-1}_{ij} (x_j - x^{\mathrm{fid}}_j)^2,
+\Delta \chi^2_{\mathrm{prior}} = \sum_{i,j} (x_i - x^{\mathrm{fid}}_i) C^{-1}_{ij} (x_j - x^{\mathrm{fid}}_j),
 \label{Eq:chi2-prior}
 \end{equation}
 where $\vec{x}^{\mathrm{fid}}$ denotes parameters of the fiducial model and $\mathbf{C^{-1}}$ is the inverse of the covariance matrix. In this way we marginalize the Planck prior over the neutrino mass and the optical depth, $\tau$, which are parameters that we want to leave free since we want to determine the first and our survey is not sensitive to the second. The results are shown in Table~\ref{Table:2} and Fig.~\ref{fig:mcmc-cmb-prior}.
